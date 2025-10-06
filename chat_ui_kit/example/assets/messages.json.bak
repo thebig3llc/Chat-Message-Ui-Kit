@@ -1,0 +1,1841 @@
+{
+  "chats": {
+    "travel-planning": {
+      "name": "Travel Planning 🌍",
+      "participants": [
+        "John",
+        "Janice",
+        "Matthew"
+      ],
+      "lastActivity": 1655648404000,
+      "messages": [
+        {
+          "author": {
+            "firstName": "John",
+            "id": "4c2307ba-3d40-442f-b1ff-b271f63904ca",
+            "lastName": "Queen"
+          },
+          "createdAt": 1655648404000,
+          "id": "c67ed376-52bf-4d4e-ba2a-7a0f8467b22a",
+          "status": "seen",
+          "text": "Ooowww ☺️",
+          "type": "text"
+        },
+        {
+          "author": {
+            "firstName": "Janice",
+            "id": "e52552f4-835d-4dbe-ba77-b076e659774d",
+            "imageUrl": "https://i.pravatar.cc/300?u=e52552f4-835d-4dbe-ba77-b076e659774d",
+            "lastName": "King"
+          },
+          "createdAt": 1655648403000,
+          "height": 1280,
+          "id": "02797655-4d73-402e-a319-50fde79e2bc4",
+          "name": "madrid",
+          "size": 585000,
+          "status": "seen",
+          "type": "image",
+          "uri": "https://source.unsplash.com/WBGjg0DsO_g/1920x1280",
+          "width": 1920
+        },
+        {
+          "author": {
+            "firstName": "Janice",
+            "id": "e52552f4-835d-4dbe-ba77-b076e659774d",
+            "imageUrl": "https://i.pravatar.cc/300?u=e52552f4-835d-4dbe-ba77-b076e659774d",
+            "lastName": "King"
+          },
+          "createdAt": 1655648402000,
+          "id": "4e048753-2d60-4144-bc28-9967050aaf12",
+          "status": "seen",
+          "text": "What a ~nice~ _wonderful_ sunset! 😻",
+          "type": "text"
+        },
+        {
+          "author": {
+            "firstName": "Matthew",
+            "id": "82091008-a484-4a89-ae75-a22bf8d6f3ac",
+            "lastName": "White"
+          },
+          "createdAt": 1655648401000,
+          "id": "64747b28-df19-4a0c-8c47-316dc3546e3c",
+          "status": "seen",
+          "text": "Here you go buddy! 💪",
+          "type": "text"
+        },
+        {
+          "author": {
+            "firstName": "Matthew",
+            "id": "82091008-a484-4a89-ae75-a22bf8d6f3ac",
+            "lastName": "White"
+          },
+          "createdAt": 1655648400000,
+          "id": "6a1a4351-cf05-4d0c-9d0f-47ed378b6112",
+          "mimeType": "application/pdf",
+          "name": "city_guide-madrid.pdf",
+          "size": 10550000,
+          "status": "seen",
+          "type": "file",
+          "uri": "https://www.esmadrid.com/sites/default/files/documentos/madrid_imprescindible_2016_ing_web_0.pdf"
+        }
+      ]
+    },
+    "project-discussion": {
+      "name": "Project Discussion 💼",
+      "participants": [
+        "Alice",
+        "Bob",
+        "Charlie",
+        "Diana"
+      ],
+      "lastActivity": 1655748404000,
+      "messages": [
+        {
+          "author": {
+            "firstName": "Alice",
+            "id": "alice-001",
+            "imageUrl": "https://i.pravatar.cc/300?u=alice-001",
+            "lastName": "Johnson"
+          },
+          "createdAt": 1655748404000,
+          "id": "proj-msg-001",
+          "status": "sent",
+          "text": "Great work on the latest sprint everyone! 🎉",
+          "type": "text"
+        },
+        {
+          "author": {
+            "firstName": "Bob",
+            "id": "bob-002",
+            "imageUrl": "https://i.pravatar.cc/300?u=bob-002",
+            "lastName": "Smith"
+          },
+          "createdAt": 1655748000000,
+          "id": "proj-msg-002",
+          "status": "seen",
+          "text": "The performance improvements look amazing. Loading time reduced by 60%! ⚡",
+          "type": "text"
+        },
+        {
+          "author": {
+            "firstName": "Charlie",
+            "id": "charlie-003",
+            "lastName": "Brown"
+          },
+          "createdAt": 1655747000000,
+          "id": "proj-msg-003",
+          "status": "seen",
+          "text": "Should we schedule the code review for tomorrow?",
+          "type": "text"
+        },
+        {
+          "author": {
+            "firstName": "Diana",
+            "id": "diana-004",
+            "imageUrl": "https://i.pravatar.cc/300?u=diana-004",
+            "lastName": "Wilson"
+          },
+          "createdAt": 1655746000000,
+          "height": 800,
+          "id": "proj-msg-004",
+          "name": "architecture-diagram",
+          "size": 245000,
+          "status": "seen",
+          "type": "image",
+          "uri": "https://source.unsplash.com/1200x800/?architecture,diagram",
+          "width": 1200
+        }
+      ]
+    },
+    "large-performance-test": {
+      "name": "Performance Test Chat 🚀",
+      "participants": [
+        "TestUser1",
+        "TestUser2",
+        "TestUser3",
+        "TestUser4",
+        "TestUser5"
+      ],
+      "lastActivity": 1655848404000,
+      "messages": [
+        {
+          "author": {
+            "id": "test-user-3",
+            "firstName": "Olivia",
+            "lastName": "Garcia",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-3"
+          },
+          "createdAt": 1758812317074,
+          "id": "perf-msg-120",
+          "status": "sent",
+          "text": "Ready for production deployment! 🚀",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-3",
+            "firstName": "Olivia",
+            "lastName": "Garcia",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-3"
+          },
+          "createdAt": 1758812242078,
+          "id": "perf-msg-119",
+          "status": "sent",
+          "text": "Memory usage optimized by 30%",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "current-user",
+            "firstName": "You",
+            "lastName": "User",
+            "imageUrl": "https://i.pravatar.cc/300?u=current-user"
+          },
+          "createdAt": 1758812199373,
+          "id": "perf-msg-118",
+          "status": "sent",
+          "text": "Documentation has been updated accordingly",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-5",
+            "firstName": "Sophia",
+            "lastName": "Martinez",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-5"
+          },
+          "createdAt": 1758812140341,
+          "height": 600,
+          "id": "perf-img-117",
+          "name": "screenshot_117",
+          "size": 132314,
+          "status": "seen",
+          "type": "image",
+          "uri": "https://source.unsplash.com/800x600/?meeting,business",
+          "width": 800
+        },
+        {
+          "author": {
+            "id": "test-user-2",
+            "firstName": "Liam",
+            "lastName": "Miller",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-2"
+          },
+          "createdAt": 1758812086360,
+          "id": "perf-msg-116",
+          "status": "sent",
+          "text": "Should we add more test cases for edge scenarios?",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-2",
+            "firstName": "Liam",
+            "lastName": "Miller",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-2"
+          },
+          "createdAt": 1758812020540,
+          "height": 600,
+          "id": "perf-img-115",
+          "name": "screenshot_115",
+          "size": 226525,
+          "status": "sent",
+          "type": "image",
+          "uri": "https://source.unsplash.com/800x600/?office,workspace",
+          "width": 800
+        },
+        {
+          "author": {
+            "id": "test-user-4",
+            "firstName": "Noah",
+            "lastName": "Rodriguez"
+          },
+          "createdAt": 1758811960414,
+          "id": "perf-msg-114",
+          "status": "sent",
+          "text": "Ready to deploy to staging environment",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-5",
+            "firstName": "Sophia",
+            "lastName": "Martinez",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-5"
+          },
+          "createdAt": 1758811905029,
+          "id": "perf-msg-113",
+          "status": "seen",
+          "text": "I've pushed the latest changes to the repository",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758811835546,
+          "id": "perf-msg-112",
+          "status": "sent",
+          "text": "Documentation site is live and updated 📚",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-2",
+            "firstName": "Liam",
+            "lastName": "Miller",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-2"
+          },
+          "createdAt": 1758811770001,
+          "id": "perf-msg-111",
+          "status": "sent",
+          "text": "The performance improvements are looking great! 🚀",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-5",
+            "firstName": "Sophia",
+            "lastName": "Martinez",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-5"
+          },
+          "createdAt": 1758811726918,
+          "id": "perf-msg-110",
+          "status": "seen",
+          "text": "Cross-browser compatibility testing completed",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-5",
+            "firstName": "Sophia",
+            "lastName": "Martinez",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-5"
+          },
+          "createdAt": 1758811658208,
+          "id": "perf-msg-109",
+          "status": "sent",
+          "text": "Memory usage optimized by 30%",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758811606411,
+          "id": "perf-msg-108",
+          "status": "sent",
+          "text": "Collaboration tools integrated seamlessly",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-4",
+            "firstName": "Noah",
+            "lastName": "Rodriguez"
+          },
+          "createdAt": 1758811521043,
+          "id": "perf-msg-107",
+          "status": "seen",
+          "text": "Database optimization reduced query time by 60%",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-4",
+            "firstName": "Noah",
+            "lastName": "Rodriguez"
+          },
+          "createdAt": 1758811469490,
+          "id": "perf-msg-106",
+          "status": "seen",
+          "text": "Offline mode is working seamlessly",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758811417065,
+          "id": "perf-msg-105",
+          "status": "sent",
+          "text": "Monitoring and alerting systems active",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "current-user",
+            "firstName": "You",
+            "lastName": "User",
+            "imageUrl": "https://i.pravatar.cc/300?u=current-user"
+          },
+          "createdAt": 1758811341894,
+          "height": 600,
+          "id": "perf-img-104",
+          "name": "screenshot_104",
+          "size": 516925,
+          "status": "seen",
+          "type": "image",
+          "uri": "https://source.unsplash.com/800x600/?technology,computer",
+          "width": 800
+        },
+        {
+          "author": {
+            "id": "current-user",
+            "firstName": "You",
+            "lastName": "User",
+            "imageUrl": "https://i.pravatar.cc/300?u=current-user"
+          },
+          "createdAt": 1758811289449,
+          "id": "perf-msg-103",
+          "status": "sent",
+          "text": "The API integration is working smoothly now",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758811220441,
+          "id": "perf-msg-102",
+          "status": "seen",
+          "text": "Documentation site is live and updated 📚",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-4",
+            "firstName": "Noah",
+            "lastName": "Rodriguez"
+          },
+          "createdAt": 1758811164325,
+          "height": 600,
+          "id": "perf-img-101",
+          "name": "screenshot_101",
+          "size": 157443,
+          "status": "sent",
+          "type": "image",
+          "uri": "https://source.unsplash.com/800x600/?mobile,app",
+          "width": 800
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758811113716,
+          "id": "perf-msg-100",
+          "status": "seen",
+          "text": "Code review comments have been addressed",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-3",
+            "firstName": "Olivia",
+            "lastName": "Garcia",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-3"
+          },
+          "createdAt": 1758811065587,
+          "id": "perf-msg-99",
+          "status": "seen",
+          "text": "Error handling has been improved across the board",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-3",
+            "firstName": "Olivia",
+            "lastName": "Garcia",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-3"
+          },
+          "createdAt": 1758811003578,
+          "id": "perf-msg-98",
+          "status": "sent",
+          "text": "Error handling has been improved across the board",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "current-user",
+            "firstName": "You",
+            "lastName": "User",
+            "imageUrl": "https://i.pravatar.cc/300?u=current-user"
+          },
+          "createdAt": 1758810940431,
+          "id": "perf-msg-97",
+          "status": "sent",
+          "text": "Monitoring and alerting systems active",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-3",
+            "firstName": "Olivia",
+            "lastName": "Garcia",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-3"
+          },
+          "createdAt": 1758810865579,
+          "id": "perf-msg-96",
+          "status": "sent",
+          "text": "Backup and recovery procedures tested",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-2",
+            "firstName": "Liam",
+            "lastName": "Miller",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-2"
+          },
+          "createdAt": 1758810811337,
+          "height": 600,
+          "id": "perf-img-95",
+          "name": "screenshot_95",
+          "size": 495309,
+          "status": "sent",
+          "type": "image",
+          "uri": "https://source.unsplash.com/800x600/?technology,computer",
+          "width": 800
+        },
+        {
+          "author": {
+            "id": "test-user-4",
+            "firstName": "Noah",
+            "lastName": "Rodriguez"
+          },
+          "createdAt": 1758810741724,
+          "id": "perf-msg-94",
+          "status": "seen",
+          "text": "Real-time notifications are working perfectly",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758810687108,
+          "id": "perf-msg-93",
+          "status": "sent",
+          "text": "Error handling has been improved across the board",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758810638999,
+          "id": "perf-msg-92",
+          "status": "sent",
+          "text": "Cross-browser compatibility testing completed",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758810570577,
+          "id": "perf-msg-91",
+          "status": "seen",
+          "text": "Code coverage is now at 95% - excellent progress!",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "current-user",
+            "firstName": "You",
+            "lastName": "User",
+            "imageUrl": "https://i.pravatar.cc/300?u=current-user"
+          },
+          "createdAt": 1758810524321,
+          "id": "perf-msg-90",
+          "status": "sent",
+          "text": "Automated testing suite expanded",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-5",
+            "firstName": "Sophia",
+            "lastName": "Martinez",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-5"
+          },
+          "createdAt": 1758810464041,
+          "id": "perf-msg-89",
+          "status": "seen",
+          "text": "Automated testing suite expanded",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-5",
+            "firstName": "Sophia",
+            "lastName": "Martinez",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-5"
+          },
+          "createdAt": 1758810405588,
+          "id": "perf-msg-88",
+          "status": "seen",
+          "text": "Amazing work team! This sprint was incredibly productive",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "current-user",
+            "firstName": "You",
+            "lastName": "User",
+            "imageUrl": "https://i.pravatar.cc/300?u=current-user"
+          },
+          "createdAt": 1758810329703,
+          "id": "perf-msg-87",
+          "status": "sent",
+          "text": "The new feature is ready for review",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-5",
+            "firstName": "Sophia",
+            "lastName": "Martinez",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-5"
+          },
+          "createdAt": 1758810265855,
+          "id": "perf-msg-86",
+          "status": "sent",
+          "text": "Bundle size reduced through code splitting",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-4",
+            "firstName": "Noah",
+            "lastName": "Rodriguez"
+          },
+          "createdAt": 1758810202630,
+          "id": "perf-msg-85",
+          "status": "seen",
+          "text": "Code coverage is now at 95% - excellent progress!",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758810161853,
+          "height": 600,
+          "id": "perf-img-84",
+          "name": "screenshot_84",
+          "size": 596113,
+          "status": "sent",
+          "type": "image",
+          "uri": "https://source.unsplash.com/800x600/?code,programming",
+          "width": 800
+        },
+        {
+          "author": {
+            "id": "test-user-4",
+            "firstName": "Noah",
+            "lastName": "Rodriguez"
+          },
+          "createdAt": 1758810094616,
+          "id": "perf-msg-83",
+          "status": "seen",
+          "text": "The loading time has improved by 40% with the new optimizations",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-2",
+            "firstName": "Liam",
+            "lastName": "Miller",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-2"
+          },
+          "createdAt": 1758810037218,
+          "id": "perf-msg-82",
+          "status": "sent",
+          "text": "Just finished the UI redesign. What do you think?",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758809982439,
+          "id": "perf-msg-81",
+          "status": "seen",
+          "text": "Offline mode is working seamlessly",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758809928423,
+          "height": 600,
+          "id": "perf-img-80",
+          "name": "screenshot_80",
+          "size": 229028,
+          "status": "sent",
+          "type": "image",
+          "uri": "https://source.unsplash.com/800x600/?meeting,business",
+          "width": 800
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758809868029,
+          "height": 600,
+          "id": "perf-img-79",
+          "name": "screenshot_79",
+          "size": 595453,
+          "status": "sent",
+          "type": "image",
+          "uri": "https://source.unsplash.com/800x600/?code,programming",
+          "width": 800
+        },
+        {
+          "author": {
+            "id": "test-user-5",
+            "firstName": "Sophia",
+            "lastName": "Martinez",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-5"
+          },
+          "createdAt": 1758809808408,
+          "id": "perf-msg-78",
+          "status": "sent",
+          "text": "Code review comments have been addressed",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758809728466,
+          "id": "perf-msg-77",
+          "status": "seen",
+          "text": "Backup and recovery procedures tested",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-5",
+            "firstName": "Sophia",
+            "lastName": "Martinez",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-5"
+          },
+          "createdAt": 1758809675704,
+          "id": "perf-msg-76",
+          "status": "seen",
+          "text": "User feedback has been overwhelmingly positive",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "current-user",
+            "firstName": "You",
+            "lastName": "User",
+            "imageUrl": "https://i.pravatar.cc/300?u=current-user"
+          },
+          "createdAt": 1758809604183,
+          "id": "perf-msg-75",
+          "status": "seen",
+          "text": "Video call feature is working perfectly 🎥",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-4",
+            "firstName": "Noah",
+            "lastName": "Rodriguez"
+          },
+          "createdAt": 1758809556517,
+          "id": "perf-msg-74",
+          "status": "sent",
+          "text": "Bundle size reduced through code splitting",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-3",
+            "firstName": "Olivia",
+            "lastName": "Garcia",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-3"
+          },
+          "createdAt": 1758809492956,
+          "id": "perf-msg-73",
+          "status": "sent",
+          "text": "Performance monitoring dashboard created",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-4",
+            "firstName": "Noah",
+            "lastName": "Rodriguez"
+          },
+          "createdAt": 1758809434184,
+          "id": "perf-msg-72",
+          "status": "seen",
+          "text": "Accessibility features have been implemented",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-4",
+            "firstName": "Noah",
+            "lastName": "Rodriguez"
+          },
+          "createdAt": 1758809361293,
+          "id": "perf-msg-71",
+          "status": "sent",
+          "text": "Error handling has been improved across the board",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-4",
+            "firstName": "Noah",
+            "lastName": "Rodriguez"
+          },
+          "createdAt": 1758809329057,
+          "id": "perf-msg-70",
+          "status": "seen",
+          "text": "The loading time has improved by 40% with the new optimizations",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758809246401,
+          "id": "perf-msg-69",
+          "status": "seen",
+          "text": "Error handling has been improved across the board",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "current-user",
+            "firstName": "You",
+            "lastName": "User",
+            "imageUrl": "https://i.pravatar.cc/300?u=current-user"
+          },
+          "createdAt": 1758809204445,
+          "height": 600,
+          "id": "perf-img-68",
+          "name": "screenshot_68",
+          "size": 412734,
+          "status": "sent",
+          "type": "image",
+          "uri": "https://source.unsplash.com/800x600/?code,programming",
+          "width": 800
+        },
+        {
+          "author": {
+            "id": "test-user-4",
+            "firstName": "Noah",
+            "lastName": "Rodriguez"
+          },
+          "createdAt": 1758809144456,
+          "id": "perf-msg-67",
+          "status": "sent",
+          "text": "Offline mode is working seamlessly",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-3",
+            "firstName": "Olivia",
+            "lastName": "Garcia",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-3"
+          },
+          "createdAt": 1758809083751,
+          "height": 600,
+          "id": "perf-img-66",
+          "name": "screenshot_66",
+          "size": 400281,
+          "status": "sent",
+          "type": "image",
+          "uri": "https://source.unsplash.com/800x600/?teamwork,collaboration",
+          "width": 800
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758809014823,
+          "id": "perf-msg-65",
+          "status": "sent",
+          "text": "Should we add more test cases for edge scenarios?",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-5",
+            "firstName": "Sophia",
+            "lastName": "Martinez",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-5"
+          },
+          "createdAt": 1758808966772,
+          "id": "perf-msg-64",
+          "status": "seen",
+          "text": "The API integration is working smoothly now",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758808896318,
+          "height": 600,
+          "id": "perf-img-63",
+          "name": "screenshot_63",
+          "size": 425584,
+          "status": "sent",
+          "type": "image",
+          "uri": "https://source.unsplash.com/800x600/?teamwork,collaboration",
+          "width": 800
+        },
+        {
+          "author": {
+            "id": "test-user-5",
+            "firstName": "Sophia",
+            "lastName": "Martinez",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-5"
+          },
+          "createdAt": 1758808826105,
+          "id": "perf-msg-62",
+          "status": "sent",
+          "text": "Bundle size reduced through code splitting",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "current-user",
+            "firstName": "You",
+            "lastName": "User",
+            "imageUrl": "https://i.pravatar.cc/300?u=current-user"
+          },
+          "createdAt": 1758808786719,
+          "height": 600,
+          "id": "perf-img-61",
+          "name": "screenshot_61",
+          "size": 554269,
+          "status": "seen",
+          "type": "image",
+          "uri": "https://source.unsplash.com/800x600/?design,ui",
+          "width": 800
+        },
+        {
+          "author": {
+            "id": "test-user-5",
+            "firstName": "Sophia",
+            "lastName": "Martinez",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-5"
+          },
+          "createdAt": 1758808706242,
+          "id": "perf-msg-60",
+          "status": "seen",
+          "text": "Just finished the UI redesign. What do you think?",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-2",
+            "firstName": "Liam",
+            "lastName": "Miller",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-2"
+          },
+          "createdAt": 1758808666145,
+          "id": "perf-msg-59",
+          "status": "sent",
+          "text": "File sharing capabilities enhanced",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758808592228,
+          "id": "perf-msg-58",
+          "status": "seen",
+          "text": "Should we add more test cases for edge scenarios?",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-3",
+            "firstName": "Olivia",
+            "lastName": "Garcia",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-3"
+          },
+          "createdAt": 1758808534266,
+          "id": "perf-msg-57",
+          "status": "sent",
+          "text": "Payment gateway testing successful 💳",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-5",
+            "firstName": "Sophia",
+            "lastName": "Martinez",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-5"
+          },
+          "createdAt": 1758808486277,
+          "id": "perf-msg-56",
+          "status": "sent",
+          "text": "The performance improvements are looking great! 🚀",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758808413196,
+          "id": "perf-msg-55",
+          "status": "sent",
+          "text": "Cross-browser compatibility testing completed",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "current-user",
+            "firstName": "You",
+            "lastName": "User",
+            "imageUrl": "https://i.pravatar.cc/300?u=current-user"
+          },
+          "createdAt": 1758808369512,
+          "height": 600,
+          "id": "perf-img-54",
+          "name": "screenshot_54",
+          "size": 281438,
+          "status": "sent",
+          "type": "image",
+          "uri": "https://source.unsplash.com/800x600/?code,programming",
+          "width": 800
+        },
+        {
+          "author": {
+            "id": "current-user",
+            "firstName": "You",
+            "lastName": "User",
+            "imageUrl": "https://i.pravatar.cc/300?u=current-user"
+          },
+          "createdAt": 1758808303978,
+          "id": "perf-msg-53",
+          "status": "seen",
+          "text": "Memory usage optimized by 30%",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-4",
+            "firstName": "Noah",
+            "lastName": "Rodriguez"
+          },
+          "createdAt": 1758808235563,
+          "id": "perf-msg-52",
+          "status": "seen",
+          "text": "Should we add more test cases for edge scenarios?",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "current-user",
+            "firstName": "You",
+            "lastName": "User",
+            "imageUrl": "https://i.pravatar.cc/300?u=current-user"
+          },
+          "createdAt": 1758808162020,
+          "height": 600,
+          "id": "perf-img-51",
+          "name": "screenshot_51",
+          "size": 410332,
+          "status": "seen",
+          "type": "image",
+          "uri": "https://source.unsplash.com/800x600/?technology,computer",
+          "width": 800
+        },
+        {
+          "author": {
+            "id": "test-user-5",
+            "firstName": "Sophia",
+            "lastName": "Martinez",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-5"
+          },
+          "createdAt": 1758808121179,
+          "height": 600,
+          "id": "perf-img-50",
+          "name": "screenshot_50",
+          "size": 256203,
+          "status": "seen",
+          "type": "image",
+          "uri": "https://source.unsplash.com/800x600/?mobile,app",
+          "width": 800
+        },
+        {
+          "author": {
+            "id": "test-user-4",
+            "firstName": "Noah",
+            "lastName": "Rodriguez"
+          },
+          "createdAt": 1758808068325,
+          "id": "perf-msg-49",
+          "status": "sent",
+          "text": "Hey everyone! How's the project coming along? 👋",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-4",
+            "firstName": "Noah",
+            "lastName": "Rodriguez"
+          },
+          "createdAt": 1758807981827,
+          "id": "perf-msg-48",
+          "status": "sent",
+          "text": "Logging system provides better debugging insights",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-2",
+            "firstName": "Liam",
+            "lastName": "Miller",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-2"
+          },
+          "createdAt": 1758807930883,
+          "id": "perf-msg-47",
+          "status": "sent",
+          "text": "Analytics dashboard provides valuable insights 📊",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-3",
+            "firstName": "Olivia",
+            "lastName": "Garcia",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-3"
+          },
+          "createdAt": 1758807865119,
+          "id": "perf-msg-46",
+          "status": "seen",
+          "text": "All tests are passing in the CI pipeline ✅",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758807815394,
+          "id": "perf-file-45",
+          "mimeType": "application/octet-stream",
+          "name": "archive.zip",
+          "size": 1183209,
+          "status": "sent",
+          "type": "file",
+          "uri": "https://example.com/files/archive.zip"
+        },
+        {
+          "author": {
+            "id": "test-user-3",
+            "firstName": "Olivia",
+            "lastName": "Garcia",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-3"
+          },
+          "createdAt": 1758807755377,
+          "id": "perf-msg-44",
+          "status": "seen",
+          "text": "Analytics dashboard provides valuable insights 📊",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758807683212,
+          "id": "perf-msg-43",
+          "status": "sent",
+          "text": "User feedback has been overwhelmingly positive",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-2",
+            "firstName": "Liam",
+            "lastName": "Miller",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-2"
+          },
+          "createdAt": 1758807639717,
+          "id": "perf-msg-42",
+          "status": "seen",
+          "text": "Amazing work team! This sprint was incredibly productive",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "current-user",
+            "firstName": "You",
+            "lastName": "User",
+            "imageUrl": "https://i.pravatar.cc/300?u=current-user"
+          },
+          "createdAt": 1758807574413,
+          "id": "perf-msg-41",
+          "status": "sent",
+          "text": "Amazing work team! This sprint was incredibly productive",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-4",
+            "firstName": "Noah",
+            "lastName": "Rodriguez"
+          },
+          "createdAt": 1758807505541,
+          "id": "perf-msg-40",
+          "status": "seen",
+          "text": "User authentication flow is now seamless",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-5",
+            "firstName": "Sophia",
+            "lastName": "Martinez",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-5"
+          },
+          "createdAt": 1758807457719,
+          "id": "perf-msg-39",
+          "status": "sent",
+          "text": "Performance monitoring dashboard created",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-5",
+            "firstName": "Sophia",
+            "lastName": "Martinez",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-5"
+          },
+          "createdAt": 1758807404853,
+          "id": "perf-msg-38",
+          "status": "sent",
+          "text": "Analytics dashboard provides valuable insights 📊",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758807321633,
+          "id": "perf-msg-37",
+          "status": "seen",
+          "text": "Collaboration tools integrated seamlessly",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-3",
+            "firstName": "Olivia",
+            "lastName": "Garcia",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-3"
+          },
+          "createdAt": 1758807281057,
+          "id": "perf-msg-36",
+          "status": "sent",
+          "text": "Collaboration tools integrated seamlessly",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-5",
+            "firstName": "Sophia",
+            "lastName": "Martinez",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-5"
+          },
+          "createdAt": 1758807201638,
+          "id": "perf-msg-35",
+          "status": "sent",
+          "text": "Ready to deploy to staging environment",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758807150233,
+          "id": "perf-msg-34",
+          "status": "sent",
+          "text": "User authentication flow is now seamless",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-3",
+            "firstName": "Olivia",
+            "lastName": "Garcia",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-3"
+          },
+          "createdAt": 1758807109127,
+          "id": "perf-msg-33",
+          "status": "sent",
+          "text": "Video call feature is working perfectly 🎥",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758807041719,
+          "id": "perf-msg-32",
+          "status": "sent",
+          "text": "Great work on the bug fixes yesterday! 🎉",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-3",
+            "firstName": "Olivia",
+            "lastName": "Garcia",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-3"
+          },
+          "createdAt": 1758806977188,
+          "height": 600,
+          "id": "perf-img-31",
+          "name": "screenshot_31",
+          "size": 583428,
+          "status": "sent",
+          "type": "image",
+          "uri": "https://source.unsplash.com/800x600/?meeting,business",
+          "width": 800
+        },
+        {
+          "author": {
+            "id": "test-user-4",
+            "firstName": "Noah",
+            "lastName": "Rodriguez"
+          },
+          "createdAt": 1758806922978,
+          "id": "perf-msg-30",
+          "status": "seen",
+          "text": "Can we schedule a meeting for tomorrow?",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-3",
+            "firstName": "Olivia",
+            "lastName": "Garcia",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-3"
+          },
+          "createdAt": 1758806864472,
+          "id": "perf-msg-29",
+          "status": "seen",
+          "text": "Documentation site is live and updated 📚",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-5",
+            "firstName": "Sophia",
+            "lastName": "Martinez",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-5"
+          },
+          "createdAt": 1758806797792,
+          "id": "perf-msg-28",
+          "status": "sent",
+          "text": "Ready to deploy to staging environment",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "current-user",
+            "firstName": "You",
+            "lastName": "User",
+            "imageUrl": "https://i.pravatar.cc/300?u=current-user"
+          },
+          "createdAt": 1758806746168,
+          "id": "perf-msg-27",
+          "status": "seen",
+          "text": "Documentation has been updated accordingly",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-5",
+            "firstName": "Sophia",
+            "lastName": "Martinez",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-5"
+          },
+          "createdAt": 1758806677762,
+          "height": 600,
+          "id": "perf-img-26",
+          "name": "screenshot_26",
+          "size": 382228,
+          "status": "sent",
+          "type": "image",
+          "uri": "https://source.unsplash.com/800x600/?office,workspace",
+          "width": 800
+        },
+        {
+          "author": {
+            "id": "test-user-4",
+            "firstName": "Noah",
+            "lastName": "Rodriguez"
+          },
+          "createdAt": 1758806609073,
+          "height": 600,
+          "id": "perf-img-25",
+          "name": "screenshot_25",
+          "size": 497422,
+          "status": "sent",
+          "type": "image",
+          "uri": "https://source.unsplash.com/800x600/?code,programming",
+          "width": 800
+        },
+        {
+          "author": {
+            "id": "test-user-2",
+            "firstName": "Liam",
+            "lastName": "Miller",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-2"
+          },
+          "createdAt": 1758806565705,
+          "id": "perf-msg-24",
+          "status": "sent",
+          "text": "Documentation site is live and updated 📚",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758806491226,
+          "id": "perf-file-23",
+          "mimeType": "application/pdf",
+          "name": "document.pdf",
+          "size": 1539448,
+          "status": "seen",
+          "type": "file",
+          "uri": "https://example.com/files/document.pdf"
+        },
+        {
+          "author": {
+            "id": "test-user-2",
+            "firstName": "Liam",
+            "lastName": "Miller",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-2"
+          },
+          "createdAt": 1758806440028,
+          "id": "perf-msg-22",
+          "status": "sent",
+          "text": "Mobile responsiveness looks perfect across all devices 📱",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "current-user",
+            "firstName": "You",
+            "lastName": "User",
+            "imageUrl": "https://i.pravatar.cc/300?u=current-user"
+          },
+          "createdAt": 1758806362658,
+          "id": "perf-msg-21",
+          "status": "sent",
+          "text": "Push notifications are configured correctly",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758806307193,
+          "id": "perf-msg-20",
+          "status": "sent",
+          "text": "Documentation site is live and updated 📚",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "current-user",
+            "firstName": "You",
+            "lastName": "User",
+            "imageUrl": "https://i.pravatar.cc/300?u=current-user"
+          },
+          "createdAt": 1758806262054,
+          "id": "perf-msg-19",
+          "status": "sent",
+          "text": "Offline mode is working seamlessly",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-2",
+            "firstName": "Liam",
+            "lastName": "Miller",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-2"
+          },
+          "createdAt": 1758806182632,
+          "id": "perf-msg-18",
+          "status": "seen",
+          "text": "Payment gateway testing successful 💳",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758806125553,
+          "id": "perf-msg-17",
+          "status": "seen",
+          "text": "Mobile responsiveness looks perfect across all devices 📱",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-2",
+            "firstName": "Liam",
+            "lastName": "Miller",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-2"
+          },
+          "createdAt": 1758806079328,
+          "id": "perf-msg-16",
+          "status": "seen",
+          "text": "Just finished the UI redesign. What do you think?",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-3",
+            "firstName": "Olivia",
+            "lastName": "Garcia",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-3"
+          },
+          "createdAt": 1758806014769,
+          "id": "perf-msg-15",
+          "status": "seen",
+          "text": "The performance improvements are looking great! 🚀",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "current-user",
+            "firstName": "You",
+            "lastName": "User",
+            "imageUrl": "https://i.pravatar.cc/300?u=current-user"
+          },
+          "createdAt": 1758805957107,
+          "height": 600,
+          "id": "perf-img-14",
+          "name": "screenshot_14",
+          "size": 142467,
+          "status": "seen",
+          "type": "image",
+          "uri": "https://source.unsplash.com/800x600/?mobile,app",
+          "width": 800
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758805908538,
+          "id": "perf-msg-13",
+          "status": "seen",
+          "text": "Ready for production deployment! 🚀",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-5",
+            "firstName": "Sophia",
+            "lastName": "Martinez",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-5"
+          },
+          "createdAt": 1758805842117,
+          "id": "perf-file-12",
+          "mimeType": "application/octet-stream",
+          "name": "spreadsheet.xlsx",
+          "size": 3190541,
+          "status": "sent",
+          "type": "file",
+          "uri": "https://example.com/files/spreadsheet.xlsx"
+        },
+        {
+          "author": {
+            "id": "test-user-3",
+            "firstName": "Olivia",
+            "lastName": "Garcia",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-3"
+          },
+          "createdAt": 1758805770522,
+          "id": "perf-msg-11",
+          "status": "seen",
+          "text": "The caching strategy has reduced server load significantly",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "current-user",
+            "firstName": "You",
+            "lastName": "User",
+            "imageUrl": "https://i.pravatar.cc/300?u=current-user"
+          },
+          "createdAt": 1758805717623,
+          "id": "perf-msg-10",
+          "status": "seen",
+          "text": "Performance monitoring dashboard created",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-2",
+            "firstName": "Liam",
+            "lastName": "Miller",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-2"
+          },
+          "createdAt": 1758805643466,
+          "height": 600,
+          "id": "perf-img-9",
+          "name": "screenshot_9",
+          "size": 468179,
+          "status": "seen",
+          "type": "image",
+          "uri": "https://source.unsplash.com/800x600/?teamwork,collaboration",
+          "width": 800
+        },
+        {
+          "author": {
+            "id": "test-user-1",
+            "firstName": "Emma",
+            "lastName": "Davis",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-1"
+          },
+          "createdAt": 1758805604062,
+          "id": "perf-msg-8",
+          "status": "sent",
+          "text": "Accessibility features have been implemented",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "current-user",
+            "firstName": "You",
+            "lastName": "User",
+            "imageUrl": "https://i.pravatar.cc/300?u=current-user"
+          },
+          "createdAt": 1758805543505,
+          "id": "perf-msg-7",
+          "status": "sent",
+          "text": "Great work on the bug fixes yesterday! 🎉",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-4",
+            "firstName": "Noah",
+            "lastName": "Rodriguez"
+          },
+          "createdAt": 1758805482746,
+          "id": "perf-msg-6",
+          "status": "seen",
+          "text": "Error handling has been improved across the board",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-3",
+            "firstName": "Olivia",
+            "lastName": "Garcia",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-3"
+          },
+          "createdAt": 1758805428511,
+          "id": "perf-msg-5",
+          "status": "seen",
+          "text": "Real-time notifications are working perfectly",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-5",
+            "firstName": "Sophia",
+            "lastName": "Martinez",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-5"
+          },
+          "createdAt": 1758805349381,
+          "id": "perf-msg-4",
+          "status": "sent",
+          "text": "Accessibility features have been implemented",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-5",
+            "firstName": "Sophia",
+            "lastName": "Martinez",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-5"
+          },
+          "createdAt": 1758805309776,
+          "id": "perf-msg-3",
+          "status": "sent",
+          "text": "Documentation site is live and updated 📚",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-2",
+            "firstName": "Liam",
+            "lastName": "Miller",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-2"
+          },
+          "createdAt": 1758805225708,
+          "id": "perf-msg-2",
+          "status": "sent",
+          "text": "Let's discuss the architecture changes in the next standup",
+          "type": "text"
+        },
+        {
+          "author": {
+            "id": "test-user-3",
+            "firstName": "Olivia",
+            "lastName": "Garcia",
+            "imageUrl": "https://i.pravatar.cc/300?u=test-user-3"
+          },
+          "createdAt": 1758805180844,
+          "id": "perf-msg-1",
+          "status": "sent",
+          "text": "Mobile responsiveness looks perfect across all devices 📱",
+          "type": "text"
+        }
+      ]
+    }
+  },
+  "users": {
+    "4c2307ba-3d40-442f-b1ff-b271f63904ca": {
+      "firstName": "John",
+      "id": "4c2307ba-3d40-442f-b1ff-b271f63904ca",
+      "lastName": "Queen"
+    },
+    "e52552f4-835d-4dbe-ba77-b076e659774d": {
+      "firstName": "Janice",
+      "id": "e52552f4-835d-4dbe-ba77-b076e659774d",
+      "imageUrl": "https://i.pravatar.cc/300?u=e52552f4-835d-4dbe-ba77-b076e659774d",
+      "lastName": "King"
+    },
+    "82091008-a484-4a89-ae75-a22bf8d6f3ac": {
+      "firstName": "Matthew",
+      "id": "82091008-a484-4a89-ae75-a22bf8d6f3ac",
+      "lastName": "White"
+    },
+    "alice-001": {
+      "firstName": "Alice",
+      "id": "alice-001",
+      "imageUrl": "https://i.pravatar.cc/300?u=alice-001",
+      "lastName": "Johnson"
+    },
+    "bob-002": {
+      "firstName": "Bob",
+      "id": "bob-002",
+      "imageUrl": "https://i.pravatar.cc/300?u=bob-002",
+      "lastName": "Smith"
+    },
+    "charlie-003": {
+      "firstName": "Charlie",
+      "id": "charlie-003",
+      "lastName": "Brown"
+    },
+    "diana-004": {
+      "firstName": "Diana",
+      "id": "diana-004",
+      "imageUrl": "https://i.pravatar.cc/300?u=diana-004",
+      "lastName": "Wilson"
+    },
+    "current-user": {
+      "firstName": "You",
+      "id": "current-user",
+      "imageUrl": "https://i.pravatar.cc/300?u=current-user",
+      "lastName": "User"
+    }
+  }
+}
