@@ -24,7 +24,7 @@ void main() {
 
     test('creates text message with all fields', () {
       final createdAt = DateTime.now().millisecondsSinceEpoch;
-      final previewData = PreviewData(
+      final previewData = const PreviewData(
         title: 'Example Title',
         description: 'Example description',
         link: 'https://example.com',
@@ -73,7 +73,7 @@ void main() {
     });
 
     test('JSON serialization works', () {
-      final previewData = PreviewData(
+      final previewData = const PreviewData(
         title: 'Example Title',
         link: 'https://example.com',
       );

@@ -50,7 +50,7 @@ void main() {
                 final message = messageData['message'] as MessageModel;
                 return ListTile(
                   title: Text(message.id),
-                  subtitle: Text('Message content'),
+                  subtitle: const Text('Message content'),
                 );
               },
             ),
@@ -91,7 +91,7 @@ void main() {
                 final message = messageData['message'] as MessageModel;
                 return ListTile(
                   title: Text(message.id),
-                  subtitle: Text('Message content'),
+                  subtitle: const Text('Message content'),
                 );
               },
             ),
@@ -130,7 +130,7 @@ void main() {
                   height: 60,
                   child: ListTile(
                     title: Text(message.id),
-                    subtitle: Text('Message content'),
+                    subtitle: const Text('Message content'),
                   ),
                 );
               },
@@ -247,7 +247,7 @@ void main() {
                   final message = messageData['message'] as MessageModel;
                   return ListTile(
                     title: Text(message.id),
-                    subtitle: Text('Message content'),
+                    subtitle: const Text('Message content'),
                   );
                 },
               ),

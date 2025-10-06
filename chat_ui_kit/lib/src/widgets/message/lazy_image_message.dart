@@ -459,11 +459,6 @@ class _VisibilityDetectorState extends State<VisibilityDetector> {
       final size = renderBox.size;
       final position = renderBox.localToGlobal(Offset.zero);
       final viewport = RenderAbstractViewport.of(renderBox);
-        
-      if (viewport == null) {
-        widget.onVisibilityChanged(const VisibilityInfo(visibleFraction: 1.0));
-        return;
-      }
 
       final vpSize = viewport.paintBounds.size;
       final vpPosition = viewport.paintBounds.topLeft;
