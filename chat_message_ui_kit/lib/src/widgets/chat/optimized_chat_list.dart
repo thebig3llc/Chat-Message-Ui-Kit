@@ -86,7 +86,8 @@ class _OptimizedChatListState extends State<OptimizedChatList>
 
   /// Efficiently handle list updates with optimized diff calculation
   void _handleListUpdate(List<Object> oldItems) async {
-    if (widget.items.length > widget.diffThreshold && widget.enableIsolateForDiff) {
+    if (widget.items.length > widget.diffThreshold &&
+        widget.enableIsolateForDiff) {
       // Use isolate for large lists
       await _calculateDiffsInIsolate(oldItems);
     } else {
@@ -149,7 +150,6 @@ class _OptimizedChatListState extends State<OptimizedChatList>
       receivePort.close();
     }
   }
-
 
   /// Auto-scroll to bottom for new user messages
   void _scrollToBottomIfNeeded(List<Object> oldItems) {
@@ -220,10 +220,7 @@ class _OptimizedChatListState extends State<OptimizedChatList>
       builder: (context, value, child) {
         return Transform.translate(
           offset: Offset(0, 20 * (1 - value)),
-          child: Opacity(
-            opacity: value,
-            child: child,
-          ),
+          child: Opacity(opacity: value, child: child),
         );
       },
     );
@@ -245,7 +242,8 @@ class _OptimizedChatListState extends State<OptimizedChatList>
           setState(() {
             _indicatorOnScrollStatus = true;
           });
-        } else if (notification.metrics.pixels == 0.0 && _indicatorOnScrollStatus) {
+        } else if (notification.metrics.pixels == 0.0 &&
+            _indicatorOnScrollStatus) {
           setState(() {
             _indicatorOnScrollStatus = false;
           });
@@ -256,11 +254,9 @@ class _OptimizedChatListState extends State<OptimizedChatList>
             widget.isLastPage != true &&
             !_isNextPageLoading &&
             widget.items.isNotEmpty) {
-
           final threshold = widget.onEndReachedThreshold ?? 0.75;
           if (notification.metrics.pixels >=
               notification.metrics.maxScrollExtent * threshold) {
-
             _controller.duration = Duration.zero;
             _controller.forward();
 
@@ -295,9 +291,7 @@ class _OptimizedChatListState extends State<OptimizedChatList>
           // Typing indicator
           SliverPadding(
             padding: const EdgeInsets.only(bottom: 4),
-            sliver: SliverToBoxAdapter(
-              child: _buildTypingIndicator(),
-            ),
+            sliver: SliverToBoxAdapter(child: _buildTypingIndicator()),
           ),
 
           // Optimized message list
@@ -314,9 +308,11 @@ class _OptimizedChatListState extends State<OptimizedChatList>
           // Loading indicator
           SliverPadding(
             padding: EdgeInsets.only(
-              top: 16 + (widget.useTopSafeAreaInset
-                  ? MediaQuery.of(context).padding.top
-                  : 0),
+              top:
+                  16 +
+                  (widget.useTopSafeAreaInset
+                      ? MediaQuery.of(context).padding.top
+                      : 0),
             ),
             sliver: SliverToBoxAdapter(
               child: SizeTransition(
@@ -327,19 +323,22 @@ class _OptimizedChatListState extends State<OptimizedChatList>
                     alignment: Alignment.center,
                     height: 32,
                     width: 32,
-                    child: _isNextPageLoading
-                        ? SizedBox(
-                            height: 16,
-                            width: 16,
-                            child: CircularProgressIndicator(
-                              backgroundColor: Colors.transparent,
-                              strokeWidth: 1.5,
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                InheritedChatTheme.of(context).theme.primaryColor,
+                    child:
+                        _isNextPageLoading
+                            ? SizedBox(
+                              height: 16,
+                              width: 16,
+                              child: CircularProgressIndicator(
+                                backgroundColor: Colors.transparent,
+                                strokeWidth: 1.5,
+                                valueColor: AlwaysStoppedAnimation<Color>(
+                                  InheritedChatTheme.of(
+                                    context,
+                                  ).theme.primaryColor,
+                                ),
                               ),
-                            ),
-                          )
-                        : null,
+                            )
+                            : null,
                   ),
                 ),
               ),
@@ -394,10 +393,7 @@ class DiffResult {
   final Set<String> newMessageIds;
   final Set<String> removedMessageIds;
 
-  DiffResult({
-    required this.newMessageIds,
-    required this.removedMessageIds,
-  });
+  DiffResult({required this.newMessageIds, required this.removedMessageIds});
 }
 
 /// Isolate entry point for diff calculation
@@ -413,20 +409,14 @@ void _diffCalculationIsolate(DiffCalculationData data) {
 
     data.sendPort.send(result);
   } catch (e) {
-    data.sendPort.send(DiffResult(
-      newMessageIds: {},
-      removedMessageIds: {},
-    ));
+    data.sendPort.send(DiffResult(newMessageIds: {}, removedMessageIds: {}));
   }
 }
 
 /// Extract message IDs in isolate
 Set<String> _extractMessageIdsIsolate(List<Object> items) {
-  return items
-      .whereType<Map<String, Object>>()
-      .map((item) {
-        final message = item['message'] as MessageModel;
-        return message.id;
-      })
-      .toSet();
+  return items.whereType<Map<String, Object>>().map((item) {
+    final message = item['message'] as MessageModel;
+    return message.id;
+  }).toSet();
 }

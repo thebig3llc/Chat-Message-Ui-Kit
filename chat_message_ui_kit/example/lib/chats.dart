@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:chat_message_ui_kit/chat_message_ui_kit.dart';
+
 /// Individual chat screen using the app_messaging_ui Chat widget
 ///
 /// This demonstrates the main Chat widget with all its capabilities:

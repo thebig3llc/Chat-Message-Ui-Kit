@@ -178,7 +178,9 @@ class _InputState extends State<Input> {
         .copyWith(left: 0, right: 0)
         .add(
           EdgeInsets.fromLTRB(
-            widget.onAttachmentPressed != null ? 0 : 24, // Left padding when no attachment button
+            widget.onAttachmentPressed != null
+                ? 0
+                : 24, // Left padding when no attachment button
             0,
             _sendButtonVisible ? 0 : 24, // Right padding when no send button
             0,
@@ -187,7 +189,8 @@ class _InputState extends State<Input> {
 
     // Build the complete input widget with theming and layout
     return Focus(
-      autofocus: !widget.options.autofocus, // Inverted for proper focus behavior
+      autofocus:
+          !widget.options.autofocus, // Inverted for proper focus behavior
       child: Padding(
         padding: InheritedChatTheme.of(context).theme.inputMargin,
         child: Material(
@@ -201,7 +204,8 @@ class _InputState extends State<Input> {
                 InheritedChatTheme.of(context).theme.inputContainerDecoration,
             padding: safeAreaInsets,
             child: Row(
-              textDirection: TextDirection.ltr, // Ensure consistent button layout
+              textDirection:
+                  TextDirection.ltr, // Ensure consistent button layout
               children: [
                 // Show attachment button if callback is provided
                 if (widget.onAttachmentPressed != null)

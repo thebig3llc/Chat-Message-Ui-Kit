@@ -1,4 +1,5 @@
-import 'package:flutter/gestures.dart' show DragStartBehavior, TapGestureRecognizer;
+import 'package:flutter/gestures.dart'
+    show DragStartBehavior, TapGestureRecognizer;
 import 'package:flutter/material.dart';
 import 'package:linkify/linkify.dart';
 
@@ -137,11 +138,7 @@ class SelectableLinkify extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final elements = linkify(
-      text,
-      options: options,
-      linkifiers: linkifiers,
-    );
+    final elements = linkify(text, options: options, linkifiers: linkifiers);
 
     return SelectableText.rich(
       _buildTextSpan(
@@ -182,25 +179,31 @@ class SelectableLinkify extends StatelessWidget {
   }
 }
 
-TextSpan _buildTextSpan(List<LinkifyElement> elements, {
+TextSpan _buildTextSpan(
+  List<LinkifyElement> elements, {
   TextStyle? style,
-   TextStyle? linkStyle,
-   LinkCallback? onOpen,
-   bool useMouseRegion = false,
+  TextStyle? linkStyle,
+  LinkCallback? onOpen,
+  bool useMouseRegion = false,
 }) {
   return TextSpan(
     children: [
-      for(var i in elements)  
-        if(i is LinkableElement)
+      for (var i in elements)
+        if (i is LinkableElement)
           TextSpan(
             text: i.text,
             style: linkStyle,
-            recognizer: onOpen != null ?
-            (TapGestureRecognizer()..onTap = (){ return onOpen(i);}) : null,
+            recognizer:
+                onOpen != null
+                    ? (TapGestureRecognizer()
+                      ..onTap = () {
+                        return onOpen(i);
+                      })
+                    : null,
             mouseCursor: useMouseRegion ? SystemMouseCursors.click : null,
           )
-          else 
-         TextSpan(text: i.text, style: style),
-    ]
+        else
+          TextSpan(text: i.text, style: style),
+    ],
   );
 }

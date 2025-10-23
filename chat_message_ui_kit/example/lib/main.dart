@@ -88,11 +88,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
   Widget build(BuildContext context) {
     if (chatData == null) {
       // Loading state - you can customize this
-      return const Scaffold(
-        body: Center(
-          child: CircularProgressIndicator(),
-        ),
-      );
+      return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
 
     final chats = chatData!['chats'] as Map<String, dynamic>;
@@ -127,9 +123,9 @@ class _ChatListScreenState extends State<ChatListScreen> {
                 const SizedBox(height: 8),
                 Text(
                   'Explore different chat features:',
-                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: Colors.grey.shade700,
-                  ),
+                  style: Theme.of(
+                    context,
+                  ).textTheme.bodyMedium?.copyWith(color: Colors.grey.shade700),
                 ),
                 const SizedBox(height: 4),
                 Text(
@@ -148,17 +144,17 @@ class _ChatListScreenState extends State<ChatListScreen> {
           Expanded(
             child: ListView.separated(
               itemCount: chats.keys.length,
-              separatorBuilder: (context, index) => Divider(
-                height: 1,
-                color: Colors.grey.shade200,
-              ),
+              separatorBuilder: (context, index) =>
+                  Divider(height: 1, color: Colors.grey.shade200),
               itemBuilder: (context, index) {
                 final chatId = chats.keys.elementAt(index);
                 final chat = chats[chatId] as Map<String, dynamic>;
                 final messages = chat['messages'] as List<dynamic>;
 
                 // Get the latest message for preview
-                final latestMessage = messages.isNotEmpty ? messages.first : null;
+                final latestMessage = messages.isNotEmpty
+                    ? messages.first
+                    : null;
                 String previewText = 'No messages yet';
                 String timeAgo = '';
 
@@ -238,9 +234,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
                         previewText,
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                          color: Colors.grey.shade700,
-                        ),
+                        style: TextStyle(color: Colors.grey.shade700),
                       ),
                     ],
                   ),

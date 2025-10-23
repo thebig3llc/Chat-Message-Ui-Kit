@@ -30,7 +30,8 @@ class LazyImageMessage extends StatefulWidget {
     required String uri,
     required Map<String, String>? imageHeaders,
     required Conditional conditional,
-  })? imageProviderBuilder;
+  })?
+  imageProviderBuilder;
   final ImageMessageModel message;
   final int messageWidth;
 
@@ -41,7 +42,8 @@ class LazyImageMessage extends StatefulWidget {
   final Widget Function(BuildContext context, Size size)? placeholderBuilder;
 
   /// Custom error widget builder
-  final Widget Function(BuildContext context, Object error, Size size)? errorBuilder;
+  final Widget Function(BuildContext context, Object error, Size size)?
+  errorBuilder;
 
   /// Cache width for memory optimization
   final int? cacheWidth;
@@ -84,16 +86,17 @@ class _LazyImageMessageState extends State<LazyImageMessage>
     if (_image != null) return;
 
     try {
-      _image = widget.imageProviderBuilder != null
-          ? widget.imageProviderBuilder!(
-              uri: widget.message.uri,
-              imageHeaders: widget.imageHeaders,
-              conditional: Conditional(),
-            )
-          : Conditional().createImageProvider(
-              widget.message.uri,
-              headers: widget.imageHeaders,
-            );
+      _image =
+          widget.imageProviderBuilder != null
+              ? widget.imageProviderBuilder!(
+                uri: widget.message.uri,
+                imageHeaders: widget.imageHeaders,
+                conditional: Conditional(),
+              )
+              : Conditional().createImageProvider(
+                widget.message.uri,
+                headers: widget.imageHeaders,
+              );
 
       if (mounted) {
         _getImage();
@@ -114,12 +117,13 @@ class _LazyImageMessageState extends State<LazyImageMessage>
     _stream = _image?.resolve(
       createLocalImageConfiguration(
         context,
-        size: widget.cacheWidth != null || widget.cacheHeight != null
-            ? Size(
-                widget.cacheWidth?.toDouble() ?? double.infinity,
-                widget.cacheHeight?.toDouble() ?? double.infinity,
-              )
-            : null,
+        size:
+            widget.cacheWidth != null || widget.cacheHeight != null
+                ? Size(
+                  widget.cacheWidth?.toDouble() ?? double.infinity,
+                  widget.cacheHeight?.toDouble() ?? double.infinity,
+                )
+                : null,
       ),
     );
 
@@ -127,10 +131,7 @@ class _LazyImageMessageState extends State<LazyImageMessage>
       return;
     }
 
-    final listener = ImageStreamListener(
-      _updateImage,
-      onError: _onImageError,
-    );
+    final listener = ImageStreamListener(_updateImage, onError: _onImageError);
 
     oldImageStream?.removeListener(listener);
     _stream?.addListener(listener);
@@ -139,10 +140,7 @@ class _LazyImageMessageState extends State<LazyImageMessage>
   void _updateImage(ImageInfo info, bool _) {
     if (mounted) {
       setState(() {
-        _size = Size(
-          info.image.width.toDouble(),
-          info.image.height.toDouble(),
-        );
+        _size = Size(info.image.width.toDouble(), info.image.height.toDouble());
         _hasError = false;
         _error = null;
       });
@@ -197,10 +195,10 @@ class _LazyImageMessageState extends State<LazyImageMessage>
       child: AspectRatio(
         aspectRatio: aspectRatio,
         child: Container(
-          color: InheritedChatTheme.of(context).theme.secondaryColor.withValues(alpha: 0.1),
-          child: const Center(
-            child: CircularProgressIndicator(strokeWidth: 2),
-          ),
+          color: InheritedChatTheme.of(
+            context,
+          ).theme.secondaryColor.withValues(alpha: 0.1),
+          child: const Center(child: CircularProgressIndicator(strokeWidth: 2)),
         ),
       ),
     );
@@ -222,7 +220,9 @@ class _LazyImageMessageState extends State<LazyImageMessage>
       child: AspectRatio(
         aspectRatio: aspectRatio,
         child: Container(
-          color: InheritedChatTheme.of(context).theme.errorColor.withValues(alpha: 0.1),
+          color: InheritedChatTheme.of(
+            context,
+          ).theme.errorColor.withValues(alpha: 0.1),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -265,16 +265,15 @@ class _LazyImageMessageState extends State<LazyImageMessage>
         color: InheritedChatTheme.of(context).theme.secondaryColor,
         height: _size.height,
         width: _size.width,
-        child: const Center(
-          child: CircularProgressIndicator(strokeWidth: 2),
-        ),
+        child: const Center(child: CircularProgressIndicator(strokeWidth: 2)),
       );
     } else if (_size.aspectRatio < 0.1 || _size.aspectRatio > 10) {
       // File-like display for extreme aspect ratios
       return Container(
-        color: user.id == widget.message.author.id
-            ? InheritedChatTheme.of(context).theme.primaryColor
-            : InheritedChatTheme.of(context).theme.secondaryColor,
+        color:
+            user.id == widget.message.author.id
+                ? InheritedChatTheme.of(context).theme.primaryColor
+                : InheritedChatTheme.of(context).theme.secondaryColor,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -292,12 +291,18 @@ class _LazyImageMessageState extends State<LazyImageMessage>
                 child: Image(
                   fit: BoxFit.cover,
                   image: _image!,
-                  frameBuilder: (context, child, frame, wasSynchronouslyLoaded) {
+                  frameBuilder: (
+                    context,
+                    child,
+                    frame,
+                    wasSynchronouslyLoaded,
+                  ) {
                     if (wasSynchronouslyLoaded || frame != null) {
                       return child;
                     }
                     return Container(
-                      color: InheritedChatTheme.of(context).theme.secondaryColor,
+                      color:
+                          InheritedChatTheme.of(context).theme.secondaryColor,
                       child: const Center(
                         child: CircularProgressIndicator(strokeWidth: 1),
                       ),
@@ -305,7 +310,9 @@ class _LazyImageMessageState extends State<LazyImageMessage>
                   },
                   errorBuilder: (context, error, stackTrace) {
                     return Container(
-                      color: InheritedChatTheme.of(context).theme.errorColor.withValues(alpha: 0.1),
+                      color: InheritedChatTheme.of(
+                        context,
+                      ).theme.errorColor.withValues(alpha: 0.1),
                       child: Icon(
                         Icons.error_outline,
                         color: InheritedChatTheme.of(context).theme.errorColor,
@@ -329,18 +336,28 @@ class _LazyImageMessageState extends State<LazyImageMessage>
                   children: [
                     Text(
                       widget.message.name,
-                      style: user.id == widget.message.author.id
-                          ? InheritedChatTheme.of(context).theme.sentMessageBodyTextStyle
-                          : InheritedChatTheme.of(context).theme.receivedMessageBodyTextStyle,
+                      style:
+                          user.id == widget.message.author.id
+                              ? InheritedChatTheme.of(
+                                context,
+                              ).theme.sentMessageBodyTextStyle
+                              : InheritedChatTheme.of(
+                                context,
+                              ).theme.receivedMessageBodyTextStyle,
                       textWidthBasis: TextWidthBasis.longestLine,
                     ),
                     Container(
                       margin: const EdgeInsets.only(top: 4),
                       child: Text(
                         formatBytes(widget.message.size.truncate()),
-                        style: user.id == widget.message.author.id
-                            ? InheritedChatTheme.of(context).theme.sentMessageCaptionTextStyle
-                            : InheritedChatTheme.of(context).theme.receivedMessageCaptionTextStyle,
+                        style:
+                            user.id == widget.message.author.id
+                                ? InheritedChatTheme.of(
+                                  context,
+                                ).theme.sentMessageCaptionTextStyle
+                                : InheritedChatTheme.of(
+                                  context,
+                                ).theme.receivedMessageCaptionTextStyle,
                       ),
                     ),
                   ],
@@ -400,7 +417,8 @@ class _LazyImageMessageState extends State<LazyImageMessage>
       key: _visibilityKey,
       onVisibilityChanged: (VisibilityInfo info) {
         final wasVisible = _isVisible;
-        _isVisible = info.visibleFraction > 0.1; // Consider visible if >10% is shown
+        _isVisible =
+            info.visibleFraction > 0.1; // Consider visible if >10% is shown
 
         if (_isVisible && !wasVisible) {
           // Became visible - load image
@@ -491,4 +509,3 @@ class VisibilityInfo {
   /// Fraction of the widget that is visible (0.0 to 1.0)
   final double visibleFraction;
 }
-

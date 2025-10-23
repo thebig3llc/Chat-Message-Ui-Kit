@@ -24,7 +24,10 @@ class ImageCompression {
         maxHeight: maxHeight,
       );
 
-      final thumbnailBytes = await _encodeImage(compressedImage, quality: quality);
+      final thumbnailBytes = await _encodeImage(
+        compressedImage,
+        quality: quality,
+      );
 
       image.dispose();
       compressedImage.dispose();
@@ -58,7 +61,10 @@ class ImageCompression {
         maxHeight: maxHeight,
       );
 
-      final compressedBytes = await _encodeImage(compressedImage, quality: quality);
+      final compressedBytes = await _encodeImage(
+        compressedImage,
+        quality: quality,
+      );
 
       image.dispose();
       compressedImage.dispose();
@@ -82,7 +88,8 @@ class ImageCompression {
     final adjustedMaxWidth = (maxWidth / devicePixelRatio).round();
     final adjustedMaxHeight = (maxHeight / devicePixelRatio).round();
 
-    if (originalWidth <= adjustedMaxWidth && originalHeight <= adjustedMaxHeight) {
+    if (originalWidth <= adjustedMaxWidth &&
+        originalHeight <= adjustedMaxHeight) {
       return Size(originalWidth.toDouble(), originalHeight.toDouble());
     }
 
@@ -107,11 +114,7 @@ class ImageCompression {
   }
 
   /// Check if image should be compressed based on memory constraints
-  static bool shouldCompress(
-    int width,
-    int height, {
-    int maxMemoryMB = 10,
-  }) {
+  static bool shouldCompress(int width, int height, {int maxMemoryMB = 10}) {
     final memoryUsage = estimateMemoryUsage(width, height);
     final maxMemoryBytes = maxMemoryMB * 1024 * 1024;
     return memoryUsage > maxMemoryBytes;
@@ -147,9 +150,10 @@ class ImageCompression {
     final canvas = Canvas(recorder);
 
     // Use high-quality image filtering
-    final paint = Paint()
-      ..isAntiAlias = true
-      ..filterQuality = FilterQuality.high;
+    final paint =
+        Paint()
+          ..isAntiAlias = true
+          ..filterQuality = FilterQuality.high;
 
     canvas.drawImageRect(
       image,
@@ -166,7 +170,10 @@ class ImageCompression {
   }
 
   /// Encode image to bytes with specified quality
-  static Future<Uint8List> _encodeImage(ui.Image image, {double quality = 0.8}) async {
+  static Future<Uint8List> _encodeImage(
+    ui.Image image, {
+    double quality = 0.8,
+  }) async {
     final byteData = await image.toByteData(format: ui.ImageByteFormat.png);
     if (byteData == null) {
       throw Exception('Failed to encode image');
@@ -272,7 +279,9 @@ class ImageMemoryManager {
     return {
       'totalUsageMB': (_totalMemoryUsage / (1024 * 1024)).toStringAsFixed(2),
       'maxUsageMB': _maxTotalMemoryMB,
-      'usagePercentage': ((_totalMemoryUsage / (_maxTotalMemoryMB * 1024 * 1024)) * 100).toStringAsFixed(1),
+      'usagePercentage':
+          ((_totalMemoryUsage / (_maxTotalMemoryMB * 1024 * 1024)) * 100)
+              .toStringAsFixed(1),
     };
   }
 

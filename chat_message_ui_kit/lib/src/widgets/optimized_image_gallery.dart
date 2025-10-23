@@ -27,7 +27,8 @@ class OptimizedImageGallery extends StatefulWidget {
     required String uri,
     required Map<String, String>? imageHeaders,
     required Conditional conditional,
-  })? imageProviderBuilder;
+  })?
+  imageProviderBuilder;
 
   /// Images to show in the gallery
   final List<PreviewImage> images;
@@ -70,7 +71,10 @@ class _OptimizedImageGalleryState extends State<OptimizedImageGallery>
     super.initState();
     WidgetsBinding.instance.addObserver(this);
 
-    _currentPage = widget.pageController.initialPage.clamp(0, widget.images.length - 1);
+    _currentPage = widget.pageController.initialPage.clamp(
+      0,
+      widget.images.length - 1,
+    );
     _updatePreloadIndices();
 
     // Listen to page changes
@@ -128,9 +132,15 @@ class _OptimizedImageGalleryState extends State<OptimizedImageGallery>
   void _updatePreloadIndices() {
     final newPreloadIndices = <int>{};
 
-    for (int i = math.max(0, _currentPage - widget.preloadDistance);
-         i <= math.min(widget.images.length - 1, _currentPage + widget.preloadDistance);
-         i++) {
+    for (
+      int i = math.max(0, _currentPage - widget.preloadDistance);
+      i <=
+          math.min(
+            widget.images.length - 1,
+            _currentPage + widget.preloadDistance,
+          );
+      i++
+    ) {
       newPreloadIndices.add(i);
     }
 
@@ -152,9 +162,13 @@ class _OptimizedImageGalleryState extends State<OptimizedImageGallery>
     final indicesToRemove = <int>[];
 
     for (final index in _loadedProviders.keys) {
-      final shouldKeep = aggressive
-          ? index == _currentPage // Only keep current image if aggressive
-          : _preloadedIndices.contains(index); // Keep preloaded images normally
+      final shouldKeep =
+          aggressive
+              ? index ==
+                  _currentPage // Only keep current image if aggressive
+              : _preloadedIndices.contains(
+                index,
+              ); // Keep preloaded images normally
 
       if (!shouldKeep) {
         indicesToRemove.add(index);
@@ -166,7 +180,9 @@ class _OptimizedImageGalleryState extends State<OptimizedImageGallery>
     }
 
     if (indicesToRemove.isNotEmpty) {
-      debugPrint('OptimizedImageGallery: Cleaned up ${indicesToRemove.length} images');
+      debugPrint(
+        'OptimizedImageGallery: Cleaned up ${indicesToRemove.length} images',
+      );
     }
   }
 
@@ -200,16 +216,17 @@ class _OptimizedImageGalleryState extends State<OptimizedImageGallery>
     }
 
     // Create new provider
-    final provider = widget.imageProviderBuilder != null
-        ? widget.imageProviderBuilder!(
-            uri: widget.images[index].uri,
-            imageHeaders: widget.imageHeaders,
-            conditional: Conditional(),
-          )
-        : Conditional().createImageProvider(
-            widget.images[index].uri,
-            headers: widget.imageHeaders,
-          );
+    final provider =
+        widget.imageProviderBuilder != null
+            ? widget.imageProviderBuilder!(
+              uri: widget.images[index].uri,
+              imageHeaders: widget.imageHeaders,
+              conditional: Conditional(),
+            )
+            : Conditional().createImageProvider(
+              widget.images[index].uri,
+              headers: widget.imageHeaders,
+            );
 
     // Apply memory optimizations
     ImageProvider optimizedProvider = provider;
@@ -226,7 +243,8 @@ class _OptimizedImageGalleryState extends State<OptimizedImageGallery>
   /// Wrap image provider with memory limits
   ImageProvider _wrapWithMemoryLimits(ImageProvider provider) {
     // If using ResizeImage, apply it here for memory optimization
-    if (widget.options.maxImageWidth != null || widget.options.maxImageHeight != null) {
+    if (widget.options.maxImageWidth != null ||
+        widget.options.maxImageHeight != null) {
       return ResizeImage(
         provider,
         width: widget.options.maxImageWidth,
@@ -247,9 +265,10 @@ class _OptimizedImageGalleryState extends State<OptimizedImageGallery>
             width: 40,
             height: 40,
             child: CircularProgressIndicator(
-              value: event == null || event.expectedTotalBytes == null
-                  ? null
-                  : event.cumulativeBytesLoaded / event.expectedTotalBytes!,
+              value:
+                  event == null || event.expectedTotalBytes == null
+                      ? null
+                      : event.cumulativeBytesLoaded / event.expectedTotalBytes!,
               strokeWidth: 3,
               color: Colors.white,
             ),
@@ -265,16 +284,16 @@ class _OptimizedImageGalleryState extends State<OptimizedImageGallery>
   }
 
   /// Error widget for failed image loads
-  Widget _imageGalleryErrorBuilder(BuildContext context, Object error, StackTrace? stackTrace) {
+  Widget _imageGalleryErrorBuilder(
+    BuildContext context,
+    Object error,
+    StackTrace? stackTrace,
+  ) {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(
-            Icons.error_outline,
-            size: 64,
-            color: Colors.white70,
-          ),
+          const Icon(Icons.error_outline, size: 64, color: Colors.white70),
           const SizedBox(height: 16),
           const Text(
             'Failed to load image',
@@ -287,10 +306,7 @@ class _OptimizedImageGalleryState extends State<OptimizedImageGallery>
               _disposeImageProvider(_currentPage);
               setState(() {}); // Trigger rebuild
             },
-            child: const Text(
-              'Retry',
-              style: TextStyle(color: Colors.white),
-            ),
+            child: const Text('Retry', style: TextStyle(color: Colors.white)),
           ),
         ],
       ),
@@ -334,7 +350,8 @@ class _OptimizedImageGalleryState extends State<OptimizedImageGallery>
                   );
                 },
                 itemCount: widget.images.length,
-                loadingBuilder: (context, event) => _imageGalleryLoadingBuilder(event),
+                loadingBuilder:
+                    (context, event) => _imageGalleryLoadingBuilder(event),
                 pageController: widget.pageController,
                 scrollPhysics: const ClampingScrollPhysics(),
                 onPageChanged: (index) {
@@ -367,7 +384,10 @@ class _OptimizedImageGalleryState extends State<OptimizedImageGallery>
                 textDirection: Directionality.of(context),
                 top: 64,
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 6,
+                  ),
                   decoration: BoxDecoration(
                     color: Colors.black54,
                     borderRadius: BorderRadius.circular(12),
@@ -393,7 +413,10 @@ class _OptimizedImageGalleryState extends State<OptimizedImageGallery>
                     ),
                     child: Text(
                       'Loaded: ${_loadedProviders.length}/${widget.images.length}',
-                      style: const TextStyle(color: Colors.white70, fontSize: 12),
+                      style: const TextStyle(
+                        color: Colors.white70,
+                        fontSize: 12,
+                      ),
                     ),
                   ),
                 ),
@@ -439,19 +462,20 @@ class OptimizedImageGalleryOptions {
   final bool showMemoryUsage;
 
   /// High memory efficiency preset
-  static const OptimizedImageGalleryOptions memoryEfficient = OptimizedImageGalleryOptions(
-    enableCaching: true,
-    maxImageWidth: 1920,
-    maxImageHeight: 1920,
-    cleanupDelaySeconds: 5,
-  );
+  static const OptimizedImageGalleryOptions memoryEfficient =
+      OptimizedImageGalleryOptions(
+        enableCaching: true,
+        maxImageWidth: 1920,
+        maxImageHeight: 1920,
+        cleanupDelaySeconds: 5,
+      );
 
   /// Balanced performance preset
-  static const OptimizedImageGalleryOptions balanced = OptimizedImageGalleryOptions(
-    enableCaching: true,
-    maxImageWidth: 2560,
-    maxImageHeight: 2560,
-    cleanupDelaySeconds: 10,
-  );
+  static const OptimizedImageGalleryOptions balanced =
+      OptimizedImageGalleryOptions(
+        enableCaching: true,
+        maxImageWidth: 2560,
+        maxImageHeight: 2560,
+        cleanupDelaySeconds: 10,
+      );
 }
-

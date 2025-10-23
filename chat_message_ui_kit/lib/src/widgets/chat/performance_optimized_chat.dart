@@ -72,7 +72,8 @@ class PerformanceOptimizedChat extends StatefulWidget {
   final bool useTopSafeAreaInset;
 
   @override
-  State<PerformanceOptimizedChat> createState() => _PerformanceOptimizedChatState();
+  State<PerformanceOptimizedChat> createState() =>
+      _PerformanceOptimizedChatState();
 }
 
 class _PerformanceOptimizedChatState extends State<PerformanceOptimizedChat> {
@@ -129,10 +130,7 @@ class _PerformanceOptimizedChatState extends State<PerformanceOptimizedChat> {
 
       // Fall back to regular image widget
       if (message is ImageMessageModel) {
-        return ImageMessage(
-          message: message,
-          messageWidth: 300,
-        );
+        return ImageMessage(message: message, messageWidth: 300);
       }
 
       // For other message types, return a basic implementation

@@ -28,22 +28,22 @@ A comprehensive Flutter package for building chat and messaging UIs. Provides cu
 
 ## Getting started
 
-**Installation:**
+** Installation: **
 
 Add to your `pubspec.yaml`:
 ```yaml
 dependencies:
-  chat_ui_kit: ^1.0.0
-
+  chat_message_ui_kit: ^0.0.2
+```
 Then run:
 flutter pub get
 
 ## Usage
 
-**Basic Example:**
+** Basic Example: **
 
 ```dart
-import 'package:chat_ui_kit/chat_ui_kit.dart';
+import 'package:chat_message_ui_kit/chat_message_ui_kit.dart';
 
 class MyChatScreen extends StatelessWidget {
   @override
@@ -94,15 +94,15 @@ See the /example folder for complete working examples.
 
 ```markdown
 **Documentation:**
-- Full API documentation: [pub.dev/documentation/chat_ui_kit](https://pub.dev/documentation/chat_ui_kit)
-- Example app source: [`/example`](example/)
+- Full API documentation: [pub.dev/documentation/chat_message_ui_kit](https://pub.dev/documentation/chat_message_ui_kit)
+- Example app source: [`/example`](https://github.com/thebig3llc/Chat-Message-Ui-Kit/tree/main/chat_message_ui_kit/example)
 
 **Contributing:**
-Contributions are welcome! Please file issues and pull requests on the [GitHub repository](https://github.com/yourusername/chat_ui_kit).
+Contributions are welcome! Please file issues and pull requests on the [GitHub repository](https://github.com/thebig3llc/Chat-Message-Ui-Kit).
 
 **Support:**
-- File issues: [GitHub Issues](https://github.com/yourusername/chat_ui_kit/issues)
-- Package developed and maintained by [Your Name/Organization]
+- File issues: [GitHub Issues](https://github.com/thebig3llc/Chat-Message-Ui-Kit/issues)
+- Package developed and maintained by [The Big 3]
 
 **License:** MIT
 ```

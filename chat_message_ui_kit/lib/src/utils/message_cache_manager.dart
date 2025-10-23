@@ -77,7 +77,8 @@ class MessageCacheManager {
       'cacheSize': _widgetCache.length,
       'maxSize': maxCacheSize,
       'animatingCount': _animatingIds.length,
-      'memoryUsage': '${(_widgetCache.length * 1024).toStringAsFixed(1)} bytes (estimated)',
+      'memoryUsage':
+          '${(_widgetCache.length * 1024).toStringAsFixed(1)} bytes (estimated)',
     };
   }
 }
@@ -86,13 +87,10 @@ class MessageCacheManager {
 class MessageUtils {
   /// Extract message IDs from items list using whereType for type safety
   static Set<String> extractMessageIds(List<Object> items) {
-    return items
-        .whereType<Map<String, Object>>()
-        .map((item) {
-          final message = item['message'] as MessageModel;
-          return message.id;
-        })
-        .toSet();
+    return items.whereType<Map<String, Object>>().map((item) {
+      final message = item['message'] as MessageModel;
+      return message.id;
+    }).toSet();
   }
 
   /// Compare two message lists efficiently (shallow comparison)

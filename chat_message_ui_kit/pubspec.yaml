@@ -1,7 +1,8 @@
 name: chat_message_ui_kit
 description: "A Flutter package for building chat and messaging UIs."
-version: 0.0.1
-homepage: https://github.com/thebig3llc/Chat-Ui-Kit
+version: 0.0.2
+homepage: https://github.com/thebig3llc/Chat-Message-Ui-Kit
+issue_tracker: https://github.com/thebig3llc/Chat-Message-Ui-Kit/issues
 
 environment:
   sdk: ^3.7.2

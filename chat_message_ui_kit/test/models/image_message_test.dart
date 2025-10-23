@@ -127,11 +127,13 @@ void main() {
         status: Status.sending,
       );
 
-      final updatedMessage = originalMessage.copyWith(
-        name: 'new_name.jpg',
-        uri: 'https://example.com/new_image.jpg',
-        status: Status.delivered,
-      ) as ImageMessageModel;
+      final updatedMessage =
+          originalMessage.copyWith(
+                name: 'new_name.jpg',
+                uri: 'https://example.com/new_image.jpg',
+                status: Status.delivered,
+              )
+              as ImageMessageModel;
 
       expect(updatedMessage.name, equals('new_name.jpg'));
       expect(updatedMessage.uri, equals('https://example.com/new_image.jpg'));
