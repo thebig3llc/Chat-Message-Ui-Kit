@@ -7,7 +7,9 @@ void main() {
     const testUser = ChatUser(id: 'user123', firstName: 'John');
     const anotherUser = ChatUser(id: 'user456', firstName: 'Jane');
 
-    testWidgets('Complete chat flow - send and display messages', (tester) async {
+    testWidgets('Complete chat flow - send and display messages', (
+      tester,
+    ) async {
       final List<MessageModel> messages = [];
 
       await tester.pumpWidget(
@@ -15,12 +17,14 @@ void main() {
           home: Chat(
             messages: messages,
             onSendPressed: (partialMessage) {
-              messages.add(TextMessageModel(
-                author: testUser,
-                id: DateTime.now().millisecondsSinceEpoch.toString(),
-                text: partialMessage.text,
-                createdAt: DateTime.now().millisecondsSinceEpoch,
-              ));
+              messages.add(
+                TextMessageModel(
+                  author: testUser,
+                  id: DateTime.now().millisecondsSinceEpoch.toString(),
+                  text: partialMessage.text,
+                  createdAt: DateTime.now().millisecondsSinceEpoch,
+                ),
+              );
             },
             user: testUser,
           ),
@@ -100,11 +104,7 @@ void main() {
 
       await tester.pumpWidget(
         MaterialApp(
-          home: Chat(
-            messages: messages,
-            onSendPressed: (_) {},
-            user: testUser,
-          ),
+          home: Chat(messages: messages, onSendPressed: (_) {}, user: testUser),
         ),
       );
 
@@ -212,11 +212,7 @@ void main() {
 
       await tester.pumpWidget(
         MaterialApp(
-          home: Chat(
-            messages: messages,
-            onSendPressed: (_) {},
-            user: testUser,
-          ),
+          home: Chat(messages: messages, onSendPressed: (_) {}, user: testUser),
         ),
       );
 
@@ -232,8 +228,9 @@ void main() {
     });
 
     testWidgets('Large message list performance', (tester) async {
-      final messages = List.generate(50, (index) =>
-        TextMessageModel(
+      final messages = List.generate(
+        50,
+        (index) => TextMessageModel(
           author: index % 2 == 0 ? testUser : anotherUser,
           id: 'msg_$index',
           text: 'Message $index',
@@ -243,11 +240,7 @@ void main() {
 
       await tester.pumpWidget(
         MaterialApp(
-          home: Chat(
-            messages: messages,
-            onSendPressed: (_) {},
-            user: testUser,
-          ),
+          home: Chat(messages: messages, onSendPressed: (_) {}, user: testUser),
         ),
       );
 

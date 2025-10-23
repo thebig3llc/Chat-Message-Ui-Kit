@@ -10,11 +10,7 @@ void main() {
     testWidgets('renders empty state when no messages', (tester) async {
       await tester.pumpWidget(
         MaterialApp(
-          home: Chat(
-            messages: const [],
-            onSendPressed: (_) {},
-            user: testUser,
-          ),
+          home: Chat(messages: const [], onSendPressed: (_) {}, user: testUser),
         ),
       );
 
@@ -67,11 +63,7 @@ void main() {
 
       await tester.pumpWidget(
         MaterialApp(
-          home: Chat(
-            messages: messages,
-            onSendPressed: (_) {},
-            user: testUser,
-          ),
+          home: Chat(messages: messages, onSendPressed: (_) {}, user: testUser),
         ),
       );
 
@@ -161,11 +153,7 @@ void main() {
     testWidgets('has input widget at bottom', (tester) async {
       await tester.pumpWidget(
         MaterialApp(
-          home: Chat(
-            messages: const [],
-            onSendPressed: (_) {},
-            user: testUser,
-          ),
+          home: Chat(messages: const [], onSendPressed: (_) {}, user: testUser),
         ),
       );
 
@@ -197,9 +185,7 @@ void main() {
     });
 
     testWidgets('applies custom theme', (tester) async {
-      const customTheme = DefaultChatTheme(
-        primaryColor: Colors.purple,
-      );
+      const customTheme = DefaultChatTheme(primaryColor: Colors.purple);
 
       await tester.pumpWidget(
         MaterialApp(

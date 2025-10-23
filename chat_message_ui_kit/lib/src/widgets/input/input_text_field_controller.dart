@@ -9,10 +9,10 @@ class InputTextFieldController extends TextEditingController {
   /// List of markdown patterns to detect and style in the input field.
   /// Each pattern defines a regex and corresponding TextStyle for visual highlighting.
   final List<PatternStyle> _listPatternStyle = [
-    PatternStyle.bold,        // **text** or __text__
-    PatternStyle.italic,      // *text* or _text_
+    PatternStyle.bold, // **text** or __text__
+    PatternStyle.italic, // *text* or _text_
     PatternStyle.lineThrough, // ~~text~~
-    PatternStyle.code,        // `text`
+    PatternStyle.code, // `text`
   ];
 
   /// Builds a styled TextSpan with markdown formatting applied to the input text.
@@ -40,13 +40,15 @@ class InputTextFieldController extends TextEditingController {
       onMatch: (match) {
         final text = match[0]!;
         // Find which pattern matched and get its corresponding style
-        final patternStyle =
-            _listPatternStyle.firstWhere((element) {
-              return element.regExp.hasMatch(text);
-            });
+        final patternStyle = _listPatternStyle.firstWhere((element) {
+          return element.regExp.hasMatch(text);
+        });
 
         // Create styled text span for the matched pattern
-        final span = TextSpan(text: match.group(0), style: patternStyle.textStyle);
+        final span = TextSpan(
+          text: match.group(0),
+          style: patternStyle.textStyle,
+        );
         children.add(span);
         return span.toPlainText();
       },

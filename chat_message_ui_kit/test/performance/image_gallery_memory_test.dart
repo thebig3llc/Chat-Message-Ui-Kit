@@ -10,7 +10,6 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('Image Gallery Memory Management Tests', () {
-
     /// Generate test preview images
     List<PreviewImage> generateTestImages(int count) {
       return List.generate(count, (index) {
@@ -21,7 +20,9 @@ void main() {
       });
     }
 
-    testWidgets('OptimizedImageGallery memory usage', (WidgetTester tester) async {
+    testWidgets('OptimizedImageGallery memory usage', (
+      WidgetTester tester,
+    ) async {
       final images = generateTestImages(50);
       final pageController = PageController();
 
@@ -57,7 +58,9 @@ void main() {
       pageController.dispose();
     });
 
-    testWidgets('ImageGallery optimization toggle', (WidgetTester tester) async {
+    testWidgets('ImageGallery optimization toggle', (
+      WidgetTester tester,
+    ) async {
       final images = generateTestImages(10);
       final pageController = PageController();
 
@@ -152,10 +155,18 @@ void main() {
       expect(memoryUsage, equals(800 * 600 * 4)); // RGBA = 4 bytes per pixel
 
       // Test optimization decisions
-      final shouldCompress = ImageCompression.shouldCompress(2048, 2048, maxMemoryMB: 10);
+      final shouldCompress = ImageCompression.shouldCompress(
+        2048,
+        2048,
+        maxMemoryMB: 10,
+      );
       expect(shouldCompress, isTrue);
 
-      final shouldNotCompress = ImageCompression.shouldCompress(100, 100, maxMemoryMB: 10);
+      final shouldNotCompress = ImageCompression.shouldCompress(
+        100,
+        100,
+        maxMemoryMB: 10,
+      );
       expect(shouldNotCompress, isFalse);
     });
 
@@ -187,7 +198,9 @@ void main() {
       ImageMemoryManager.handleMemoryPressure();
 
       // Test memory allocation checks
-      final canAllocate = ImageMemoryManager.canAllocateMemory(1024 * 1024); // 1MB
+      final canAllocate = ImageMemoryManager.canAllocateMemory(
+        1024 * 1024,
+      ); // 1MB
       expect(canAllocate, isTrue);
 
       // Test memory registration
@@ -207,7 +220,9 @@ void main() {
       expect(totalUsage, greaterThanOrEqualTo(0));
     });
 
-    testWidgets('Memory stress test with many images', (WidgetTester tester) async {
+    testWidgets('Memory stress test with many images', (
+      WidgetTester tester,
+    ) async {
       final images = generateTestImages(100);
       final pageController = PageController();
 
@@ -280,7 +295,9 @@ void main() {
         stopwatch.stop();
 
         final averageTime = stopwatch.elapsedMilliseconds / iterations;
-        print('Average thumbnail generation time: ${averageTime.toStringAsFixed(1)}ms');
+        print(
+          'Average thumbnail generation time: ${averageTime.toStringAsFixed(1)}ms',
+        );
 
         // Should be reasonably fast
         expect(averageTime, lessThan(100));
@@ -302,7 +319,9 @@ void main() {
         stopwatch.stop();
 
         final averageTime = stopwatch.elapsedMicroseconds / iterations;
-        print('Average optimization calculation time: ${averageTime.toStringAsFixed(1)}μs');
+        print(
+          'Average optimization calculation time: ${averageTime.toStringAsFixed(1)}μs',
+        );
 
         // Should be very fast
         expect(averageTime, lessThan(100));

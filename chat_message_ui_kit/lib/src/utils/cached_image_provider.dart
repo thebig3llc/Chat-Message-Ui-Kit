@@ -55,27 +55,31 @@ class CachedImageProvider extends ImageProvider<CachedImageProvider> {
   }
 
   @override
-  ImageStreamCompleter loadImage(CachedImageProvider key, ImageDecoderCallback decode) {
+  ImageStreamCompleter loadImage(
+    CachedImageProvider key,
+    ImageDecoderCallback decode,
+  ) {
     return OneFrameImageStreamCompleter(
       _loadAsync(key, decode),
-      informationCollector: () => <DiagnosticsNode>[
-        DiagnosticsProperty<CachedImageProvider>('Image provider', this),
-        DiagnosticsProperty<String>('Image URL', url),
-      ],
+      informationCollector:
+          () => <DiagnosticsNode>[
+            DiagnosticsProperty<CachedImageProvider>('Image provider', this),
+            DiagnosticsProperty<String>('Image URL', url),
+          ],
     );
   }
 
   /// Load image asynchronously with caching
-  Future<ImageInfo> _loadAsync(CachedImageProvider key, ImageDecoderCallback decode) async {
+  Future<ImageInfo> _loadAsync(
+    CachedImageProvider key,
+    ImageDecoderCallback decode,
+  ) async {
     try {
       // Check memory cache first
       final cacheEntry = _memoryCache[url];
       if (cacheEntry != null && !cacheEntry.isExpired) {
         cacheEntry.lastAccessed = DateTime.now();
-        return ImageInfo(
-          image: cacheEntry.image,
-          scale: scale,
-        );
+        return ImageInfo(image: cacheEntry.image, scale: scale);
       }
 
       // Load from network
@@ -96,10 +100,7 @@ class CachedImageProvider extends ImageProvider<CachedImageProvider> {
       // Cache the image
       await _cacheImage(url, image);
 
-      return ImageInfo(
-        image: image,
-        scale: scale,
-      );
+      return ImageInfo(image: image, scale: scale);
     } catch (e) {
       // Return a placeholder or error image
       return _createErrorImage();
@@ -192,8 +193,10 @@ class CachedImageProvider extends ImageProvider<CachedImageProvider> {
     if (_currentMemoryUsage <= targetSize) return;
 
     // Sort by last accessed (LRU)
-    final entries = _memoryCache.entries.toList()
-      ..sort((a, b) => a.value.lastAccessed.compareTo(b.value.lastAccessed));
+    final entries =
+        _memoryCache.entries.toList()..sort(
+          (a, b) => a.value.lastAccessed.compareTo(b.value.lastAccessed),
+        );
 
     // Remove oldest entries until under memory limit
     for (final entry in entries) {
@@ -229,21 +232,14 @@ class CachedImageProvider extends ImageProvider<CachedImageProvider> {
     );
 
     // Draw X
-    final paint = Paint()
-      ..color = Colors.grey[600]!
-      ..strokeWidth = 4
-      ..strokeCap = StrokeCap.round;
+    final paint =
+        Paint()
+          ..color = Colors.grey[600]!
+          ..strokeWidth = 4
+          ..strokeCap = StrokeCap.round;
 
-    canvas.drawLine(
-      const Offset(20, 20),
-      const Offset(80, 80),
-      paint,
-    );
-    canvas.drawLine(
-      const Offset(80, 20),
-      const Offset(20, 80),
-      paint,
-    );
+    canvas.drawLine(const Offset(20, 20), const Offset(80, 80), paint);
+    canvas.drawLine(const Offset(80, 20), const Offset(20, 80), paint);
 
     final picture = recorder.endRecording();
     final image = picture.toImageSync(size.toInt(), size.toInt());
@@ -282,7 +278,8 @@ class CachedImageProvider extends ImageProvider<CachedImageProvider> {
   int get hashCode => Object.hash(url, scale);
 
   @override
-  String toString() => '${objectRuntimeType(this, 'CachedImageProvider')}("$url", scale: $scale)';
+  String toString() =>
+      '${objectRuntimeType(this, 'CachedImageProvider')}("$url", scale: $scale)';
 }
 
 /// Cache entry with metadata
@@ -327,16 +324,20 @@ class CacheMemoryManager {
     final stats = CachedImageProvider.getCacheStats();
     final memoryUsageMB = double.tryParse(stats['memoryUsageMB']) ?? 0;
 
-    if (memoryUsageMB > 80) { // Cleanup at 80MB
-      debugPrint('CacheMemoryManager: Memory usage high ($memoryUsageMB MB), cleaning up');
+    if (memoryUsageMB > 80) {
+      // Cleanup at 80MB
+      debugPrint(
+        'CacheMemoryManager: Memory usage high ($memoryUsageMB MB), cleaning up',
+      );
       CachedImageProvider.clearCache();
     }
   }
 
   /// Handle system memory pressure
   static void handleMemoryPressure() {
-    debugPrint('CacheMemoryManager: Memory pressure detected, clearing image cache');
+    debugPrint(
+      'CacheMemoryManager: Memory pressure detected, clearing image cache',
+    );
     CachedImageProvider.clearCache();
   }
 }
-

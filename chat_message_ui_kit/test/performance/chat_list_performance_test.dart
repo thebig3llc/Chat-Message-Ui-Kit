@@ -25,7 +25,8 @@ void main() {
           author: testUsers[index % 2],
           createdAt: DateTime.now().millisecondsSinceEpoch - (index * 60000),
           id: 'msg_$index',
-          text: 'Test message $index with some content to simulate real messages',
+          text:
+              'Test message $index with some content to simulate real messages',
         );
         return {'message': message};
       });
@@ -152,7 +153,9 @@ void main() {
       }
 
       stopwatch.stop();
-      print('Scroll performance for 10 scrolls: ${stopwatch.elapsedMilliseconds}ms');
+      print(
+        'Scroll performance for 10 scrolls: ${stopwatch.elapsedMilliseconds}ms',
+      );
 
       // Scrolling should be smooth (less than 100ms total for 10 scrolls)
       expect(stopwatch.elapsedMilliseconds, lessThan(1000));
@@ -172,7 +175,9 @@ void main() {
       }
 
       stopwatch.stop();
-      print('Cache operations for 200 widgets: ${stopwatch.elapsedMilliseconds}ms');
+      print(
+        'Cache operations for 200 widgets: ${stopwatch.elapsedMilliseconds}ms',
+      );
 
       // Cache should maintain max size
       expect(cacheManager.cacheSize, equals(100));
@@ -189,7 +194,9 @@ void main() {
       }
 
       retrievalStopwatch.stop();
-      print('Cache retrieval for 50 widgets: ${retrievalStopwatch.elapsedMilliseconds}ms');
+      print(
+        'Cache retrieval for 50 widgets: ${retrievalStopwatch.elapsedMilliseconds}ms',
+      );
 
       expect(retrievalStopwatch.elapsedMilliseconds, lessThan(50));
     });
@@ -206,7 +213,9 @@ void main() {
       }
 
       stopwatch.stop();
-      print('Message ID extraction (100 iterations): ${stopwatch.elapsedMilliseconds}ms');
+      print(
+        'Message ID extraction (100 iterations): ${stopwatch.elapsedMilliseconds}ms',
+      );
 
       // Should be very fast
       expect(stopwatch.elapsedMilliseconds, lessThan(500));
@@ -221,7 +230,9 @@ void main() {
       }
 
       equalityStopwatch.stop();
-      print('List equality comparison (100 iterations): ${equalityStopwatch.elapsedMilliseconds}ms');
+      print(
+        'List equality comparison (100 iterations): ${equalityStopwatch.elapsedMilliseconds}ms',
+      );
 
       expect(equalityStopwatch.elapsedMilliseconds, lessThan(500));
     });
@@ -266,9 +277,7 @@ void main() {
 
         // Replace with empty widget to trigger dispose
         await tester.pumpWidget(
-          const MaterialApp(
-            home: Scaffold(body: SizedBox.shrink()),
-          ),
+          const MaterialApp(home: Scaffold(body: SizedBox.shrink())),
         );
       }
 
@@ -278,14 +287,18 @@ void main() {
   });
 
   group('Benchmark Comparison Tests', () {
-    testWidgets('Compare OptimizedChatList vs regular ListView', (WidgetTester tester) async {
+    testWidgets('Compare OptimizedChatList vs regular ListView', (
+      WidgetTester tester,
+    ) async {
       final messages = List.generate(500, (index) {
-        return {'message': TextMessageModel(
-          author: const ChatUser(id: 'user1', firstName: 'John'),
-          createdAt: DateTime.now().millisecondsSinceEpoch - (index * 60000),
-          id: 'msg_$index',
-          text: 'Test message $index',
-        )};
+        return {
+          'message': TextMessageModel(
+            author: const ChatUser(id: 'user1', firstName: 'John'),
+            createdAt: DateTime.now().millisecondsSinceEpoch - (index * 60000),
+            id: 'msg_$index',
+            text: 'Test message $index',
+          ),
+        };
       });
 
       // Test OptimizedChatList
@@ -331,13 +344,19 @@ void main() {
 
       regularStopwatch.stop();
 
-      print('OptimizedChatList build time: ${optimizedStopwatch.elapsedMilliseconds}ms');
-      print('Regular ListView build time: ${regularStopwatch.elapsedMilliseconds}ms');
+      print(
+        'OptimizedChatList build time: ${optimizedStopwatch.elapsedMilliseconds}ms',
+      );
+      print(
+        'Regular ListView build time: ${regularStopwatch.elapsedMilliseconds}ms',
+      );
 
       // OptimizedChatList should be competitive with regular ListView
       // Allow some overhead for the additional features
-      expect(optimizedStopwatch.elapsedMilliseconds,
-             lessThan(regularStopwatch.elapsedMilliseconds * 2));
+      expect(
+        optimizedStopwatch.elapsedMilliseconds,
+        lessThan(regularStopwatch.elapsedMilliseconds * 2),
+      );
     });
   });
 }
