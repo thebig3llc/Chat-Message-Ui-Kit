@@ -193,13 +193,12 @@ TextSpan _buildTextSpan(
           TextSpan(
             text: i.text,
             style: linkStyle,
-            recognizer:
-                onOpen != null
-                    ? (TapGestureRecognizer()
-                      ..onTap = () {
-                        return onOpen(i);
-                      })
-                    : null,
+            recognizer: onOpen != null
+                ? (TapGestureRecognizer()
+                    ..onTap = () {
+                      return onOpen(i);
+                    })
+                : null,
             mouseCursor: useMouseRegion ? SystemMouseCursors.click : null,
           )
         else

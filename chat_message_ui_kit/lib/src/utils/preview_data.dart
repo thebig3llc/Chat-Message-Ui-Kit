@@ -24,8 +24,9 @@ Future<PreviewData> getPreviewData(
 
   try {
     final emailRegexp = RegExp(regexEmail, caseSensitive: false);
-    final textWithoutEmails =
-        text.replaceAllMapped(emailRegexp, (match) => '').trim();
+    final textWithoutEmails = text
+        .replaceAllMapped(emailRegexp, (match) => '')
+        .trim();
     if (textWithoutEmails.isEmpty) return previewData;
 
     final urlRegexp = RegExp(regexLink, caseSensitive: false);
@@ -79,10 +80,9 @@ Future<PreviewData> getPreviewData(
     String imageUrl;
 
     if (imageUrls.isNotEmpty) {
-      imageUrl =
-          imageUrls.length == 1
-              ? _calculateUrl(imageUrls[0], proxy)
-              : await _getBiggestImageUrl(imageUrls, proxy);
+      imageUrl = imageUrls.length == 1
+          ? _calculateUrl(imageUrls[0], proxy)
+          : await _getBiggestImageUrl(imageUrls, proxy);
 
       imageSize = await _getImageSize(imageUrl);
       previewDataImage = PreviewDataImage(
@@ -119,11 +119,10 @@ String? _getMetaContent(Document document, String propertyValue) {
   final meta = document.getElementsByTagName('meta');
   final element = meta.firstWhere(
     (e) => e.attributes['property'] == propertyValue,
-    orElse:
-        () => meta.firstWhere(
-          (e) => e.attributes['name'] == propertyValue,
-          orElse: () => Element.tag(null),
-        ),
+    orElse: () => meta.firstWhere(
+      (e) => e.attributes['name'] == propertyValue,
+      orElse: () => Element.tag(null),
+    ),
   );
 
   return element.attributes['content']?.trim();
@@ -157,14 +156,13 @@ String? _getDescription(Document document) =>
 List<String> _getImageUrls(Document document, String baseUrl) {
   final meta = document.getElementsByTagName('meta');
   var attribute = 'content';
-  var elements =
-      meta
-          .where(
-            (e) =>
-                e.attributes['property'] == 'og:image' ||
-                e.attributes['property'] == 'twitter:image',
-          )
-          .toList();
+  var elements = meta
+      .where(
+        (e) =>
+            e.attributes['property'] == 'og:image' ||
+            e.attributes['property'] == 'twitter:image',
+      )
+      .toList();
 
   if (elements.isEmpty) {
     elements = document.getElementsByTagName('img');

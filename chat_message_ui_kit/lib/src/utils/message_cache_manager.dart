@@ -1,5 +1,7 @@
 import 'dart:collection';
+
 import 'package:flutter/widgets.dart';
+
 import '../models/message.dart';
 
 /// Manages widget caching and memory usage for chat messages

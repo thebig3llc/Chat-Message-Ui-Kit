@@ -158,20 +158,18 @@ class _InputState extends State<Input> {
   Widget _inputBuilder() {
     // Get screen dimensions and theme information
     final query = MediaQuery.of(context);
-    final buttonPadding = InheritedChatTheme.of(
-      context,
-    ).theme.inputPadding.copyWith(left: 16, right: 16);
+    final buttonPadding = InheritedChatTheme.of(context).theme.inputPadding
+        .copyWith(left: 16, right: 16);
 
     // Configure safe area insets for mobile devices (keyboard, notches, etc.)
-    final safeAreaInsets =
-        isMobile
-            ? EdgeInsets.fromLTRB(
-              query.padding.left,
-              0,
-              query.padding.right,
-              query.viewInsets.bottom + query.padding.bottom,
-            )
-            : EdgeInsets.zero;
+    final safeAreaInsets = isMobile
+        ? EdgeInsets.fromLTRB(
+            query.padding.left,
+            0,
+            query.padding.right,
+            query.viewInsets.bottom + query.padding.bottom,
+          )
+        : EdgeInsets.zero;
 
     // Calculate text field padding based on button visibility
     final textPadding = InheritedChatTheme.of(context).theme.inputPadding
@@ -196,12 +194,14 @@ class _InputState extends State<Input> {
         child: Material(
           borderRadius: InheritedChatTheme.of(context).theme.inputBorderRadius,
           color: InheritedChatTheme.of(context).theme.inputBackgroundColor,
-          surfaceTintColor:
-              InheritedChatTheme.of(context).theme.inputSurfaceTintColor,
+          surfaceTintColor: InheritedChatTheme.of(context)
+              .theme
+              .inputSurfaceTintColor,
           elevation: InheritedChatTheme.of(context).theme.inputElevation,
           child: Container(
-            decoration:
-                InheritedChatTheme.of(context).theme.inputContainerDecoration,
+            decoration: InheritedChatTheme.of(context)
+                .theme
+                .inputContainerDecoration,
             padding: safeAreaInsets,
             child: Row(
               textDirection:
@@ -224,35 +224,38 @@ class _InputState extends State<Input> {
                       autofocus: widget.options.autofocus,
                       enableSuggestions: widget.options.enableSuggestions,
                       controller: _textController,
-                      cursorColor:
-                          InheritedChatTheme.of(
-                            context,
-                          ).theme.inputTextCursorColor,
-                      decoration: InheritedChatTheme.of(
-                        context,
-                      ).theme.inputTextDecoration.copyWith(
-                        hintStyle: InheritedChatTheme.of(
-                          context,
-                        ).theme.inputTextStyle.copyWith(
-                          color: InheritedChatTheme.of(
-                            context,
-                          ).theme.inputTextColor.withValues(alpha: 0.5),
-                        ),
-                        hintText:
-                            InheritedL10n.of(context).l10n.inputPlaceholder,
-                      ),
+                      cursorColor: InheritedChatTheme.of(context)
+                          .theme
+                          .inputTextCursorColor,
+                      decoration: InheritedChatTheme.of(context)
+                          .theme
+                          .inputTextDecoration
+                          .copyWith(
+                            hintStyle: InheritedChatTheme.of(context)
+                                .theme
+                                .inputTextStyle
+                                .copyWith(
+                                  color: InheritedChatTheme.of(context)
+                                      .theme
+                                      .inputTextColor
+                                      .withValues(alpha: 0.5),
+                                ),
+                            hintText: InheritedL10n.of(context)
+                                .l10n
+                                .inputPlaceholder,
+                          ),
                       focusNode: _inputFocusNode,
                       keyboardType: widget.options.keyboardType,
                       maxLines: 5, // Allow multi-line input up to 5 lines
                       minLines: 1, // Start with single line
                       onChanged: widget.options.onTextChanged,
                       onTap: widget.options.onTextFieldTap,
-                      style: InheritedChatTheme.of(
-                        context,
-                      ).theme.inputTextStyle.copyWith(
-                        color:
-                            InheritedChatTheme.of(context).theme.inputTextColor,
-                      ),
+                      style: InheritedChatTheme.of(context).theme.inputTextStyle
+                          .copyWith(
+                            color: InheritedChatTheme.of(context)
+                                .theme
+                                .inputTextColor,
+                          ),
                       textCapitalization: TextCapitalization.sentences,
                     ),
                   ),

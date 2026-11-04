@@ -150,10 +150,9 @@ class ImageCompression {
     final canvas = Canvas(recorder);
 
     // Use high-quality image filtering
-    final paint =
-        Paint()
-          ..isAntiAlias = true
-          ..filterQuality = FilterQuality.high;
+    final paint = Paint()
+      ..isAntiAlias = true
+      ..filterQuality = FilterQuality.high;
 
     canvas.drawImageRect(
       image,

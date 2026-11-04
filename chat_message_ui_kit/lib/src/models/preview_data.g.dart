@@ -8,10 +8,9 @@ part of 'preview_data.dart';
 
 PreviewData _$PreviewDataFromJson(Map<String, dynamic> json) => PreviewData(
   description: json['description'] as String?,
-  image:
-      json['image'] == null
-          ? null
-          : PreviewDataImage.fromJson(json['image'] as Map<String, dynamic>),
+  image: json['image'] == null
+      ? null
+      : PreviewDataImage.fromJson(json['image'] as Map<String, dynamic>),
   link: json['link'] as String?,
   title: json['title'] as String?,
 );

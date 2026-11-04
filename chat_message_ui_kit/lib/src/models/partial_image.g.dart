@@ -10,12 +10,11 @@ PartialImageModel _$PartialImageModelFromJson(Map<String, dynamic> json) =>
     PartialImageModel(
       height: (json['height'] as num?)?.toDouble(),
       name: json['name'] as String,
-      repliedMessage:
-          json['repliedMessage'] == null
-              ? null
-              : MessageModel.fromJson(
-                json['repliedMessage'] as Map<String, dynamic>,
-              ),
+      repliedMessage: json['repliedMessage'] == null
+          ? null
+          : MessageModel.fromJson(
+              json['repliedMessage'] as Map<String, dynamic>,
+            ),
       size: json['size'] as num,
       uri: json['uri'] as String,
       width: (json['width'] as num?)?.toDouble(),

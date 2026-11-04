@@ -145,10 +145,9 @@ class _Room extends Room {
     createdAt: createdAt == _Unset ? this.createdAt : createdAt as int?,
     id: id ?? this.id,
     imageUrl: imageUrl == _Unset ? this.imageUrl : imageUrl as String?,
-    lastMessages:
-        lastMessages == _Unset
-            ? this.lastMessages
-            : lastMessages as List<MessageModel>?,
+    lastMessages: lastMessages == _Unset
+        ? this.lastMessages
+        : lastMessages as List<MessageModel>?,
     name: name == _Unset ? this.name : name as String?,
     updatedAt: updatedAt == _Unset ? this.updatedAt : updatedAt as int?,
     users: users ?? this.users,

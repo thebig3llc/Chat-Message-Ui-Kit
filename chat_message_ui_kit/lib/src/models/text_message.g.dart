@@ -11,19 +11,15 @@ TextMessageModel _$TextMessageModelFromJson(Map<String, dynamic> json) =>
       author: ChatUser.fromJson(json['author'] as Map<String, dynamic>),
       createdAt: (json['createdAt'] as num?)?.toInt(),
       id: json['id'] as String,
-      previewData:
-          json['previewData'] == null
-              ? null
-              : PreviewData.fromJson(
-                json['previewData'] as Map<String, dynamic>,
-              ),
+      previewData: json['previewData'] == null
+          ? null
+          : PreviewData.fromJson(json['previewData'] as Map<String, dynamic>),
       remoteId: json['remoteId'] as String?,
-      repliedMessage:
-          json['repliedMessage'] == null
-              ? null
-              : MessageModel.fromJson(
-                json['repliedMessage'] as Map<String, dynamic>,
-              ),
+      repliedMessage: json['repliedMessage'] == null
+          ? null
+          : MessageModel.fromJson(
+              json['repliedMessage'] as Map<String, dynamic>,
+            ),
       roomId: json['roomId'] as String?,
       showStatus: json['showStatus'] as bool?,
       status: $enumDecodeNullable(_$StatusEnumMap, json['status']),

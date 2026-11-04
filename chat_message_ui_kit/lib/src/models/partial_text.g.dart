@@ -8,18 +8,14 @@ part of 'partial_text.dart';
 
 PartialTextModel _$PartialTextModelFromJson(Map<String, dynamic> json) =>
     PartialTextModel(
-      previewData:
-          json['previewData'] == null
-              ? null
-              : PreviewData.fromJson(
-                json['previewData'] as Map<String, dynamic>,
-              ),
-      repliedMessage:
-          json['repliedMessage'] == null
-              ? null
-              : MessageModel.fromJson(
-                json['repliedMessage'] as Map<String, dynamic>,
-              ),
+      previewData: json['previewData'] == null
+          ? null
+          : PreviewData.fromJson(json['previewData'] as Map<String, dynamic>),
+      repliedMessage: json['repliedMessage'] == null
+          ? null
+          : MessageModel.fromJson(
+              json['repliedMessage'] as Map<String, dynamic>,
+            ),
       text: json['text'] as String,
     );
 

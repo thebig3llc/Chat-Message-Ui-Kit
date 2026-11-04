@@ -1,0 +1,58 @@
+# Publishes chat_message_ui_kit to pub.dev when a version tag is pushed:
+#   git tag v0.0.3 && git push origin v0.0.3
+#
+# Authenticates with GitHub OIDC (no secrets). One-time setup on pub.dev, in
+# the package's Admin tab under "Automated publishing": enable GitHub Actions,
+# repository thebig3llc/Chat-Message-Ui-Kit, tag pattern v{{version}}, and
+# require the GitHub Actions environment "pub.dev".
+name: Publish to pub.dev
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+*'
+
+permissions:
+  contents: read
+
+jobs:
+  check-release:
+    name: Check tag, pubspec and CHANGELOG
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Tag matches pubspec version and has a CHANGELOG entry
+        working-directory: chat_message_ui_kit
+        run: |
+          version=$(sed -n 's/^version: *//p' pubspec.yaml | tr -d "\"' ")
+          if [ "v$version" != "$GITHUB_REF_NAME" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME does not match pubspec.yaml version $version (expected tag v$version)."
+            exit 1
+          fi
+          if ! grep -qx "## $version" CHANGELOG.md; then
+            echo "::error::CHANGELOG.md has no '## $version' heading."
+            exit 1
+          fi
+
+      - name: Tagged commit is on main
+        run: |
+          if ! git merge-base --is-ancestor "$GITHUB_SHA" origin/main; then
+            echo "::error::Tag $GITHUB_REF_NAME points to a commit that is not on main. Merge first, then tag."
+            exit 1
+          fi
+
+  verify:
+    uses: ./.github/workflows/verify.yml
+
+  publish:
+    needs: [check-release, verify]
+    permissions:
+      contents: read
+      id-token: write # Required for pub.dev OIDC authentication
+    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
+    with:
+      environment: pub.dev
+      working-directory: chat_message_ui_kit

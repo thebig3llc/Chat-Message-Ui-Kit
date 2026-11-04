@@ -21,13 +21,13 @@ class UserName extends StatelessWidget {
     return name.isEmpty
         ? const SizedBox()
         : Padding(
-          padding: const EdgeInsets.only(bottom: 6),
-          child: Text(
-            name,
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: theme.userNameTextStyle.copyWith(color: color),
-          ),
-        );
+            padding: const EdgeInsets.only(bottom: 6),
+            child: Text(
+              name,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: theme.userNameTextStyle.copyWith(color: color),
+            ),
+          );
   }
 }

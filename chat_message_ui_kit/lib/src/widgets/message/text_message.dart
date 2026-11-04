@@ -75,20 +75,18 @@ class TextMessage extends StatelessWidget {
   /// Creates a preview card with website metadata, title, description, and thumbnail.
   Widget _linkPreview(ChatUser user, double width, BuildContext context) {
     // Choose appropriate text styles based on whether this is a sent or received message
-    final linkDescriptionTextStyle =
-        user.id == message.author.id
-            ? InheritedChatTheme.of(
-              context,
-            ).theme.sentMessageLinkDescriptionTextStyle
-            : InheritedChatTheme.of(
-              context,
-            ).theme.receivedMessageLinkDescriptionTextStyle;
-    final linkTitleTextStyle =
-        user.id == message.author.id
-            ? InheritedChatTheme.of(context).theme.sentMessageLinkTitleTextStyle
-            : InheritedChatTheme.of(
-              context,
-            ).theme.receivedMessageLinkTitleTextStyle;
+    final linkDescriptionTextStyle = user.id == message.author.id
+        ? InheritedChatTheme.of(context)
+              .theme
+              .sentMessageLinkDescriptionTextStyle
+        : InheritedChatTheme.of(context)
+              .theme
+              .receivedMessageLinkDescriptionTextStyle;
+    final linkTitleTextStyle = user.id == message.author.id
+        ? InheritedChatTheme.of(context).theme.sentMessageLinkTitleTextStyle
+        : InheritedChatTheme.of(context)
+              .theme
+              .receivedMessageLinkTitleTextStyle;
 
     // Build the complete link preview widget with text and preview card
     return LinkPreview(
@@ -100,8 +98,9 @@ class TextMessage extends StatelessWidget {
       openOnPreviewImageTap: options.openOnPreviewImageTap,
       openOnPreviewTitleTap: options.openOnPreviewTitleTap,
       padding: EdgeInsets.symmetric(
-        horizontal:
-            InheritedChatTheme.of(context).theme.messageInsetsHorizontal,
+        horizontal: InheritedChatTheme.of(context)
+            .theme
+            .messageInsetsHorizontal,
         vertical: InheritedChatTheme.of(context).theme.messageInsetsVertical,
       ),
       previewData: message.previewData, // Cached preview data if available
@@ -130,28 +129,21 @@ class TextMessage extends StatelessWidget {
   ) {
     // Get theme and determine appropriate text styles based on message direction
     final theme = InheritedChatTheme.of(context).theme;
-    final bodyLinkTextStyle =
-        user.id == message.author.id
-            ? InheritedChatTheme.of(context).theme.sentMessageBodyLinkTextStyle
-            : InheritedChatTheme.of(
-              context,
-            ).theme.receivedMessageBodyLinkTextStyle;
-    final bodyTextStyle =
-        user.id == message.author.id
-            ? theme.sentMessageBodyTextStyle
-            : theme.receivedMessageBodyTextStyle;
-    final boldTextStyle =
-        user.id == message.author.id
-            ? theme.sentMessageBodyBoldTextStyle
-            : theme.receivedMessageBodyBoldTextStyle;
-    final codeTextStyle =
-        user.id == message.author.id
-            ? theme.sentMessageBodyCodeTextStyle
-            : theme.receivedMessageBodyCodeTextStyle;
-    final emojiTextStyle =
-        user.id == message.author.id
-            ? theme.sentEmojiMessageTextStyle
-            : theme.receivedEmojiMessageTextStyle;
+    final bodyLinkTextStyle = user.id == message.author.id
+        ? InheritedChatTheme.of(context).theme.sentMessageBodyLinkTextStyle
+        : InheritedChatTheme.of(context).theme.receivedMessageBodyLinkTextStyle;
+    final bodyTextStyle = user.id == message.author.id
+        ? theme.sentMessageBodyTextStyle
+        : theme.receivedMessageBodyTextStyle;
+    final boldTextStyle = user.id == message.author.id
+        ? theme.sentMessageBodyBoldTextStyle
+        : theme.receivedMessageBodyBoldTextStyle;
+    final codeTextStyle = user.id == message.author.id
+        ? theme.sentMessageBodyCodeTextStyle
+        : theme.receivedMessageBodyCodeTextStyle;
+    final emojiTextStyle = user.id == message.author.id
+        ? theme.sentEmojiMessageTextStyle
+        : theme.receivedEmojiMessageTextStyle;
 
     // Build the complete text widget with optional name and styled content
     return Column(

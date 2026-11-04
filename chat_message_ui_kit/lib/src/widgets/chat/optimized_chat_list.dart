@@ -323,22 +323,21 @@ class _OptimizedChatListState extends State<OptimizedChatList>
                     alignment: Alignment.center,
                     height: 32,
                     width: 32,
-                    child:
-                        _isNextPageLoading
-                            ? SizedBox(
-                              height: 16,
-                              width: 16,
-                              child: CircularProgressIndicator(
-                                backgroundColor: Colors.transparent,
-                                strokeWidth: 1.5,
-                                valueColor: AlwaysStoppedAnimation<Color>(
-                                  InheritedChatTheme.of(
-                                    context,
-                                  ).theme.primaryColor,
-                                ),
+                    child: _isNextPageLoading
+                        ? SizedBox(
+                            height: 16,
+                            width: 16,
+                            child: CircularProgressIndicator(
+                              backgroundColor: Colors.transparent,
+                              strokeWidth: 1.5,
+                              valueColor: AlwaysStoppedAnimation<Color>(
+                                InheritedChatTheme.of(context)
+                                    .theme
+                                    .primaryColor,
                               ),
-                            )
-                            : null,
+                            ),
+                          )
+                        : null,
                   ),
                 ),
               ),

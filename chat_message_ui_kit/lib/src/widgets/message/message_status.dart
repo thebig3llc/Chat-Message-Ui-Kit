@@ -19,42 +19,42 @@ class MessageStatus extends StatelessWidget {
         return InheritedChatTheme.of(context).theme.deliveredIcon != null
             ? InheritedChatTheme.of(context).theme.deliveredIcon!
             : Image.asset(
-              'assets/icon-delivered.png',
-              color: InheritedChatTheme.of(context).theme.primaryColor,
-              package: 'flutter_chat_ui',
-            );
+                'assets/icon-delivered.png',
+                color: InheritedChatTheme.of(context).theme.primaryColor,
+                package: 'flutter_chat_ui',
+              );
       case Status.error:
         return InheritedChatTheme.of(context).theme.errorIcon != null
             ? InheritedChatTheme.of(context).theme.errorIcon!
             : Image.asset(
-              'assets/icon-error.png',
-              color: InheritedChatTheme.of(context).theme.errorColor,
-              package: 'flutter_chat_ui',
-            );
+                'assets/icon-error.png',
+                color: InheritedChatTheme.of(context).theme.errorColor,
+                package: 'flutter_chat_ui',
+              );
       case Status.seen:
         return InheritedChatTheme.of(context).theme.seenIcon != null
             ? InheritedChatTheme.of(context).theme.seenIcon!
             : Image.asset(
-              'assets/icon-seen.png',
-              color: InheritedChatTheme.of(context).theme.primaryColor,
-              package: 'flutter_chat_ui',
-            );
+                'assets/icon-seen.png',
+                color: InheritedChatTheme.of(context).theme.primaryColor,
+                package: 'flutter_chat_ui',
+              );
       case Status.sending:
         return InheritedChatTheme.of(context).theme.sendingIcon != null
             ? InheritedChatTheme.of(context).theme.sendingIcon!
             : Center(
-              child: SizedBox(
-                height: 10,
-                width: 10,
-                child: CircularProgressIndicator(
-                  backgroundColor: Colors.transparent,
-                  strokeWidth: 1.5,
-                  valueColor: AlwaysStoppedAnimation<Color>(
-                    InheritedChatTheme.of(context).theme.primaryColor,
+                child: SizedBox(
+                  height: 10,
+                  width: 10,
+                  child: CircularProgressIndicator(
+                    backgroundColor: Colors.transparent,
+                    strokeWidth: 1.5,
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                      InheritedChatTheme.of(context).theme.primaryColor,
+                    ),
                   ),
                 ),
-              ),
-            );
+              );
       default:
         return const SizedBox(width: 8);
     }

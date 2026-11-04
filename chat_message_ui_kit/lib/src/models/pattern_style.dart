@@ -88,10 +88,9 @@ class PatternStyle {
       RegExp('`[^`]+`'),
       '',
       TextStyle(
-        fontFamily:
-            defaultTargetPlatform == TargetPlatform.iOS
-                ? 'Courier'
-                : 'monospace',
+        fontFamily: defaultTargetPlatform == TargetPlatform.iOS
+            ? 'Courier'
+            : 'monospace',
       ),
     );
   }

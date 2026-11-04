@@ -188,10 +188,9 @@ class _VideoMessage extends VideoMessageModel {
     id: id ?? this.id,
     name: name ?? this.name,
     remoteId: remoteId == _Unset ? this.remoteId : remoteId as String?,
-    repliedMessage:
-        repliedMessage == _Unset
-            ? this.repliedMessage
-            : repliedMessage as MessageModel?,
+    repliedMessage: repliedMessage == _Unset
+        ? this.repliedMessage
+        : repliedMessage as MessageModel?,
     roomId: roomId == _Unset ? this.roomId : roomId as String?,
     showStatus: showStatus == _Unset ? this.showStatus : showStatus as bool?,
     size: size ?? this.size,
