@@ -7,7 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 /// Function used to check message text for possible email to highlight and
 /// hyperlink
-MatchText mailToMatcher({final TextStyle? style}) {
+MatchText mailToMatcher({TextStyle? style}) {
   return MatchText(
     onTap: (mail) async {
       final url = Uri(scheme: 'mailto', path: mail);
@@ -22,10 +22,7 @@ MatchText mailToMatcher({final TextStyle? style}) {
 }
 
 /// Function to check message text for url to hyperlink
-MatchText urlMatcher({
-  final TextStyle? style,
-  final Function(String url)? onLinkPressed,
-}) {
+MatchText urlMatcher({TextStyle? style, Function(String url)? onLinkPressed}) {
   return MatchText(
     onTap: (urlText) async {
       final protocolRegex = RegExp(
@@ -51,34 +48,33 @@ MatchText urlMatcher({
 }
 
 MatchText _patternStyleMatcher({
-  required final PatternStyle patternStyle,
-  final TextStyle? style,
+  required PatternStyle patternStyle,
+  TextStyle? style,
 }) {
   return MatchText(
     pattern: patternStyle.pattern,
     style: style,
-    renderText:
-        ({required String str, required String pattern}) => {
-          'display': str.replaceAll(patternStyle.from, patternStyle.replace),
-        },
+    renderText: ({required String str, required String pattern}) => {
+      'display': str.replaceAll(patternStyle.from, patternStyle.replace),
+    },
   );
 }
 
-MatchText boldMatcher({final TextStyle? style}) {
+MatchText boldMatcher({TextStyle? style}) {
   return _patternStyleMatcher(patternStyle: PatternStyle.bold, style: style);
 }
 
-MatchText italicMatcher({final TextStyle? style}) {
+MatchText italicMatcher({TextStyle? style}) {
   return _patternStyleMatcher(patternStyle: PatternStyle.italic, style: style);
 }
 
-MatchText lineThroughMatcher({final TextStyle? style}) {
+MatchText lineThroughMatcher({TextStyle? style}) {
   return _patternStyleMatcher(
     patternStyle: PatternStyle.lineThrough,
     style: style,
   );
 }
 
-MatchText codeMatcher({final TextStyle? style}) {
+MatchText codeMatcher({TextStyle? style}) {
   return _patternStyleMatcher(patternStyle: PatternStyle.code, style: style);
 }
