@@ -162,13 +162,10 @@ class _OptimizedImageGalleryState extends State<OptimizedImageGallery>
     final indicesToRemove = <int>[];
 
     for (final index in _loadedProviders.keys) {
-      final shouldKeep =
-          aggressive
-              ? index ==
-                  _currentPage // Only keep current image if aggressive
-              : _preloadedIndices.contains(
-                index,
-              ); // Keep preloaded images normally
+      final shouldKeep = aggressive
+          ? index ==
+                _currentPage // Only keep current image if aggressive
+          : _preloadedIndices.contains(index); // Keep preloaded images normally
 
       if (!shouldKeep) {
         indicesToRemove.add(index);
@@ -216,17 +213,16 @@ class _OptimizedImageGalleryState extends State<OptimizedImageGallery>
     }
 
     // Create new provider
-    final provider =
-        widget.imageProviderBuilder != null
-            ? widget.imageProviderBuilder!(
-              uri: widget.images[index].uri,
-              imageHeaders: widget.imageHeaders,
-              conditional: Conditional(),
-            )
-            : Conditional().createImageProvider(
-              widget.images[index].uri,
-              headers: widget.imageHeaders,
-            );
+    final provider = widget.imageProviderBuilder != null
+        ? widget.imageProviderBuilder!(
+            uri: widget.images[index].uri,
+            imageHeaders: widget.imageHeaders,
+            conditional: Conditional(),
+          )
+        : Conditional().createImageProvider(
+            widget.images[index].uri,
+            headers: widget.imageHeaders,
+          );
 
     // Apply memory optimizations
     ImageProvider optimizedProvider = provider;
@@ -265,10 +261,9 @@ class _OptimizedImageGalleryState extends State<OptimizedImageGallery>
             width: 40,
             height: 40,
             child: CircularProgressIndicator(
-              value:
-                  event == null || event.expectedTotalBytes == null
-                      ? null
-                      : event.cumulativeBytesLoaded / event.expectedTotalBytes!,
+              value: event == null || event.expectedTotalBytes == null
+                  ? null
+                  : event.cumulativeBytesLoaded / event.expectedTotalBytes!,
               strokeWidth: 3,
               color: Colors.white,
             ),
@@ -350,8 +345,8 @@ class _OptimizedImageGalleryState extends State<OptimizedImageGallery>
                   );
                 },
                 itemCount: widget.images.length,
-                loadingBuilder:
-                    (context, event) => _imageGalleryLoadingBuilder(event),
+                loadingBuilder: (context, event) =>
+                    _imageGalleryLoadingBuilder(event),
                 pageController: widget.pageController,
                 scrollPhysics: const ClampingScrollPhysics(),
                 onPageChanged: (index) {

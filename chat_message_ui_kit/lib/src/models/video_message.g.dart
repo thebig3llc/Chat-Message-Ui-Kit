@@ -14,12 +14,11 @@ VideoMessageModel _$VideoMessageModelFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       name: json['name'] as String,
       remoteId: json['remoteId'] as String?,
-      repliedMessage:
-          json['repliedMessage'] == null
-              ? null
-              : MessageModel.fromJson(
-                json['repliedMessage'] as Map<String, dynamic>,
-              ),
+      repliedMessage: json['repliedMessage'] == null
+          ? null
+          : MessageModel.fromJson(
+              json['repliedMessage'] as Map<String, dynamic>,
+            ),
       roomId: json['roomId'] as String?,
       showStatus: json['showStatus'] as bool?,
       size: json['size'] as num,

@@ -103,8 +103,9 @@ class _PreviewData extends PreviewData {
     dynamic link = _Unset,
     dynamic title = _Unset,
   }) => _PreviewData(
-    description:
-        description == _Unset ? this.description : description as String?,
+    description: description == _Unset
+        ? this.description
+        : description as String?,
     image: image == _Unset ? this.image : image as PreviewDataImage?,
     link: link == _Unset ? this.link : link as String?,
     title: title == _Unset ? this.title : title as String?,

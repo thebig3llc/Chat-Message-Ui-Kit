@@ -50,17 +50,16 @@ class _ImageMessageState extends State<ImageMessage> {
   @override
   void initState() {
     super.initState();
-    _image =
-        widget.imageProviderBuilder != null
-            ? widget.imageProviderBuilder!(
-              uri: widget.message.uri,
-              imageHeaders: widget.imageHeaders,
-              conditional: Conditional(),
-            )
-            : Conditional().createImageProvider(
-              widget.message.uri,
-              headers: widget.imageHeaders,
-            );
+    _image = widget.imageProviderBuilder != null
+        ? widget.imageProviderBuilder!(
+            uri: widget.message.uri,
+            imageHeaders: widget.imageHeaders,
+            conditional: Conditional(),
+          )
+        : Conditional().createImageProvider(
+            widget.message.uri,
+            headers: widget.imageHeaders,
+          );
     _size = Size(widget.message.width ?? 0, widget.message.height ?? 0);
   }
 
@@ -107,10 +106,9 @@ class _ImageMessageState extends State<ImageMessage> {
       );
     } else if (_size.aspectRatio < 0.1 || _size.aspectRatio > 10) {
       return Container(
-        color:
-            user.id == widget.message.author.id
-                ? InheritedChatTheme.of(context).theme.primaryColor
-                : InheritedChatTheme.of(context).theme.secondaryColor,
+        color: user.id == widget.message.author.id
+            ? InheritedChatTheme.of(context).theme.primaryColor
+            : InheritedChatTheme.of(context).theme.secondaryColor,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -141,28 +139,26 @@ class _ImageMessageState extends State<ImageMessage> {
                   children: [
                     Text(
                       widget.message.name,
-                      style:
-                          user.id == widget.message.author.id
-                              ? InheritedChatTheme.of(
-                                context,
-                              ).theme.sentMessageBodyTextStyle
-                              : InheritedChatTheme.of(
-                                context,
-                              ).theme.receivedMessageBodyTextStyle,
+                      style: user.id == widget.message.author.id
+                          ? InheritedChatTheme.of(context)
+                                .theme
+                                .sentMessageBodyTextStyle
+                          : InheritedChatTheme.of(context)
+                                .theme
+                                .receivedMessageBodyTextStyle,
                       textWidthBasis: TextWidthBasis.longestLine,
                     ),
                     Container(
                       margin: const EdgeInsets.only(top: 4),
                       child: Text(
                         formatBytes(widget.message.size.truncate()),
-                        style:
-                            user.id == widget.message.author.id
-                                ? InheritedChatTheme.of(
-                                  context,
-                                ).theme.sentMessageCaptionTextStyle
-                                : InheritedChatTheme.of(
-                                  context,
-                                ).theme.receivedMessageCaptionTextStyle,
+                        style: user.id == widget.message.author.id
+                            ? InheritedChatTheme.of(context)
+                                  .theme
+                                  .sentMessageCaptionTextStyle
+                            : InheritedChatTheme.of(context)
+                                  .theme
+                                  .receivedMessageCaptionTextStyle,
                       ),
                     ),
                   ],

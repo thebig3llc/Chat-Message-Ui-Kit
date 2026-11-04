@@ -156,12 +156,11 @@ class _LinkPreviewState extends State<LinkPreview>
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         GestureDetector(
-          onTap:
-              widget.openOnPreviewTitleTap
-                  ? () {
-                    _onOpen(data.link!);
-                  }
-                  : null,
+          onTap: widget.openOnPreviewTitleTap
+              ? () {
+                  _onOpen(data.link!);
+                }
+              : null,
           child: Container(
             padding: EdgeInsets.only(
               bottom: padding.bottom,
@@ -202,15 +201,14 @@ class _LinkPreviewState extends State<LinkPreview>
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding:
-                withPadding
-                    ? EdgeInsets.zero
-                    : EdgeInsets.only(
-                      left: padding.left,
-                      right: padding.right,
-                      top: padding.top,
-                      bottom: _hasOnlyImage() ? 0 : 16,
-                    ),
+            padding: withPadding
+                ? EdgeInsets.zero
+                : EdgeInsets.only(
+                    left: padding.left,
+                    right: padding.right,
+                    top: padding.top,
+                    bottom: _hasOnlyImage() ? 0 : 16,
+                  ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -295,10 +293,9 @@ class _LinkPreviewState extends State<LinkPreview>
       child: Container(
         constraints: BoxConstraints(maxHeight: width),
         width: width,
-        child:
-            widget.imageBuilder != null
-                ? widget.imageBuilder!(imageUrl)
-                : Image.network(imageUrl, fit: BoxFit.contain),
+        child: widget.imageBuilder != null
+            ? widget.imageBuilder!(imageUrl)
+            : Image.network(imageUrl, fit: BoxFit.contain),
       ),
     );
   }
@@ -330,10 +327,9 @@ class _LinkPreviewState extends State<LinkPreview>
               children: <Widget>[
                 Expanded(
                   child: GestureDetector(
-                    onTap:
-                        widget.openOnPreviewTitleTap
-                            ? () => _onOpen(data.link!)
-                            : null,
+                    onTap: widget.openOnPreviewTitleTap
+                        ? () => _onOpen(data.link!)
+                        : null,
                     child: Container(
                       margin: const EdgeInsets.only(right: 4),
                       child: Column(
@@ -364,10 +360,9 @@ class _LinkPreviewState extends State<LinkPreview>
         child: SizedBox(
           height: 48,
           width: 48,
-          child:
-              widget.imageBuilder != null
-                  ? widget.imageBuilder!(imageUrl)
-                  : Image.network(imageUrl),
+          child: widget.imageBuilder != null
+              ? widget.imageBuilder!(imageUrl)
+              : Image.network(imageUrl),
         ),
       ),
     );
@@ -433,20 +428,18 @@ class _LinkPreviewState extends State<LinkPreview>
       if (widget.previewBuilder != null) {
         return widget.previewBuilder!(context, previewData);
       } else {
-        final aspectRatio =
-            widget.previewData!.image == null
-                ? null
-                : widget.previewData!.image!.width /
-                    widget.previewData!.image!.height;
+        final aspectRatio = widget.previewData!.image == null
+            ? null
+            : widget.previewData!.image!.width /
+                  widget.previewData!.image!.height;
 
         final width = aspectRatio == 1 ? widget.width : widget.width - 32;
 
         return _containerWidget(
           animate: shouldAnimate,
-          child:
-              aspectRatio == 1
-                  ? _minimizedBodyWidget(previewData)
-                  : _bodyWidget(previewData, width),
+          child: aspectRatio == 1
+              ? _minimizedBodyWidget(previewData)
+              : _bodyWidget(previewData, width),
           withPadding: aspectRatio == 1,
         );
       }

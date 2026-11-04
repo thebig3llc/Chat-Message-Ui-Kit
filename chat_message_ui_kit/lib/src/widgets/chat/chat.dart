@@ -465,14 +465,14 @@ class ChatState extends State<Chat> {
       final maxWidth = widget.theme.messageMaxWidth;
       final messageWidth =
           widget.showUserAvatars && message.author.id != widget.user.id
-              ? min(
-                constraints.maxWidth * widget.messageWidthRatio,
-                maxWidth,
-              ).floor()
-              : min(
-                constraints.maxWidth * (widget.messageWidthRatio + 0.06),
-                maxWidth,
-              ).floor();
+          ? min(
+              constraints.maxWidth * widget.messageWidthRatio,
+              maxWidth,
+            ).floor()
+          : min(
+              constraints.maxWidth * (widget.messageWidthRatio + 0.06),
+              maxWidth,
+            ).floor();
       final Widget msgWidget = Message(
         audioMessageBuilder: widget.audioMessageBuilder,
         avatarBuilder: widget.avatarBuilder,
@@ -513,10 +513,9 @@ class ChatState extends State<Chat> {
         userAgent: widget.userAgent,
         videoMessageBuilder: widget.videoMessageBuilder,
       );
-      messageWidget =
-          widget.slidableMessageBuilder == null
-              ? msgWidget
-              : widget.slidableMessageBuilder!(message, msgWidget);
+      messageWidget = widget.slidableMessageBuilder == null
+          ? msgWidget
+          : widget.slidableMessageBuilder!(message, msgWidget);
 
       return AutoScrollTag(
         controller: _scrollController,
@@ -618,46 +617,44 @@ class ChatState extends State<Chat> {
                   child: Column(
                     children: [
                       Flexible(
-                        child:
-                            widget.messages.isEmpty
-                                ? SizedBox.expand(child: _emptyStateBuilder())
-                                : GestureDetector(
-                                  onTap: () {
-                                    FocusManager.instance.primaryFocus
-                                        ?.unfocus();
-                                    widget.onBackgroundTap?.call();
+                        child: widget.messages.isEmpty
+                            ? SizedBox.expand(child: _emptyStateBuilder())
+                            : GestureDetector(
+                                onTap: () {
+                                  FocusManager.instance.primaryFocus?.unfocus();
+                                  widget.onBackgroundTap?.call();
+                                },
+                                child: LayoutBuilder(
+                                  builder: (context, constraints) {
+                                    return ChatList(
+                                      bottomWidget: widget.listBottomWidget,
+                                      bubbleRtlAlignment:
+                                          widget.bubbleRtlAlignment!,
+                                      isLastPage: widget.isLastPage,
+                                      itemBuilder: (item, index) {
+                                        return _messageBuilder(
+                                          item,
+                                          constraints,
+                                          index,
+                                        );
+                                      },
+                                      items: _chatMessages,
+                                      keyboardDismissBehavior:
+                                          widget.keyboardDismissBehavior,
+                                      onEndReached: widget.onEndReached,
+                                      onEndReachedThreshold:
+                                          widget.onEndReachedThreshold,
+                                      scrollController: _scrollController,
+                                      scrollPhysics: widget.scrollPhysics,
+                                      typingIndicatorOptions:
+                                          widget.typingIndicatorOptions,
+                                      useTopSafeAreaInset:
+                                          widget.useTopSafeAreaInset ??
+                                          isMobile,
+                                    );
                                   },
-                                  child: LayoutBuilder(
-                                    builder: (context, constraints) {
-                                      return ChatList(
-                                        bottomWidget: widget.listBottomWidget,
-                                        bubbleRtlAlignment:
-                                            widget.bubbleRtlAlignment!,
-                                        isLastPage: widget.isLastPage,
-                                        itemBuilder: (item, index) {
-                                          return _messageBuilder(
-                                            item,
-                                            constraints,
-                                            index,
-                                          );
-                                        },
-                                        items: _chatMessages,
-                                        keyboardDismissBehavior:
-                                            widget.keyboardDismissBehavior,
-                                        onEndReached: widget.onEndReached,
-                                        onEndReachedThreshold:
-                                            widget.onEndReachedThreshold,
-                                        scrollController: _scrollController,
-                                        scrollPhysics: widget.scrollPhysics,
-                                        typingIndicatorOptions:
-                                            widget.typingIndicatorOptions,
-                                        useTopSafeAreaInset:
-                                            widget.useTopSafeAreaInset ??
-                                            isMobile,
-                                      );
-                                    },
-                                  ),
                                 ),
+                              ),
                       ),
                       widget.customBottomWidget ??
                           Input(

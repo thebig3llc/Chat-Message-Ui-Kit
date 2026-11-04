@@ -153,13 +153,13 @@ class _TextMessage extends TextMessageModel {
     author: author ?? this.author,
     createdAt: createdAt == _Unset ? this.createdAt : createdAt as int?,
     id: id ?? this.id,
-    previewData:
-        previewData == _Unset ? this.previewData : previewData as PreviewData?,
+    previewData: previewData == _Unset
+        ? this.previewData
+        : previewData as PreviewData?,
     remoteId: remoteId == _Unset ? this.remoteId : remoteId as String?,
-    repliedMessage:
-        repliedMessage == _Unset
-            ? this.repliedMessage
-            : repliedMessage as MessageModel?,
+    repliedMessage: repliedMessage == _Unset
+        ? this.repliedMessage
+        : repliedMessage as MessageModel?,
     roomId: roomId == _Unset ? this.roomId : roomId as String?,
     showStatus: showStatus == _Unset ? this.showStatus : showStatus as bool?,
     status: status == _Unset ? this.status : status as Status?,

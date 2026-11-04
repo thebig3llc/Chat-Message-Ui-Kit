@@ -187,12 +187,12 @@ class Message extends StatelessWidget {
   Widget _avatarBuilder() {
     return showAvatar
         ? avatarBuilder?.call(message.author) ??
-            UserAvatar(
-              author: message.author,
-              bubbleRtlAlignment: bubbleRtlAlignment,
-              imageHeaders: imageHeaders,
-              onAvatarTap: onAvatarTap,
-            )
+              UserAvatar(
+                author: message.author,
+                bubbleRtlAlignment: bubbleRtlAlignment,
+                imageHeaders: imageHeaders,
+                onAvatarTap: onAvatarTap,
+              )
         : const SizedBox(width: 40);
   }
 
@@ -202,28 +202,26 @@ class Message extends StatelessWidget {
     bool currentUserIsAuthor,
     bool enlargeEmojis,
   ) {
-    final defaultMessage =
-        (enlargeEmojis && hideBackgroundOnEmojiMessages)
-            ? _messageBuilder()
-            : Container(
-              decoration: BoxDecoration(
-                borderRadius: borderRadius,
-                color:
-                    !currentUserIsAuthor || message.type == MessageType.image
-                        ? InheritedChatTheme.of(context).theme.secondaryColor
-                        : InheritedChatTheme.of(context).theme.primaryColor,
-              ),
-              child: ClipRRect(
-                borderRadius: borderRadius,
-                child: _messageBuilder(),
-              ),
-            );
+    final defaultMessage = (enlargeEmojis && hideBackgroundOnEmojiMessages)
+        ? _messageBuilder()
+        : Container(
+            decoration: BoxDecoration(
+              borderRadius: borderRadius,
+              color: !currentUserIsAuthor || message.type == MessageType.image
+                  ? InheritedChatTheme.of(context).theme.secondaryColor
+                  : InheritedChatTheme.of(context).theme.primaryColor,
+            ),
+            child: ClipRRect(
+              borderRadius: borderRadius,
+              child: _messageBuilder(),
+            ),
+          );
     return bubbleBuilder != null
         ? bubbleBuilder!(
-          _messageBuilder(),
-          message: message,
-          nextMessageInGroup: roundBorder,
-        )
+            _messageBuilder(),
+            message: message,
+            nextMessageInGroup: roundBorder,
+          )
         : defaultMessage;
   }
 
@@ -239,30 +237,30 @@ class Message extends StatelessWidget {
         return imageMessageBuilder != null
             ? imageMessageBuilder!(imageMessage, messageWidth: messageWidth)
             : ImageMessage(
-              imageHeaders: imageHeaders,
-              imageProviderBuilder: imageProviderBuilder,
-              message: imageMessage,
-              messageWidth: messageWidth,
-            );
+                imageHeaders: imageHeaders,
+                imageProviderBuilder: imageProviderBuilder,
+                message: imageMessage,
+                messageWidth: messageWidth,
+              );
       case MessageType.text:
         final textMessage = message as TextMessageModel;
         return textMessageBuilder != null
             ? textMessageBuilder!(
-              textMessage,
-              messageWidth: messageWidth,
-              showName: showName,
-            )
+                textMessage,
+                messageWidth: messageWidth,
+                showName: showName,
+              )
             : TextMessage(
-              emojiEnlargementBehavior: emojiEnlargementBehavior,
-              hideBackgroundOnEmojiMessages: hideBackgroundOnEmojiMessages,
-              message: textMessage,
-              nameBuilder: nameBuilder,
-              onPreviewDataFetched: onPreviewDataFetched,
-              options: textMessageOptions,
-              showName: showName,
-              usePreviewData: usePreviewData,
-              userAgent: userAgent,
-            );
+                emojiEnlargementBehavior: emojiEnlargementBehavior,
+                hideBackgroundOnEmojiMessages: hideBackgroundOnEmojiMessages,
+                message: textMessage,
+                nameBuilder: nameBuilder,
+                onPreviewDataFetched: onPreviewDataFetched,
+                options: textMessageOptions,
+                showName: showName,
+                usePreviewData: usePreviewData,
+                userAgent: userAgent,
+              );
       case MessageType.video:
         final videoMessage = message as VideoMessageModel;
         return videoMessageBuilder != null
@@ -293,59 +291,56 @@ class Message extends StatelessWidget {
         emojiEnlargementBehavior != EmojiEnlargementBehavior.never &&
         message is TextMessage &&
         consistsOfEmojis(emojiEnlargementBehavior, message as TextMessageModel);
-    final messageBorderRadius =
-        InheritedChatTheme.of(context).theme.messageBorderRadius;
-    final borderRadius =
-        bubbleRtlAlignment == BubbleRtlAlignment.left
-            ? BorderRadiusDirectional.only(
-              bottomEnd: Radius.circular(
-                !currentUserIsAuthor || roundBorder ? messageBorderRadius : 0,
-              ),
-              bottomStart: Radius.circular(
-                currentUserIsAuthor || roundBorder ? messageBorderRadius : 0,
-              ),
-              topEnd: Radius.circular(messageBorderRadius),
-              topStart: Radius.circular(messageBorderRadius),
-            )
-            : BorderRadius.only(
-              bottomLeft: Radius.circular(
-                currentUserIsAuthor || roundBorder ? messageBorderRadius : 0,
-              ),
-              bottomRight: Radius.circular(
-                !currentUserIsAuthor || roundBorder ? messageBorderRadius : 0,
-              ),
-              topLeft: Radius.circular(messageBorderRadius),
-              topRight: Radius.circular(messageBorderRadius),
-            );
+    final messageBorderRadius = InheritedChatTheme.of(context)
+        .theme
+        .messageBorderRadius;
+    final borderRadius = bubbleRtlAlignment == BubbleRtlAlignment.left
+        ? BorderRadiusDirectional.only(
+            bottomEnd: Radius.circular(
+              !currentUserIsAuthor || roundBorder ? messageBorderRadius : 0,
+            ),
+            bottomStart: Radius.circular(
+              currentUserIsAuthor || roundBorder ? messageBorderRadius : 0,
+            ),
+            topEnd: Radius.circular(messageBorderRadius),
+            topStart: Radius.circular(messageBorderRadius),
+          )
+        : BorderRadius.only(
+            bottomLeft: Radius.circular(
+              currentUserIsAuthor || roundBorder ? messageBorderRadius : 0,
+            ),
+            bottomRight: Radius.circular(
+              !currentUserIsAuthor || roundBorder ? messageBorderRadius : 0,
+            ),
+            topLeft: Radius.circular(messageBorderRadius),
+            topRight: Radius.circular(messageBorderRadius),
+          );
 
     return Container(
-      alignment:
-          bubbleRtlAlignment == BubbleRtlAlignment.left
-              ? currentUserIsAuthor
-                  ? AlignmentDirectional.centerEnd
-                  : AlignmentDirectional.centerStart
-              : currentUserIsAuthor
-              ? Alignment.centerRight
-              : Alignment.centerLeft,
-      margin:
-          bubbleRtlAlignment == BubbleRtlAlignment.left
-              ? EdgeInsetsDirectional.only(
-                bottom: 4,
-                end: isMobile ? query.padding.right : 0,
-                start: 20 + (isMobile ? query.padding.left : 0),
-              )
-              : EdgeInsets.only(
-                bottom: 4,
-                left: 20 + (isMobile ? query.padding.left : 0),
-                right: isMobile ? query.padding.right : 0,
-              ),
+      alignment: bubbleRtlAlignment == BubbleRtlAlignment.left
+          ? currentUserIsAuthor
+                ? AlignmentDirectional.centerEnd
+                : AlignmentDirectional.centerStart
+          : currentUserIsAuthor
+          ? Alignment.centerRight
+          : Alignment.centerLeft,
+      margin: bubbleRtlAlignment == BubbleRtlAlignment.left
+          ? EdgeInsetsDirectional.only(
+              bottom: 4,
+              end: isMobile ? query.padding.right : 0,
+              start: 20 + (isMobile ? query.padding.left : 0),
+            )
+          : EdgeInsets.only(
+              bottom: 4,
+              left: 20 + (isMobile ? query.padding.left : 0),
+              right: isMobile ? query.padding.right : 0,
+            ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.end,
         mainAxisSize: MainAxisSize.min,
-        textDirection:
-            bubbleRtlAlignment == BubbleRtlAlignment.left
-                ? null
-                : TextDirection.ltr,
+        textDirection: bubbleRtlAlignment == BubbleRtlAlignment.left
+            ? null
+            : TextDirection.ltr,
         children: [
           if (!currentUserIsAuthor && showUserAvatars) _avatarBuilder(),
           if (currentUserIsAuthor && isLeftStatus) _statusIcon(context),
@@ -358,28 +353,27 @@ class Message extends StatelessWidget {
                   onDoubleTap: () => onMessageDoubleTap?.call(context, message),
                   onLongPress: () => onMessageLongPress?.call(context, message),
                   onTap: () => onMessageTap?.call(context, message),
-                  child:
-                      onMessageVisibilityChanged != null
-                          ? VisibilityDetector(
-                            key: Key(message.id),
-                            onVisibilityChanged:
-                                (visibilityInfo) => onMessageVisibilityChanged!(
-                                  message,
-                                  visibilityInfo.visibleFraction > 0.1,
-                                ),
-                            child: _bubbleBuilder(
-                              context,
-                              borderRadius.resolve(Directionality.of(context)),
-                              currentUserIsAuthor,
-                              enlargeEmojis,
-                            ),
-                          )
-                          : _bubbleBuilder(
+                  child: onMessageVisibilityChanged != null
+                      ? VisibilityDetector(
+                          key: Key(message.id),
+                          onVisibilityChanged: (visibilityInfo) =>
+                              onMessageVisibilityChanged!(
+                                message,
+                                visibilityInfo.visibleFraction > 0.1,
+                              ),
+                          child: _bubbleBuilder(
                             context,
                             borderRadius.resolve(Directionality.of(context)),
                             currentUserIsAuthor,
                             enlargeEmojis,
                           ),
+                        )
+                      : _bubbleBuilder(
+                          context,
+                          borderRadius.resolve(Directionality.of(context)),
+                          currentUserIsAuthor,
+                          enlargeEmojis,
+                        ),
                 ),
               ],
             ),

@@ -329,7 +329,6 @@ void main() {
 
       regularStopwatch.stop();
 
-
       // OptimizedChatList should be competitive with regular ListView
       // Allow some overhead for the additional features
       expect(

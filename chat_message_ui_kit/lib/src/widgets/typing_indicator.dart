@@ -2,6 +2,7 @@ import 'package:chat_message_ui_kit/src/models/chat_user.dart';
 import 'package:chat_message_ui_kit/src/enums/bubble_rtl_alignment.dart';
 import 'package:chat_message_ui_kit/src/enums/typing_indicator_mode.dart';
 import 'package:flutter/material.dart';
+
 import '../utils/functions.dart';
 import '../inherited/inherited_chat_theme.dart';
 
@@ -83,22 +84,23 @@ class _TypingIndicatorState extends State<TypingIndicator>
     Offset? start,
     Offset? end,
     Interval animationInterval,
-  ) => TweenSequence<Offset>(<TweenSequenceItem<Offset>>[
-    TweenSequenceItem<Offset>(
-      tween: Tween<Offset>(begin: start, end: end),
-      weight: 50.0,
-    ),
-    TweenSequenceItem<Offset>(
-      tween: Tween<Offset>(begin: end, end: start),
-      weight: 50.0,
-    ),
-  ]).animate(
-    CurvedAnimation(
-      parent: _animatedCirclesController,
-      curve: animationInterval,
-      reverseCurve: animationInterval,
-    ),
-  );
+  ) =>
+      TweenSequence<Offset>(<TweenSequenceItem<Offset>>[
+        TweenSequenceItem<Offset>(
+          tween: Tween<Offset>(begin: start, end: end),
+          weight: 50.0,
+        ),
+        TweenSequenceItem<Offset>(
+          tween: Tween<Offset>(begin: end, end: start),
+          weight: 50.0,
+        ),
+      ]).animate(
+        CurvedAnimation(
+          parent: _animatedCirclesController,
+          curve: animationInterval,
+          reverseCurve: animationInterval,
+        ),
+      );
 
   @override
   void didUpdateWidget(TypingIndicator oldWidget) {
@@ -127,66 +129,63 @@ class _TypingIndicatorState extends State<TypingIndicator>
       return SizedBox(height: _indicatorSpaceAnimation.value, child: child);
     },
     child: Row(
-      mainAxisAlignment:
-          widget.bubbleAlignment == BubbleRtlAlignment.right
-              ? MainAxisAlignment.start
-              : MainAxisAlignment.end,
+      mainAxisAlignment: widget.bubbleAlignment == BubbleRtlAlignment.right
+          ? MainAxisAlignment.start
+          : MainAxisAlignment.end,
       children: <Widget>[
         widget.bubbleAlignment == BubbleRtlAlignment.left
             ? Container(
-              margin: const EdgeInsets.only(right: 12),
-              child:
-                  widget.options.typingWidgetBuilder != null
-                      ? widget.options.typingWidgetBuilder!(
+                margin: const EdgeInsets.only(right: 12),
+                child: widget.options.typingWidgetBuilder != null
+                    ? widget.options.typingWidgetBuilder!(
                         widget: widget,
                         context: context,
                         mode: widget.options.typingMode,
                       )
-                      : (widget.options.customTypingWidget ??
+                    : (widget.options.customTypingWidget ??
                           TypingWidget(
                             widget: widget,
                             context: context,
                             mode: widget.options.typingMode,
                           )),
-            )
+              )
             : const SizedBox(),
         Container(
-          margin:
-              widget.bubbleAlignment == BubbleRtlAlignment.right
-                  ? const EdgeInsets.fromLTRB(24, 24, 0, 24)
-                  : const EdgeInsets.fromLTRB(0, 24, 24, 24),
+          margin: widget.bubbleAlignment == BubbleRtlAlignment.right
+              ? const EdgeInsets.fromLTRB(24, 24, 0, 24)
+              : const EdgeInsets.fromLTRB(0, 24, 24, 24),
           decoration: BoxDecoration(
-            borderRadius:
-                InheritedChatTheme.of(
-                  context,
-                ).theme.typingIndicatorTheme.bubbleBorder,
-            color:
-                InheritedChatTheme.of(
-                  context,
-                ).theme.typingIndicatorTheme.bubbleColor,
+            borderRadius: InheritedChatTheme.of(context)
+                .theme
+                .typingIndicatorTheme
+                .bubbleBorder,
+            color: InheritedChatTheme.of(context)
+                .theme
+                .typingIndicatorTheme
+                .bubbleColor,
           ),
           child: Wrap(
             spacing: 3.0,
             children: <Widget>[
               AnimatedCircles(
-                circlesColor:
-                    InheritedChatTheme.of(
-                      context,
-                    ).theme.typingIndicatorTheme.animatedCirclesColor,
+                circlesColor: InheritedChatTheme.of(context)
+                    .theme
+                    .typingIndicatorTheme
+                    .animatedCirclesColor,
                 animationOffset: _firstCircleOffsetAnimation,
               ),
               AnimatedCircles(
-                circlesColor:
-                    InheritedChatTheme.of(
-                      context,
-                    ).theme.typingIndicatorTheme.animatedCirclesColor,
+                circlesColor: InheritedChatTheme.of(context)
+                    .theme
+                    .typingIndicatorTheme
+                    .animatedCirclesColor,
                 animationOffset: _secondCircleOffsetAnimation,
               ),
               AnimatedCircles(
-                circlesColor:
-                    InheritedChatTheme.of(
-                      context,
-                    ).theme.typingIndicatorTheme.animatedCirclesColor,
+                circlesColor: InheritedChatTheme.of(context)
+                    .theme
+                    .typingIndicatorTheme
+                    .animatedCirclesColor,
                 animationOffset: _thirdCircleOffsetAnimation,
               ),
             ],
@@ -194,21 +193,20 @@ class _TypingIndicatorState extends State<TypingIndicator>
         ),
         widget.bubbleAlignment == BubbleRtlAlignment.right
             ? Container(
-              margin: const EdgeInsets.only(left: 12),
-              child:
-                  widget.options.typingWidgetBuilder != null
-                      ? widget.options.typingWidgetBuilder!(
+                margin: const EdgeInsets.only(left: 12),
+                child: widget.options.typingWidgetBuilder != null
+                    ? widget.options.typingWidgetBuilder!(
                         widget: widget,
                         context: context,
                         mode: widget.options.typingMode,
                       )
-                      : (widget.options.customTypingWidget ??
+                    : (widget.options.customTypingWidget ??
                           TypingWidget(
                             widget: widget,
                             context: context,
                             mode: widget.options.typingMode,
                           )),
-            )
+              )
             : const SizedBox(),
       ],
     ),
@@ -260,22 +258,22 @@ class TypingWidget extends StatelessWidget {
     );
     if (mode == TypingIndicatorMode.name) {
       return SizedBox(
-        child:
-            widget.options.multiUserTextBuilder != null
-                ? widget.options.multiUserTextBuilder!(
-                  context,
-                  widget.options.typingUsers,
-                  InheritedChatTheme.of(
-                    context,
-                  ).theme.typingIndicatorTheme.multipleUserTextStyle,
-                )
-                : Text(
-                  _multiUserTextBuilder(widget.options.typingUsers),
-                  style:
-                      InheritedChatTheme.of(
-                        context,
-                      ).theme.typingIndicatorTheme.multipleUserTextStyle,
-                ),
+        child: widget.options.multiUserTextBuilder != null
+            ? widget.options.multiUserTextBuilder!(
+                context,
+                widget.options.typingUsers,
+                InheritedChatTheme.of(context)
+                    .theme
+                    .typingIndicatorTheme
+                    .multipleUserTextStyle,
+              )
+            : Text(
+                _multiUserTextBuilder(widget.options.typingUsers),
+                style: InheritedChatTheme.of(context)
+                    .theme
+                    .typingIndicatorTheme
+                    .multipleUserTextStyle,
+              ),
       );
     } else if (mode == TypingIndicatorMode.avatar) {
       return SizedBox(
@@ -298,19 +296,20 @@ class TypingWidget extends StatelessWidget {
           const SizedBox(width: 10),
           widget.options.multiUserTextBuilder != null
               ? widget.options.multiUserTextBuilder!(
-                context,
-                widget.options.typingUsers,
-                InheritedChatTheme.of(
                   context,
-                ).theme.typingIndicatorTheme.multipleUserTextStyle,
-              )
+                  widget.options.typingUsers,
+                  InheritedChatTheme.of(context)
+                      .theme
+                      .typingIndicatorTheme
+                      .multipleUserTextStyle,
+                )
               : Text(
-                _multiUserTextBuilder(widget.options.typingUsers),
-                style:
-                    InheritedChatTheme.of(
-                      context,
-                    ).theme.typingIndicatorTheme.multipleUserTextStyle,
-              ),
+                  _multiUserTextBuilder(widget.options.typingUsers),
+                  style: InheritedChatTheme.of(context)
+                      .theme
+                      .typingIndicatorTheme
+                      .multipleUserTextStyle,
+                ),
         ],
       );
     }
@@ -356,17 +355,17 @@ class AvatarHandler extends StatelessWidget {
               left: 32,
               child: CircleAvatar(
                 radius: 13,
-                backgroundColor:
-                    InheritedChatTheme.of(
-                      context,
-                    ).theme.typingIndicatorTheme.countAvatarColor,
+                backgroundColor: InheritedChatTheme.of(context)
+                    .theme
+                    .typingIndicatorTheme
+                    .countAvatarColor,
                 child: Text(
                   '${author.length - 2}',
                   style: TextStyle(
-                    color:
-                        InheritedChatTheme.of(
-                          context,
-                        ).theme.typingIndicatorTheme.countTextColor,
+                    color: InheritedChatTheme.of(context)
+                        .theme
+                        .typingIndicatorTheme
+                        .countTextColor,
                   ),
                   textAlign: TextAlign.center,
                   textScaler: const TextScaler.linear(0.7),
@@ -397,22 +396,18 @@ class TypingAvatar extends StatelessWidget {
     final initials = getUserInitials(author);
 
     return CircleAvatar(
-      backgroundColor:
-          hasImage
-              ? InheritedChatTheme.of(
-                context,
-              ).theme.userAvatarImageBackgroundColor
-              : color,
+      backgroundColor: hasImage
+          ? InheritedChatTheme.of(context).theme.userAvatarImageBackgroundColor
+          : color,
       backgroundImage: hasImage ? NetworkImage(author.imageUrl!) : null,
       radius: 13,
-      child:
-          !hasImage
-              ? Text(
-                initials,
-                style: InheritedChatTheme.of(context).theme.userAvatarTextStyle,
-                textScaler: const TextScaler.linear(0.7),
-              )
-              : null,
+      child: !hasImage
+          ? Text(
+              initials,
+              style: InheritedChatTheme.of(context).theme.userAvatarTextStyle,
+              textScaler: const TextScaler.linear(0.7),
+            )
+          : null,
     );
   }
 }
@@ -432,14 +427,14 @@ class AnimatedCircles extends StatelessWidget {
     return SlideTransition(
       position: animationOffset,
       child: Container(
-        height:
-            InheritedChatTheme.of(
-              context,
-            ).theme.typingIndicatorTheme.animatedCircleSize,
-        width:
-            InheritedChatTheme.of(
-              context,
-            ).theme.typingIndicatorTheme.animatedCircleSize,
+        height: InheritedChatTheme.of(context)
+            .theme
+            .typingIndicatorTheme
+            .animatedCircleSize,
+        width: InheritedChatTheme.of(context)
+            .theme
+            .typingIndicatorTheme
+            .animatedCircleSize,
         decoration: BoxDecoration(color: circlesColor, shape: BoxShape.circle),
       ),
     );

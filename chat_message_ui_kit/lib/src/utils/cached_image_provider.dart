@@ -61,11 +61,10 @@ class CachedImageProvider extends ImageProvider<CachedImageProvider> {
   ) {
     return OneFrameImageStreamCompleter(
       _loadAsync(key, decode),
-      informationCollector:
-          () => <DiagnosticsNode>[
-            DiagnosticsProperty<CachedImageProvider>('Image provider', this),
-            DiagnosticsProperty<String>('Image URL', url),
-          ],
+      informationCollector: () => <DiagnosticsNode>[
+        DiagnosticsProperty<CachedImageProvider>('Image provider', this),
+        DiagnosticsProperty<String>('Image URL', url),
+      ],
     );
   }
 
@@ -193,10 +192,8 @@ class CachedImageProvider extends ImageProvider<CachedImageProvider> {
     if (_currentMemoryUsage <= targetSize) return;
 
     // Sort by last accessed (LRU)
-    final entries =
-        _memoryCache.entries.toList()..sort(
-          (a, b) => a.value.lastAccessed.compareTo(b.value.lastAccessed),
-        );
+    final entries = _memoryCache.entries.toList()
+      ..sort((a, b) => a.value.lastAccessed.compareTo(b.value.lastAccessed));
 
     // Remove oldest entries until under memory limit
     for (final entry in entries) {
@@ -232,11 +229,10 @@ class CachedImageProvider extends ImageProvider<CachedImageProvider> {
     );
 
     // Draw X
-    final paint =
-        Paint()
-          ..color = Colors.grey[600]!
-          ..strokeWidth = 4
-          ..strokeCap = StrokeCap.round;
+    final paint = Paint()
+      ..color = Colors.grey[600]!
+      ..strokeWidth = 4
+      ..strokeCap = StrokeCap.round;
 
     canvas.drawLine(const Offset(20, 20), const Offset(80, 80), paint);
     canvas.drawLine(const Offset(80, 20), const Offset(20, 80), paint);

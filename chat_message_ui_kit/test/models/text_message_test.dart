@@ -105,9 +105,10 @@ void main() {
         status: Status.sending,
       );
 
-      final updatedMessage =
-          originalMessage.copyWith(text: 'Updated text', status: Status.sent)
-              as TextMessageModel;
+      final updatedMessage = originalMessage.copyWith(
+        text: 'Updated text',
+        status: Status.sent,
+      ) as TextMessageModel;
 
       expect(updatedMessage.text, equals('Updated text'));
       expect(updatedMessage.status, equals(Status.sent));

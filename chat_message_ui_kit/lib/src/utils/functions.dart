@@ -60,14 +60,12 @@ String formattedDateTimeRep(
   String? dateLocale,
   DateFormat? timeFormat,
 }) {
-  final formattedDate =
-      dateFormat != null
-          ? dateFormat.format(dateTime)
-          : DateFormat.MMMd(dateLocale).format(dateTime);
-  final formattedTime =
-      timeFormat != null
-          ? timeFormat.format(dateTime)
-          : DateFormat.Hm(dateLocale).format(dateTime);
+  final formattedDate = dateFormat != null
+      ? dateFormat.format(dateTime)
+      : DateFormat.MMMd(dateLocale).format(dateTime);
+  final formattedTime = timeFormat != null
+      ? timeFormat.format(dateTime)
+      : DateFormat.Hm(dateLocale).format(dateTime);
   final localDateTime = dateTime.toLocal();
   final now = DateTime.now();
 
@@ -197,23 +195,22 @@ List<Object> calculateChatMessages(
             message.createdAt!,
             isUtc: dateIsUtc,
           ),
-          text:
-              customDateHeaderText != null
-                  ? customDateHeaderText(
-                    DateTime.fromMillisecondsSinceEpoch(
-                      message.createdAt!,
-                      isUtc: dateIsUtc,
-                    ),
-                  )
-                  : formattedDateTimeRep(
-                    DateTime.fromMillisecondsSinceEpoch(
-                      message.createdAt!,
-                      isUtc: dateIsUtc,
-                    ),
-                    dateFormat: dateFormat,
-                    dateLocale: dateLocale,
-                    timeFormat: timeFormat,
+          text: customDateHeaderText != null
+              ? customDateHeaderText(
+                  DateTime.fromMillisecondsSinceEpoch(
+                    message.createdAt!,
+                    isUtc: dateIsUtc,
                   ),
+                )
+              : formattedDateTimeRep(
+                  DateTime.fromMillisecondsSinceEpoch(
+                    message.createdAt!,
+                    isUtc: dateIsUtc,
+                  ),
+                  dateFormat: dateFormat,
+                  dateLocale: dateLocale,
+                  timeFormat: timeFormat,
+                ),
         ),
       );
     }
@@ -237,23 +234,22 @@ List<Object> calculateChatMessages(
             nextMessage!.createdAt!,
             isUtc: dateIsUtc,
           ),
-          text:
-              customDateHeaderText != null
-                  ? customDateHeaderText(
-                    DateTime.fromMillisecondsSinceEpoch(
-                      nextMessage.createdAt!,
-                      isUtc: dateIsUtc,
-                    ),
-                  )
-                  : formattedDateTimeRep(
-                    DateTime.fromMillisecondsSinceEpoch(
-                      nextMessage.createdAt!,
-                      isUtc: dateIsUtc,
-                    ),
-                    dateFormat: dateFormat,
-                    dateLocale: dateLocale,
-                    timeFormat: timeFormat,
+          text: customDateHeaderText != null
+              ? customDateHeaderText(
+                  DateTime.fromMillisecondsSinceEpoch(
+                    nextMessage.createdAt!,
+                    isUtc: dateIsUtc,
                   ),
+                )
+              : formattedDateTimeRep(
+                  DateTime.fromMillisecondsSinceEpoch(
+                    nextMessage.createdAt!,
+                    isUtc: dateIsUtc,
+                  ),
+                  dateFormat: dateFormat,
+                  dateLocale: dateLocale,
+                  timeFormat: timeFormat,
+                ),
         ),
       );
     }
@@ -262,8 +258,9 @@ List<Object> calculateChatMessages(
       chatMessages.insert(
         0,
         UnreadHeaderData(
-          marginTop:
-              nextMessageDifferentDay || nextMessageDateThreshold ? 0 : 8,
+          marginTop: nextMessageDifferentDay || nextMessageDateThreshold
+              ? 0
+              : 8,
         ),
       );
     }

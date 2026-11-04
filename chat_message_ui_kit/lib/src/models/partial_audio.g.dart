@@ -11,12 +11,11 @@ PartialAudioModel _$PartialAudioModelFromJson(Map<String, dynamic> json) =>
       duration: Duration(microseconds: (json['duration'] as num).toInt()),
       mimeType: json['mimeType'] as String?,
       name: json['name'] as String,
-      repliedMessage:
-          json['repliedMessage'] == null
-              ? null
-              : MessageModel.fromJson(
-                json['repliedMessage'] as Map<String, dynamic>,
-              ),
+      repliedMessage: json['repliedMessage'] == null
+          ? null
+          : MessageModel.fromJson(
+              json['repliedMessage'] as Map<String, dynamic>,
+            ),
       size: json['size'] as num,
       uri: json['uri'] as String,
     );
