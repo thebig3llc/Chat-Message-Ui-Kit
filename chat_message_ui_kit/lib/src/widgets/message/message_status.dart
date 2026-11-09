@@ -17,26 +17,26 @@ class MessageStatus extends StatelessWidget {
       case Status.sent:
         return InheritedChatTheme.of(context).theme.deliveredIcon != null
             ? InheritedChatTheme.of(context).theme.deliveredIcon!
-            : Image.asset(
-                'assets/icon-delivered.png',
+            : Icon(
+                Icons.done,
                 color: InheritedChatTheme.of(context).theme.primaryColor,
-                package: 'flutter_chat_ui',
+                size: 16,
               );
       case Status.error:
         return InheritedChatTheme.of(context).theme.errorIcon != null
             ? InheritedChatTheme.of(context).theme.errorIcon!
-            : Image.asset(
-                'assets/icon-error.png',
+            : Icon(
+                Icons.error_outline,
                 color: InheritedChatTheme.of(context).theme.errorColor,
-                package: 'flutter_chat_ui',
+                size: 16,
               );
       case Status.seen:
         return InheritedChatTheme.of(context).theme.seenIcon != null
             ? InheritedChatTheme.of(context).theme.seenIcon!
-            : Image.asset(
-                'assets/icon-seen.png',
+            : Icon(
+                Icons.done_all,
                 color: InheritedChatTheme.of(context).theme.primaryColor,
-                package: 'flutter_chat_ui',
+                size: 16,
               );
       case Status.sending:
         return InheritedChatTheme.of(context).theme.sendingIcon != null

@@ -224,8 +224,9 @@ void main() {
       expect(find.text('Delivered message'), findsOneWidget);
       expect(find.text('Seen message'), findsOneWidget);
 
-      // Status icons should be present
-      expect(find.byType(Icon), findsWidgets);
+      // Status icons should be present: sent and delivered share an icon
+      expect(find.byIcon(Icons.done), findsNWidgets(2));
+      expect(find.byIcon(Icons.done_all), findsOneWidget);
     });
 
     testWidgets('Large message list performance', (tester) async {
