@@ -1,7 +1,6 @@
-import 'package:chat_message_ui_kit/src/enums/message_status.dart';
+import 'package:chat_message_core/chat_message_core.dart';
+import 'package:chat_message_ui_kit/src/inherited/inherited_chat_theme.dart';
 import 'package:flutter/material.dart';
-
-import '../../inherited/inherited_chat_theme.dart';
 
 /// A class that represents a message status.
 class MessageStatus extends StatelessWidget {

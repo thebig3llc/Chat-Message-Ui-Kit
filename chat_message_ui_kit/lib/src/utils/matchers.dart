@@ -1,7 +1,6 @@
+import 'package:chat_message_core/chat_message_core.dart';
 import 'package:chat_message_ui_kit/src/models/match_text.dart';
-import 'package:chat_message_ui_kit/src/enums/parsed_type.dart';
 import 'package:chat_message_ui_kit/src/models/pattern_style.dart';
-import 'package:chat_message_ui_kit/src/utils/regex.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -15,7 +14,7 @@ MatchText mailToMatcher({TextStyle? style}) {
         await launchUrl(url);
       }
     },
-    pattern: regexEmail,
+    pattern: ChatCoreRegex.regexEmail,
     style: style,
     parsedType: ParsedType.email,
   );
@@ -41,7 +40,7 @@ MatchText urlMatcher({TextStyle? style, Function(String url)? onLinkPressed}) {
         }
       }
     },
-    pattern: regexLink,
+    pattern: ChatCoreRegex.regexLink,
     style: style,
     parsedType: ParsedType.url,
   );

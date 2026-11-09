@@ -1,12 +1,11 @@
 import 'dart:async';
 import 'dart:math' as math;
 
+import 'package:chat_message_core/chat_message_core.dart';
+import 'package:chat_message_ui_kit/src/utils/conditional.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view_gallery.dart';
-
-import '../utils/conditional.dart';
-import '../models/preview_image.dart';
 
 /// Memory-optimized image gallery with lazy loading and automatic disposal
 /// of off-screen images to prevent memory leaks and OOM crashes.

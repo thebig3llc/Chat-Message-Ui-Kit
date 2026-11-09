@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:chat_message_ui_kit/src/models/preview_image.dart';
+import 'package:chat_message_core/chat_message_core.dart';
 import 'package:chat_message_ui_kit/src/utils/cached_image_provider.dart';
 import 'package:chat_message_ui_kit/src/utils/image_compression.dart';
 import 'package:chat_message_ui_kit/src/widgets/image_gallery.dart';

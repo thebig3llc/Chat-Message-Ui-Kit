@@ -1,20 +1,11 @@
 import 'dart:math';
 import 'dart:ui';
 
-import 'package:chat_message_ui_kit/src/models/message.dart';
-import 'package:chat_message_ui_kit/src/models/image_message.dart';
-import 'package:chat_message_ui_kit/src/models/text_message.dart';
-import 'package:chat_message_ui_kit/src/models/chat_user.dart';
-import 'package:chat_message_ui_kit/src/enums/message_type.dart';
+import 'package:chat_message_core/chat_message_core.dart';
+import 'package:chat_message_ui_kit/src/enums/emoji_enlargement_behavior.dart';
 import 'package:flutter/foundation.dart'
     show TargetPlatform, defaultTargetPlatform, kIsWeb;
 import 'package:intl/intl.dart';
-
-import '../models/date_header.dart';
-import '../enums/emoji_enlargement_behavior.dart';
-import '../models/message_spacer.dart';
-import '../models/preview_image.dart';
-import '../models/unread_header_data.dart';
 
 /// Converts byte size to human-readable format with appropriate units (B, kB, MB, GB, etc.).
 /// Uses binary calculation (1024-based) for accurate file size representation.

@@ -1,9 +1,8 @@
-import 'package:chat_message_ui_kit/src/models/chat_user.dart';
+import 'package:chat_message_core/chat_message_core.dart';
+import 'package:chat_message_ui_kit/src/enums/bubble_rtl_alignment.dart';
+import 'package:chat_message_ui_kit/src/inherited/inherited_chat_theme.dart';
+import 'package:chat_message_ui_kit/src/utils/functions.dart';
 import 'package:flutter/material.dart';
-
-import '../../enums/bubble_rtl_alignment.dart';
-import '../../utils/functions.dart';
-import '../../inherited/inherited_chat_theme.dart';
 
 /// Renders user's avatar or initials next to a message.
 class UserAvatar extends StatelessWidget {

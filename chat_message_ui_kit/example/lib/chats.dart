@@ -1,3 +1,4 @@
+import 'package:chat_message_core/chat_message_core.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_message_ui_kit/chat_message_ui_kit.dart';
 

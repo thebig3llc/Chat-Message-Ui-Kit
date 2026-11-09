@@ -1,12 +1,10 @@
+import 'package:chat_message_core/chat_message_core.dart';
+import 'package:chat_message_ui_kit/src/enums/bubble_rtl_alignment.dart';
+import 'package:chat_message_ui_kit/src/widgets/chat/optimized_chat_list.dart';
+import 'package:chat_message_ui_kit/src/widgets/message/image_message.dart';
+import 'package:chat_message_ui_kit/src/widgets/message/lazy_image_message.dart';
+import 'package:chat_message_ui_kit/src/widgets/typing_indicator.dart';
 import 'package:flutter/material.dart';
-
-import '../../models/message.dart';
-import '../../models/image_message.dart';
-import '../../enums/bubble_rtl_alignment.dart';
-import '../typing_indicator.dart';
-import 'optimized_chat_list.dart';
-import '../message/lazy_image_message.dart';
-import '../message/image_message.dart';
 
 /// Performance-optimized Chat widget that uses the optimized ChatList and lazy loading components.
 /// This is a drop-in replacement for the standard Chat widget with better performance for large message lists.

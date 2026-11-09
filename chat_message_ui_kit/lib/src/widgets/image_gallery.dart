@@ -1,9 +1,8 @@
+import 'package:chat_message_core/chat_message_core.dart';
+import 'package:chat_message_ui_kit/src/utils/conditional.dart';
+import 'package:chat_message_ui_kit/src/widgets/optimized_image_gallery.dart';
 import 'package:flutter/material.dart';
 import 'package:photo_view/photo_view_gallery.dart';
-
-import '../utils/conditional.dart';
-import '../models/preview_image.dart';
-import 'optimized_image_gallery.dart';
 
 /// Image gallery widget with automatic memory optimization.
 /// This widget now uses OptimizedImageGallery internally for better performance

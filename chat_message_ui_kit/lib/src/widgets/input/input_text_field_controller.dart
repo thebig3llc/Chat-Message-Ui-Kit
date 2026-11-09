@@ -1,6 +1,5 @@
+import 'package:chat_message_ui_kit/src/models/pattern_style.dart';
 import 'package:flutter/material.dart';
-
-import '../../models/pattern_style.dart';
 
 /// Enhanced text editing controller that provides real-time markdown highlighting in the input field.
 /// Extends TextEditingController to add visual formatting for bold, italic, strikethrough, and code patterns

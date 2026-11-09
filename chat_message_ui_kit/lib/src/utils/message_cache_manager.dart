@@ -1,8 +1,7 @@
 import 'dart:collection';
 
+import 'package:chat_message_core/chat_message_core.dart';
 import 'package:flutter/widgets.dart';
-
-import '../models/message.dart';
 
 /// Manages widget caching and memory usage for chat messages
 class MessageCacheManager {

@@ -1,8 +1,6 @@
 // ignore_for_file: avoid_unnecessary_containers
 
-import 'package:chat_message_ui_kit/src/models/message.dart';
-import 'package:chat_message_ui_kit/src/models/text_message.dart';
-import 'package:chat_message_ui_kit/src/models/chat_user.dart';
+import 'package:chat_message_core/chat_message_core.dart';
 import 'package:chat_message_ui_kit/src/enums/bubble_rtl_alignment.dart';
 import 'package:chat_message_ui_kit/src/utils/message_cache_manager.dart';
 import 'package:chat_message_ui_kit/src/widgets/chat/optimized_chat_list.dart';

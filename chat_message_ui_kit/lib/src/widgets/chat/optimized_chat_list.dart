@@ -1,14 +1,13 @@
 import 'dart:async';
 import 'dart:isolate';
 
-import 'package:chat_message_ui_kit/src/models/message.dart';
+import 'package:chat_message_core/chat_message_core.dart';
+import 'package:chat_message_ui_kit/src/enums/bubble_rtl_alignment.dart';
+import 'package:chat_message_ui_kit/src/inherited/inherited_chat_theme.dart';
+import 'package:chat_message_ui_kit/src/inherited/inherited_user.dart';
+import 'package:chat_message_ui_kit/src/utils/message_cache_manager.dart';
+import 'package:chat_message_ui_kit/src/widgets/typing_indicator.dart';
 import 'package:flutter/material.dart';
-
-import '../../enums/bubble_rtl_alignment.dart';
-import '../../utils/message_cache_manager.dart';
-import '../../inherited/inherited_chat_theme.dart';
-import '../../inherited/inherited_user.dart';
-import '../typing_indicator.dart';
 
 /// Performance-optimized chat list that uses ListView.builder for better memory usage
 /// and moves diff calculations to isolate for large message lists.

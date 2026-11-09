@@ -1,8 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:chat_message_ui_kit/src/utils/regex.dart';
-import 'package:chat_message_ui_kit/src/models/preview_data.dart';
+import 'package:chat_message_core/chat_message_core.dart';
 import 'package:flutter/material.dart' hide Element;
 import 'package:html/dom.dart';
 import 'package:html/parser.dart' as parser;
@@ -23,13 +22,13 @@ Future<PreviewData> getPreviewData(
   String? previewDataUrl;
 
   try {
-    final emailRegexp = RegExp(regexEmail, caseSensitive: false);
+    final emailRegexp = RegExp(ChatCoreRegex.regexEmail, caseSensitive: false);
     final textWithoutEmails = text
         .replaceAllMapped(emailRegexp, (match) => '')
         .trim();
     if (textWithoutEmails.isEmpty) return previewData;
 
-    final urlRegexp = RegExp(regexLink, caseSensitive: false);
+    final urlRegexp = RegExp(ChatCoreRegex.regexLink, caseSensitive: false);
     final matches = urlRegexp.allMatches(textWithoutEmails);
     if (matches.isEmpty) return previewData;
 
@@ -48,7 +47,7 @@ Future<PreviewData> getPreviewData(
         .timeout(requestTimeout ?? const Duration(seconds: 5));
     final document = parser.parse(utf8.decode(response.bodyBytes));
 
-    final imageRegexp = RegExp(regexImageContentType);
+    final imageRegexp = RegExp(ChatCoreRegex.regexImageContentType);
 
     if (imageRegexp.hasMatch(response.headers['content-type'] ?? '')) {
       final imageSize = await _getImageSize(previewDataUrl);

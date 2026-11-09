@@ -1,5 +1,5 @@
+import 'package:chat_message_core/chat_message_core.dart';
 import 'package:chat_message_ui_kit/src/models/match_text.dart';
-import 'package:chat_message_ui_kit/src/enums/parsed_type.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 

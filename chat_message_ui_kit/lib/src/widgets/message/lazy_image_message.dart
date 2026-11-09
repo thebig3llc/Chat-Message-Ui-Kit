@@ -1,13 +1,12 @@
 import 'dart:math' as math;
 
-import 'package:chat_message_ui_kit/src/models/image_message.dart';
+import 'package:chat_message_core/chat_message_core.dart';
+import 'package:chat_message_ui_kit/src/inherited/inherited_chat_theme.dart';
+import 'package:chat_message_ui_kit/src/inherited/inherited_user.dart';
+import 'package:chat_message_ui_kit/src/utils/conditional.dart';
+import 'package:chat_message_ui_kit/src/utils/functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-
-import '../../utils/conditional.dart';
-import '../../utils/functions.dart';
-import '../../inherited/inherited_chat_theme.dart';
-import '../../inherited/inherited_user.dart';
 
 /// Performance-optimized image message widget with lazy loading capabilities.
 /// Only loads images when they become visible and disposes them when scrolled away.

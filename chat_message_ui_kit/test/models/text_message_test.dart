@@ -1,5 +1,4 @@
-import 'package:chat_message_ui_kit/chat_message_ui_kit.dart';
-import 'package:chat_message_ui_kit/src/models/preview_data.dart';
+import 'package:chat_message_core/chat_message_core.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

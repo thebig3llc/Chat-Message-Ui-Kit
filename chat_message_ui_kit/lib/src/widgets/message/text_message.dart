@@ -1,19 +1,15 @@
+import 'package:chat_message_core/chat_message_core.dart';
+import 'package:chat_message_ui_kit/src/enums/emoji_enlargement_behavior.dart';
+import 'package:chat_message_ui_kit/src/inherited/inherited_chat_theme.dart';
+import 'package:chat_message_ui_kit/src/inherited/inherited_user.dart';
 import 'package:chat_message_ui_kit/src/models/match_text.dart';
-import 'package:chat_message_ui_kit/src/models/text_message.dart';
-import 'package:chat_message_ui_kit/src/models/preview_data.dart';
-import 'package:chat_message_ui_kit/src/models/chat_user.dart';
-import 'package:chat_message_ui_kit/src/utils/regex.dart';
+import 'package:chat_message_ui_kit/src/models/pattern_style.dart';
+import 'package:chat_message_ui_kit/src/utils/functions.dart';
+import 'package:chat_message_ui_kit/src/utils/matchers.dart';
 import 'package:chat_message_ui_kit/src/widgets/linking/link_preview.dart';
+import 'package:chat_message_ui_kit/src/widgets/message/user_name.dart';
 import 'package:chat_message_ui_kit/src/widgets/parsed_text.dart';
 import 'package:flutter/material.dart';
-
-import '../../enums/emoji_enlargement_behavior.dart';
-import '../../utils/matchers.dart';
-import '../../models/pattern_style.dart';
-import '../../utils/functions.dart';
-import '../../inherited/inherited_chat_theme.dart';
-import '../../inherited/inherited_user.dart';
-import 'user_name.dart';
 
 /// Widget that renders text messages with support for markdown, link previews, and emoji enlargement.
 /// This is the most common message type, handling plain text with advanced formatting capabilities
@@ -186,7 +182,7 @@ class TextMessage extends StatelessWidget {
 
     // Check if link preview should be shown (if enabled and URLs detected)
     if (usePreviewData && onPreviewDataFetched != null) {
-      final urlRegexp = RegExp(regexLink, caseSensitive: false);
+      final urlRegexp = RegExp(ChatCoreRegex.regexLink, caseSensitive: false);
       final matches = urlRegexp.allMatches(message.text);
 
       // Show link preview widget if URLs are found in the text

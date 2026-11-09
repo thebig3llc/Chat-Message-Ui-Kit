@@ -1,10 +1,9 @@
-import 'package:chat_message_ui_kit/src/models/chat_user.dart';
+import 'package:chat_message_core/chat_message_core.dart';
 import 'package:chat_message_ui_kit/src/enums/bubble_rtl_alignment.dart';
 import 'package:chat_message_ui_kit/src/enums/typing_indicator_mode.dart';
+import 'package:chat_message_ui_kit/src/inherited/inherited_chat_theme.dart';
+import 'package:chat_message_ui_kit/src/utils/functions.dart';
 import 'package:flutter/material.dart';
-
-import '../utils/functions.dart';
-import '../inherited/inherited_chat_theme.dart';
 
 class TypingIndicator extends StatefulWidget {
   const TypingIndicator({

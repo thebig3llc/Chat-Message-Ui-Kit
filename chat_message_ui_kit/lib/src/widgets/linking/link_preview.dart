@@ -1,9 +1,9 @@
-import 'package:chat_message_ui_kit/src/models/preview_data.dart';
+import 'package:chat_message_core/chat_message_core.dart';
 import 'package:chat_message_ui_kit/src/utils/preview_data.dart';
 import 'package:chat_message_ui_kit/src/widgets/linking/selectable_link.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:linkify/linkify.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 /// A widget that renders text with highlighted links.
 /// Eventually unwraps to the full preview of the first found link

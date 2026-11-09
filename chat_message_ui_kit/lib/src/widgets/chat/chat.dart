@@ -1,38 +1,26 @@
 import 'dart:math';
 
-import 'package:chat_message_ui_kit/src/models/message.dart';
-import 'package:chat_message_ui_kit/src/models/audio_message.dart';
-import 'package:chat_message_ui_kit/src/models/image_message.dart';
-import 'package:chat_message_ui_kit/src/models/partial_text.dart';
-import 'package:chat_message_ui_kit/src/models/text_message.dart';
-import 'package:chat_message_ui_kit/src/models/video_message.dart';
-import 'package:chat_message_ui_kit/src/models/preview_data.dart';
-import 'package:chat_message_ui_kit/src/models/chat_user.dart';
+import 'package:chat_message_core/chat_message_core.dart';
+import 'package:chat_message_ui_kit/src/enums/bubble_rtl_alignment.dart';
+import 'package:chat_message_ui_kit/src/enums/emoji_enlargement_behavior.dart';
+import 'package:chat_message_ui_kit/src/inherited/inherited_chat_theme.dart';
+import 'package:chat_message_ui_kit/src/inherited/inherited_l10n.dart';
+import 'package:chat_message_ui_kit/src/inherited/inherited_user.dart';
+import 'package:chat_message_ui_kit/src/themes/chat_theme.dart';
+import 'package:chat_message_ui_kit/src/utils/chat_l10n.dart';
+import 'package:chat_message_ui_kit/src/utils/conditional.dart';
+import 'package:chat_message_ui_kit/src/utils/functions.dart';
+import 'package:chat_message_ui_kit/src/widgets/chat/chat_list.dart';
+import 'package:chat_message_ui_kit/src/widgets/image_gallery.dart';
+import 'package:chat_message_ui_kit/src/widgets/input/input.dart';
+import 'package:chat_message_ui_kit/src/widgets/message/message.dart';
+import 'package:chat_message_ui_kit/src/widgets/message/text_message.dart';
+import 'package:chat_message_ui_kit/src/widgets/typing_indicator.dart';
+import 'package:chat_message_ui_kit/src/widgets/unread_header.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
-
-import '../../utils/chat_l10n.dart';
-import '../../themes/chat_theme.dart';
-import '../../utils/conditional.dart';
-import '../../enums/bubble_rtl_alignment.dart';
-import '../../models/date_header.dart';
-import '../../enums/emoji_enlargement_behavior.dart';
-import '../../models/message_spacer.dart';
-import '../../models/preview_image.dart';
-import '../../models/unread_header_data.dart';
-import '../../utils/functions.dart';
-import 'chat_list.dart';
-import '../image_gallery.dart';
-import '../input/input.dart';
-import '../message/message.dart';
-import '../message/text_message.dart';
-import '../../inherited/inherited_chat_theme.dart';
-import '../../inherited/inherited_l10n.dart';
-import '../../inherited/inherited_user.dart';
-import '../typing_indicator.dart';
-import '../unread_header.dart';
 
 /// Keep track of all the auto scroll indices by their respective message's id to allow animating to them.
 final Map<String, int> _chatMessageAutoScrollIndexById = {};
