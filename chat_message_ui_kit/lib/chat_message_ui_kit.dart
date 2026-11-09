@@ -7,6 +7,7 @@ export 'src/enums/send_button_visibility_mode.dart';
 export 'src/enums/typing_indicator_mode.dart';
 export 'src/themes/chat_theme.dart';
 export 'src/utils/chat_l10n.dart';
+export 'src/utils/conditional.dart';
 export 'src/utils/functions.dart' show formatBytes, consistsOfEmojis;
 export 'src/utils/matchers.dart';
 export 'src/widgets/chat/chat.dart';
