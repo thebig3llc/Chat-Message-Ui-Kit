@@ -374,6 +374,7 @@ Effort: S is under a day, M is one to three days, L is more than three days. The
 | U17 | System messages (core) | None | M |
 | U18 | Custom type plus a fallback bubble for unknown types | Ties into B5/D1 | M |
 | U19 | Default voice-note and video bubbles | Without builders they render `const SizedBox()` (`message.dart:234-236`, `268-270`), though README claims support. See D3. | L |
+| U30 | Image load-error fallback: a default placeholder plus an `imageErrorBuilder` on `Chat` | `ImageMessage` (`image_message.dart:128`, `181`) and the non-optimized `ImageGallery` (`image_gallery.dart:91-100`) set no `errorBuilder`, so a failed load reports a `FlutterError` and shows Flutter's debug error box. Only `OptimizedImageGallery` has one. Extends B10. | S/M |
 
 ### Input
 | ID | Item | Evidence | Effort |
