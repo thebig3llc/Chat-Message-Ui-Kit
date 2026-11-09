@@ -9,7 +9,6 @@ export 'src/themes/chat_theme.dart';
 export 'src/utils/chat_l10n.dart';
 export 'src/utils/functions.dart' show formatBytes, consistsOfEmojis;
 export 'src/utils/matchers.dart';
-export 'src/utils/preview_data.dart';
 export 'src/widgets/chat/chat.dart';
 export 'src/widgets/chat/chat_list.dart';
 export 'src/widgets/image_gallery.dart';

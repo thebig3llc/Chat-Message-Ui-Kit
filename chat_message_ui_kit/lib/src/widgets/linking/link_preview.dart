@@ -1,5 +1,6 @@
+import 'dart:async';
+
 import 'package:chat_message_core/chat_message_core.dart';
-import 'package:chat_message_ui_kit/src/utils/preview_data.dart';
 import 'package:chat_message_ui_kit/src/widgets/linking/selectable_link.dart';
 import 'package:flutter/material.dart';
 import 'package:linkify/linkify.dart';
@@ -252,8 +253,9 @@ class _LinkPreviewState extends State<LinkPreview>
       isFetchingPreviewData = true;
     });
 
-    final previewData = await getPreviewData(
+    final previewData = await ChatCoreFunctions().getPreviewData(
       text,
+      imageSizeResolver: _resolveImageSize,
       proxy: widget.corsProxy,
       requestTimeout: widget.requestTimeout,
       userAgent: widget.userAgent,
@@ -447,4 +449,34 @@ class _LinkPreviewState extends State<LinkPreview>
       return _containerWidget(animate: false);
     }
   }
+}
+
+/// Loads the image at [url] to read its pixel size. Passed to
+/// `getPreviewData` as its `imageSizeResolver`, since `chat_message_core`
+/// has no Flutter dependency and can't decode images itself.
+Future<({double height, double width})> _resolveImageSize(String url) {
+  final completer = Completer<({double height, double width})>();
+  final stream = NetworkImage(url).resolve(ImageConfiguration.empty);
+  late ImageStreamListener streamListener;
+
+  void listener(ImageInfo info, bool _) {
+    stream.removeListener(streamListener);
+    if (!completer.isCompleted) {
+      completer.complete((
+        height: info.image.height.toDouble(),
+        width: info.image.width.toDouble(),
+      ));
+    }
+  }
+
+  void onError(Object error, StackTrace? stackTrace) {
+    stream.removeListener(streamListener);
+    if (!completer.isCompleted) {
+      completer.completeError(error, stackTrace);
+    }
+  }
+
+  streamListener = ImageStreamListener(listener, onError: onError);
+  stream.addListener(streamListener);
+  return completer.future;
 }
