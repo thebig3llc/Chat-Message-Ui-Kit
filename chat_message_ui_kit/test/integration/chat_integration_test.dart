@@ -3,6 +3,8 @@ import 'package:chat_message_ui_kit/chat_message_ui_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import '../helpers/test_image.dart';
+
 void main() {
   group('Chat Integration Tests', () {
     const testUser = ChatUser(id: 'user123', firstName: 'John');
@@ -105,7 +107,12 @@ void main() {
 
       await tester.pumpWidget(
         MaterialApp(
-          home: Chat(messages: messages, onSendPressed: (_) {}, user: testUser),
+          home: Chat(
+            messages: messages,
+            onSendPressed: (_) {},
+            user: testUser,
+            imageProviderBuilder: testImageProviderBuilder,
+          ),
         ),
       );
 
@@ -161,12 +168,16 @@ void main() {
               messageCount++;
             },
             user: testUser,
+            // Keep the send button visible so empty input can be submitted.
+            inputOptions: const InputOptions(
+              sendButtonVisibilityMode: SendButtonVisibilityMode.always,
+            ),
           ),
         ),
       );
 
       // Try to send empty message
-      await tester.tap(find.byType(IconButton).last);
+      await tester.tap(find.byType(SendButton));
       await tester.pump();
 
       // Should not send empty message
@@ -174,7 +185,7 @@ void main() {
 
       // Type whitespace only
       await tester.enterText(find.byType(TextField), '   ');
-      await tester.tap(find.byType(IconButton).last);
+      await tester.tap(find.byType(SendButton));
       await tester.pump();
 
       // Should not send whitespace-only message
@@ -182,7 +193,7 @@ void main() {
 
       // Type actual message
       await tester.enterText(find.byType(TextField), 'Real message');
-      await tester.tap(find.byType(IconButton).last);
+      await tester.tap(find.byType(SendButton));
       await tester.pump();
 
       // Should send real message
@@ -252,7 +263,7 @@ void main() {
       expect(find.byType(Chat), findsOneWidget);
 
       // Scroll to test performance
-      await tester.drag(find.byType(ListView), const Offset(0, -500));
+      await tester.drag(find.byType(CustomScrollView), const Offset(0, -500));
       await tester.pump();
 
       // Should still be functional

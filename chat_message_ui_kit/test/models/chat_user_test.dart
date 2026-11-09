@@ -65,11 +65,12 @@ void main() {
       final fromJson = ChatUser.fromJson(json);
 
       expect(fromJson, equals(user));
+      // chat_message_core writes unset fields as explicit nulls.
       expect(json['id'], equals('user123'));
-      expect(json.containsKey('firstName'), isFalse);
-      expect(json.containsKey('lastName'), isFalse);
-      expect(json.containsKey('imageUrl'), isFalse);
-      expect(json.containsKey('createdAt'), isFalse);
+      expect(json, containsPair('firstName', null));
+      expect(json, containsPair('lastName', null));
+      expect(json, containsPair('imageUrl', null));
+      expect(json, containsPair('createdAt', null));
     });
 
     test('props includes all fields for equality', () {

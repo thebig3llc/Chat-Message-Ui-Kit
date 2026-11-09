@@ -64,8 +64,14 @@ void main() {
       // Verify the widget built successfully
       expect(find.byType(OptimizedChatList), findsOneWidget);
 
-      // Verify messages are rendered (check for first and last messages)
+      // Verify messages are rendered (check for first and last messages).
+      // The list builds lazily, so scroll back to reach the oldest one.
       expect(find.text('msg_0'), findsOneWidget);
+      await tester.scrollUntilVisible(
+        find.text('msg_99'),
+        500,
+        scrollable: find.byType(Scrollable),
+      );
       expect(find.text('msg_99'), findsOneWidget);
 
       scrollController.dispose();

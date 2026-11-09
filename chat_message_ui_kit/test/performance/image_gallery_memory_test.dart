@@ -8,6 +8,8 @@ import 'package:chat_message_ui_kit/src/widgets/optimized_image_gallery.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import '../helpers/test_image.dart';
+
 void main() {
   group('Image Gallery Memory Management Tests', () {
     /// Generate test preview images
@@ -72,6 +74,7 @@ void main() {
               images: images,
               pageController: pageController,
               onClosePressed: () {},
+              imageProviderBuilder: testImageProviderBuilder,
               enableOptimization: true,
             ),
           ),
@@ -89,6 +92,7 @@ void main() {
               images: images,
               pageController: pageController,
               onClosePressed: () {},
+              imageProviderBuilder: testImageProviderBuilder,
               enableOptimization: false,
             ),
           ),
