@@ -5,6 +5,7 @@ include: package:flutter_lints/flutter.yaml
 
 linter:
   rules:
+    - always_use_package_imports
     - annotate_overrides
     - avoid_empty_else
     - avoid_function_literals_in_foreach_calls
@@ -24,6 +25,7 @@ linter:
     - control_flow_in_finally
     - curly_braces_in_flow_control_structures
     - dangling_library_doc_comments
+    - directives_ordering
     - depend_on_referenced_packages
     - empty_catches
     - empty_constructor_bodies

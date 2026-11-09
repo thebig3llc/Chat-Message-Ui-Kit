@@ -1,6 +1,5 @@
+import 'package:chat_message_ui_kit/src/utils/chat_l10n.dart';
 import 'package:flutter/widgets.dart';
-
-import '../utils/chat_l10n.dart';
 
 /// InheritedWidget that provides localization (l10n) data to all descendant widgets in the chat.
 /// This widget makes localized text strings available throughout the entire chat widget tree

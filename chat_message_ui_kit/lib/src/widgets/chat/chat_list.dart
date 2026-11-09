@@ -1,8 +1,7 @@
+import 'package:chat_message_ui_kit/src/enums/bubble_rtl_alignment.dart';
+import 'package:chat_message_ui_kit/src/widgets/chat/optimized_chat_list.dart';
+import 'package:chat_message_ui_kit/src/widgets/typing_indicator.dart';
 import 'package:flutter/material.dart';
-
-import '../../enums/bubble_rtl_alignment.dart';
-import '../typing_indicator.dart';
-import 'optimized_chat_list.dart';
 
 /// The main scrollable list widget that displays chat messages with animations and pagination.
 /// This widget handles the complex logic of animating messages in/out, managing scroll behavior,
