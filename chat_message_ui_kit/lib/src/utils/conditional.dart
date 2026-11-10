@@ -1,8 +1,7 @@
-import 'package:flutter/material.dart';
-
-import 'base_conditional.dart'
+import 'package:chat_message_ui_kit/src/utils/base_conditional.dart'
     if (dart.library.io) 'io_conditional.dart'
     if (dart.library.html) 'browser_conditional.dart';
+import 'package:flutter/material.dart';
 
 /// The abstract class for a conditional import feature.
 abstract class Conditional {

@@ -1,8 +1,7 @@
 import 'dart:typed_data';
 
+import 'package:chat_message_ui_kit/src/utils/base_conditional.dart';
 import 'package:flutter/material.dart';
-
-import 'base_conditional.dart';
 
 /// Create a [BrowserConditional].
 ///

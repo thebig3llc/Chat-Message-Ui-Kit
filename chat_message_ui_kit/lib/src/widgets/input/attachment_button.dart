@@ -1,7 +1,6 @@
+import 'package:chat_message_ui_kit/src/inherited/inherited_chat_theme.dart';
+import 'package:chat_message_ui_kit/src/inherited/inherited_l10n.dart';
 import 'package:flutter/material.dart';
-
-import '../../inherited/inherited_chat_theme.dart';
-import '../../inherited/inherited_l10n.dart';
 
 /// A class that represents attachment button widget.
 class AttachmentButton extends StatelessWidget {

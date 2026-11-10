@@ -1,7 +1,6 @@
-import 'package:chat_message_ui_kit/src/enums/message_status.dart';
+import 'package:chat_message_core/chat_message_core.dart';
+import 'package:chat_message_ui_kit/src/inherited/inherited_chat_theme.dart';
 import 'package:flutter/material.dart';
-
-import '../../inherited/inherited_chat_theme.dart';
 
 /// A class that represents a message status.
 class MessageStatus extends StatelessWidget {
@@ -18,26 +17,26 @@ class MessageStatus extends StatelessWidget {
       case Status.sent:
         return InheritedChatTheme.of(context).theme.deliveredIcon != null
             ? InheritedChatTheme.of(context).theme.deliveredIcon!
-            : Image.asset(
-                'assets/icon-delivered.png',
+            : Icon(
+                Icons.done,
                 color: InheritedChatTheme.of(context).theme.primaryColor,
-                package: 'flutter_chat_ui',
+                size: 16,
               );
       case Status.error:
         return InheritedChatTheme.of(context).theme.errorIcon != null
             ? InheritedChatTheme.of(context).theme.errorIcon!
-            : Image.asset(
-                'assets/icon-error.png',
+            : Icon(
+                Icons.error_outline,
                 color: InheritedChatTheme.of(context).theme.errorColor,
-                package: 'flutter_chat_ui',
+                size: 16,
               );
       case Status.seen:
         return InheritedChatTheme.of(context).theme.seenIcon != null
             ? InheritedChatTheme.of(context).theme.seenIcon!
-            : Image.asset(
-                'assets/icon-seen.png',
+            : Icon(
+                Icons.done_all,
                 color: InheritedChatTheme.of(context).theme.primaryColor,
-                package: 'flutter_chat_ui',
+                size: 16,
               );
       case Status.sending:
         return InheritedChatTheme.of(context).theme.sendingIcon != null

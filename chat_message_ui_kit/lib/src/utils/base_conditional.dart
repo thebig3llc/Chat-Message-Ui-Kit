@@ -1,4 +1,4 @@
-import 'conditional.dart';
+import 'package:chat_message_ui_kit/src/utils/conditional.dart';
 
 /// The abstract base class for a conditional import feature.
 abstract class BaseConditional implements Conditional {}

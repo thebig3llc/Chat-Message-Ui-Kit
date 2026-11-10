@@ -1,6 +1,5 @@
+import 'package:chat_message_ui_kit/src/themes/chat_theme.dart';
 import 'package:flutter/widgets.dart';
-
-import '../themes/chat_theme.dart';
 
 /// InheritedWidget that provides ChatTheme configuration to all descendant widgets.
 /// This enables any widget in the chat widget tree to access theme properties

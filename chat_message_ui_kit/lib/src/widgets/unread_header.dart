@@ -1,9 +1,8 @@
+import 'package:chat_message_ui_kit/src/inherited/inherited_chat_theme.dart';
+import 'package:chat_message_ui_kit/src/inherited/inherited_l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:scroll_to_index/scroll_to_index.dart'
     show scrollAnimationDuration;
-
-import '../inherited/inherited_chat_theme.dart';
-import '../inherited/inherited_l10n.dart';
 
 class UnreadHeader extends StatelessWidget {
   const UnreadHeader({super.key, this.marginTop});

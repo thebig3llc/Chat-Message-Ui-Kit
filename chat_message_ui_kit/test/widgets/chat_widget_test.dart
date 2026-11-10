@@ -1,6 +1,9 @@
+import 'package:chat_message_core/chat_message_core.dart';
 import 'package:chat_message_ui_kit/chat_message_ui_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+
+import '../helpers/test_image.dart';
 
 void main() {
   group('Chat Widget', () {
@@ -91,6 +94,7 @@ void main() {
             messages: [message],
             onSendPressed: (_) {},
             user: testUser,
+            imageProviderBuilder: testImageProviderBuilder,
           ),
         ),
       );
@@ -177,7 +181,9 @@ void main() {
       );
 
       await tester.enterText(find.byType(TextField), 'Test message');
-      await tester.tap(find.byType(IconButton).last);
+      // The send button appears only once the text change is rebuilt.
+      await tester.pump();
+      await tester.tap(find.byType(SendButton));
       await tester.pump();
 
       expect(sentMessage, isNotNull);

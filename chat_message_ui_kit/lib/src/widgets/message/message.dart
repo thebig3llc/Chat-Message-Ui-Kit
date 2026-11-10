@@ -1,25 +1,16 @@
-import 'package:chat_message_ui_kit/src/models/message.dart';
-import 'package:chat_message_ui_kit/src/models/audio_message.dart';
-import 'package:chat_message_ui_kit/src/models/image_message.dart';
-import 'package:chat_message_ui_kit/src/models/text_message.dart';
-import 'package:chat_message_ui_kit/src/models/video_message.dart';
-import 'package:chat_message_ui_kit/src/models/preview_data.dart';
-import 'package:chat_message_ui_kit/src/models/chat_user.dart';
-import 'package:chat_message_ui_kit/src/enums/message_type.dart';
+import 'package:chat_message_core/chat_message_core.dart';
+import 'package:chat_message_ui_kit/src/enums/bubble_rtl_alignment.dart';
+import 'package:chat_message_ui_kit/src/enums/emoji_enlargement_behavior.dart';
+import 'package:chat_message_ui_kit/src/inherited/inherited_chat_theme.dart';
+import 'package:chat_message_ui_kit/src/inherited/inherited_user.dart';
+import 'package:chat_message_ui_kit/src/utils/conditional.dart';
+import 'package:chat_message_ui_kit/src/utils/functions.dart';
 import 'package:chat_message_ui_kit/src/widgets/message/image_message.dart';
+import 'package:chat_message_ui_kit/src/widgets/message/message_status.dart';
 import 'package:chat_message_ui_kit/src/widgets/message/text_message.dart';
+import 'package:chat_message_ui_kit/src/widgets/message/user_avatar.dart';
 import 'package:flutter/material.dart';
-
 import 'package:visibility_detector/visibility_detector.dart';
-
-import '../../utils/conditional.dart';
-import '../../enums/bubble_rtl_alignment.dart';
-import '../../enums/emoji_enlargement_behavior.dart';
-import '../../utils/functions.dart';
-import '../../inherited/inherited_chat_theme.dart';
-import '../../inherited/inherited_user.dart';
-import 'message_status.dart';
-import 'user_avatar.dart';
 
 /// Base widget for all message types in the chat. Renders bubbles around
 /// messages and status. Sets maximum width for a message for

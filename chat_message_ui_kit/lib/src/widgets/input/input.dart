@@ -1,16 +1,15 @@
-import 'package:chat_message_ui_kit/src/models/partial_text.dart';
+import 'package:chat_message_core/chat_message_core.dart';
+import 'package:chat_message_ui_kit/src/enums/input_clear_mode.dart';
+import 'package:chat_message_ui_kit/src/enums/send_button_visibility_mode.dart';
+import 'package:chat_message_ui_kit/src/inherited/inherited_chat_theme.dart';
+import 'package:chat_message_ui_kit/src/inherited/inherited_l10n.dart';
+import 'package:chat_message_ui_kit/src/utils/functions.dart';
+import 'package:chat_message_ui_kit/src/widgets/input/attachment_button.dart';
+import 'package:chat_message_ui_kit/src/widgets/input/input_text_field_controller.dart';
+import 'package:chat_message_ui_kit/src/widgets/input/send_button.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import '../../enums/input_clear_mode.dart';
-import '../../enums/send_button_visibility_mode.dart';
-import '../../utils/functions.dart';
-import '../../inherited/inherited_chat_theme.dart';
-import '../../inherited/inherited_l10n.dart';
-import 'attachment_button.dart';
-import 'input_text_field_controller.dart';
-import 'send_button.dart';
 
 /// The main input widget for composing and sending messages in the chat.
 /// Provides a text field for typing messages, optional attachment button, and a send button.

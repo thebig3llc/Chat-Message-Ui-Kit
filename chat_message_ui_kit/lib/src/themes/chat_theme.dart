@@ -1,7 +1,6 @@
+import 'package:chat_message_ui_kit/src/widgets/typing_indicator.dart';
+import 'package:chat_message_ui_kit/src/widgets/unread_header.dart';
 import 'package:flutter/material.dart';
-
-import '../widgets/typing_indicator.dart';
-import '../widgets/unread_header.dart';
 
 // For internal usage only. Use values from theme itself.
 

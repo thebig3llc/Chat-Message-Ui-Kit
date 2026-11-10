@@ -1,4 +1,4 @@
-import 'package:chat_message_ui_kit/src/utils/regex.dart';
+import 'package:chat_message_core/chat_message_core.dart';
 import 'package:linkify/linkify.dart';
 
 /// Utility class that implements [Linkifier.parse] method.
@@ -18,10 +18,12 @@ class UrlLinkifier extends Linkifier {
     for (final element in elements) {
       if (element is TextElement) {
         var loose = false;
-        var match = urlRegex.firstMatch(element.text);
+        var match = ChatCoreRegex.urlRegex.firstMatch(element.text);
 
         if (match?.group(1)?.isNotEmpty == true) {
-          final looseMatch = looseUrlRegex.firstMatch(match!.group(1)!);
+          final looseMatch = ChatCoreRegex.looseUrlRegex.firstMatch(
+            match!.group(1)!,
+          );
           if (looseMatch != null) {
             match = looseMatch;
             loose = true;
@@ -29,7 +31,7 @@ class UrlLinkifier extends Linkifier {
         }
 
         if (match == null && options.looseUrl) {
-          match = looseUrlRegex.firstMatch(element.text);
+          match = ChatCoreRegex.looseUrlRegex.firstMatch(element.text);
           loose = true;
         }
 
@@ -54,7 +56,10 @@ class UrlLinkifier extends Linkifier {
 
             final url = originalUrl;
 
-            if (loose || !originalUrl.startsWith(protocolIdentifierRegex)) {
+            if (loose ||
+                !originalUrl.startsWith(
+                  ChatCoreRegex.protocolIdentifierRegex,
+                )) {
               originalUrl =
                   (options.defaultToHttps ? 'https://' : 'http://') +
                   originalUrl;

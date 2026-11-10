@@ -1,4 +1,4 @@
-import 'package:chat_message_ui_kit/src/models/chat_user.dart';
+import 'package:chat_message_core/chat_message_core.dart';
 import 'package:flutter/widgets.dart';
 
 /// InheritedWidget that provides the current user's information to all descendant widgets in the chat.

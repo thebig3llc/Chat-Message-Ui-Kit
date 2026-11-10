@@ -1,4 +1,4 @@
-import 'package:chat_message_ui_kit/src/enums/parsed_type.dart';
+import 'package:chat_message_core/chat_message_core.dart';
 import 'package:flutter/widgets.dart';
 
 class MatchText {
